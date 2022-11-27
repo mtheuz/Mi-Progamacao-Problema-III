@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TelaInicio">
+   <children>
+      <Pane layoutY="14.0" prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;" />
+      <AnchorPane layoutX="51.0" layoutY="105.0" prefHeight="63.0" prefWidth="850.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;" />
+      <Button layoutX="207.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" text="SELEÇÕES" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button layoutX="517.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" text="CARREGAR PRÉ SET" textAlignment="CENTER" textFill="#6b1839" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="371.0" layoutY="416.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" text="INICIAR FASE DE GRUPOS" textAlignment="CENTER" textFill="#6b1839" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
