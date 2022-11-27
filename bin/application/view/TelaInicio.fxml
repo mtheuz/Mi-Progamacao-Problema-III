@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TelaInicio">
    <children>
-      <Pane layoutY="14.0" prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;" />
-      <AnchorPane layoutX="51.0" layoutY="105.0" prefHeight="63.0" prefWidth="850.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;" />
-      <Button layoutX="207.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" text="SELEÇÕES" textFill="#6b1839">
+      <Button layoutX="516.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="517.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" text="CARREGAR PRÉ SET" textAlignment="CENTER" textFill="#6b1839">
+      <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;" />
+      <AnchorPane layoutX="51.0" layoutY="105.0" prefHeight="63.0" prefWidth="850.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <Label layoutX="373.0" layoutY="13.0" prefHeight="38.0" prefWidth="129.0" text="BEM VINDO!" textFill="#6b1839">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="103.0" fitWidth="63.0" layoutX="29.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="207.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="371.0" layoutY="416.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" text="INICIAR FASE DE GRUPOS" textFill="#6b1839">
+      <Label layoutX="571.0" layoutY="268.0" prefHeight="103.0" prefWidth="118.0" text="CARREGAR PRÉ SET" textFill="#6b1839" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="303.0" prefHeight="32.0" prefWidth="118.0" text="SELEÇÕES" textFill="#6b1839" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="371.0" layoutY="443.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
+      <Label layoutX="409.0" layoutY="453.0" prefHeight="84.0" prefWidth="172.0" text="INICIAR FASE DE GRUPOS" textFill="#6b1839" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
