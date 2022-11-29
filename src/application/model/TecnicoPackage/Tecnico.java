@@ -1,4 +1,4 @@
-package application.model;
+package application.model.TecnicoPackage;
 
 /**
  * A classe <b> Tecnico </b> serve para criar um objeto que será um cadastro de um Técnico de uma Seleção da copa do mundo no sistema.
@@ -10,7 +10,10 @@ public class Tecnico {
 	 * Atributo nome do Técnico
 	 */
 	private String nome;
-	
+	/**
+	 *  Atributo nacionalidade do Técnico
+	 */
+	private String nacionalidade;
 	/**
 	 * Construtor padrão da classe <b> Arbitro </b>
 	 */
@@ -34,9 +37,20 @@ public class Tecnico {
 		this.nome = nome;
 	}
 	
-	
-	
-	
-	
+	/**
+	 * Consultar nacionalidade
+	 * @param nacionalidade
+	 * @return
+	 */
+	public String getNacionalidade(String nacionalidade) {
+		return nacionalidade;
+	}
+	/**
+	 * Setar nacionalidade
+	 * @param nacionalidade
+	 */
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
 	
 }

@@ -2,53 +2,65 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TelaInicio">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TelaInicio">
    <children>
-      <Button layoutX="516.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
+      <Button layoutX="500.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;" />
-      <AnchorPane layoutX="51.0" layoutY="105.0" prefHeight="63.0" prefWidth="850.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+      <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
          <children>
-            <Label layoutX="373.0" layoutY="13.0" prefHeight="38.0" prefWidth="129.0" text="BEM VINDO!" textFill="#6b1839">
+            <Label layoutX="385.0" layoutY="-3.0" prefHeight="45.0" prefWidth="183.0" text="SYSCOPA 3.0" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <ImageView fitHeight="103.0" fitWidth="63.0" layoutX="29.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true" />
+         </children></Pane>
+      <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <Label layoutX="280.0" layoutY="4.0" prefHeight="32.0" prefWidth="183.0" text="BEM VINDO!" textFill="#a61f54">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="207.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
+      <Button layoutX="239.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label layoutX="571.0" layoutY="268.0" prefHeight="103.0" prefWidth="118.0" text="CARREGAR PRÉ SET" textFill="#6b1839" wrapText="true">
+      <Label alignment="CENTER" layoutX="536.0" layoutY="277.0" prefHeight="84.0" prefWidth="138.0" text="CARREGAR PRÉ SET" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="256.0" layoutY="303.0" prefHeight="32.0" prefWidth="118.0" text="SELEÇÕES" textFill="#6b1839" wrapText="true">
+      <Label layoutX="285.0" layoutY="303.0" prefHeight="32.0" prefWidth="118.0" text="SELEÇÕES" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Button layoutX="371.0" layoutY="443.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
+      <Button layoutX="371.0" layoutY="402.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label layoutX="409.0" layoutY="453.0" prefHeight="84.0" prefWidth="172.0" text="INICIAR FASE DE GRUPOS" textFill="#6b1839" wrapText="true">
+      <Label alignment="CENTER" layoutX="390.0" layoutY="412.0" prefHeight="84.0" prefWidth="172.0" text="INICIAR FASE DE GRUPOS" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
+      <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
+         <image>
+            <Image url="@../../../../../Downloads/c4639855e84f992b7dbed318972b86fd%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

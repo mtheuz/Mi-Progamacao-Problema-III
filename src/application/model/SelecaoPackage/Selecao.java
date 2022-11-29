@@ -1,10 +1,10 @@
-package application.model;
+package application.model.SelecaoPackage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import application.model.Jogador;
-import application.model.Tecnico;
+import application.model.JogadorPackage.Jogador;
+import application.model.TecnicoPackage.Tecnico;
 /**
  * A classe <b> Selecao</b> serve para criar um objeto que será um cadastro de uma Seleção da copa do mundo no sistema.
  * @author Mailson
@@ -28,10 +28,6 @@ public class Selecao {
 	 * Atributo técnico é um objeto da classe Tecnico
 	 */
 	private Tecnico tecnico;
-	
-	private int pontos;
-	private int gols;
-
 	public Selecao()
 	{
 
