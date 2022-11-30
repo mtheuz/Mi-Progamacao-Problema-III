@@ -23,11 +23,11 @@ public class Main extends Application {
 		FXMLLoader loader = new FXMLLoader();
 		URL xmlURL = getClass().getResource("/application/view/TelaInicio.fxml");
 		loader.setLocation(xmlURL);
-		loader.setController(new TelaInicio());
-		loader.getController();
+		//loader.setController(new TelaInicio());
+		//loader.getController();
 		Parent parent = loader.load();
 		Scene scene = new Scene(parent);
-		primaryStage.setScene(scene);
+		primaryStage.setScene(scene); 
 		primaryStage.show();
 		
 	}

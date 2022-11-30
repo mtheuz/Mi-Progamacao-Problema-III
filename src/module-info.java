@@ -7,6 +7,7 @@ module Sycopa {
 	requires java.desktop;
 	requires javafx.base;
 	requires org.junit.jupiter.api;
+	requires junit;
 	
 	opens application.controller to javafx.graphics, javafx.fxml;
 	exports application;
