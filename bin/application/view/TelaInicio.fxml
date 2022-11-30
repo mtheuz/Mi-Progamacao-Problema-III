@@ -44,7 +44,7 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="278.0" layoutY="250.0" prefHeight="138.0" prefWidth="150.0" text="CADASTRAR SELEÇÕES" textFill="#6b1839" wrapText="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="269.0" layoutY="250.0" prefHeight="138.0" prefWidth="150.0" text="CADASTROS" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -69,10 +69,15 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label fx:id="label" layoutX="371.0" layoutY="568.0" prefHeight="20.0" prefWidth="210.0" textFill="WHITE">
+      <Label fx:id="label" layoutX="379.0" layoutY="568.0" prefHeight="20.0" prefWidth="210.0" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Button fx:id="btnAbrirMenuSelecao" layoutX="239.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnAbrirTelaSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

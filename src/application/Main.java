@@ -21,7 +21,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException { 
 
 		FXMLLoader loader = new FXMLLoader();
-		URL xmlURL = getClass().getResource("/application/view/TelaInicio.fxml");
+		URL xmlURL = getClass().getResource("/application/view/Selecao/TelaCadastrarSelecao.fxml");
 		loader.setLocation(xmlURL);
 		//loader.setController(new TelaInicio());
 		//loader.getController();

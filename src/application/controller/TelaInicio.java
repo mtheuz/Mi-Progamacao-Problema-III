@@ -9,8 +9,12 @@ import application.model.SelecaoPackage.SelecaoDAO;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class TelaInicio{
 
@@ -24,6 +28,9 @@ public class TelaInicio{
     private Button btnCadastrarSelecoes;
 
     @FXML
+    private Button btnAbrirMenuSelecao;
+    
+    @FXML
     private Button btnCarregarPreSet;
     
     @FXML
@@ -31,14 +38,32 @@ public class TelaInicio{
    
 
     SelecaoDaoImpl selecaoDao = new SelecaoDaoImpl();
-    JogadorDaoImpl jogadorDao = new JogadorDaoImpl(selecaoDao.getListaSelecoes());
+    //JogadorDaoImpl jogadorDao = new JogadorDaoImpl(selecaoDao.getListaSelecoes());
     
     @FXML
     void btnCarregarPreSetAction(ActionEvent event) throws IOException {
 
     	selecaoDao.leArquivoSelecoes();
+    	//jogadorDao.transformaEmMap();
     	label.setText("Pré Set Carregado com sucesso");
     	
+    }
+    @FXML
+    void btnAbrirTelaSelecaoAction(ActionEvent event) {
+    	FXMLLoader loader = new FXMLLoader();
+		URL xmlURL = getClass().getResource("/application/view/TelaMenuCadastros.fxml");
+		loader.setLocation(xmlURL);
+		try {
+			
+			Parent parent = loader.load();
+			Scene scene = new Scene(parent);
+			Stage primaryStage = new Stage();
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		}
+		catch(IOException e ){
+			
+		}
     }
     
     @FXML
