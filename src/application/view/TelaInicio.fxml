@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
-   <children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TelaInicio"><children>
       <Button layoutX="500.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
@@ -30,9 +29,10 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
+            <ImageView fitHeight="59.0" fitWidth="66.0" layoutX="-55.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <Button layoutX="239.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnCadastrarSelecoes" layoutX="239.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -42,7 +42,7 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="285.0" layoutY="303.0" prefHeight="32.0" prefWidth="118.0" text="SELEÇÕES" textFill="#6b1839" wrapText="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="269.0" layoutY="250.0" prefHeight="138.0" prefWidth="150.0" text="CADASTROS" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -59,8 +59,23 @@
       </Label>
       <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
          <image>
-            <Image url="copa.png" />
+            <Image url="@copa.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnCarregarPreSet" layoutX="500.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnCarregarPreSetAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" layoutX="379.0" layoutY="568.0" prefHeight="20.0" prefWidth="210.0" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAbrirMenuSelecao" layoutX="239.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnAbrirTelaSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

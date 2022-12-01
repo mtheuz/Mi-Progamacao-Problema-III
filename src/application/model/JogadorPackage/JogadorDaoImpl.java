@@ -468,7 +468,7 @@ public void cadastrarUmJogador()
 	}
 	
 	public void transformaEmMap() {  
-		jogadorView.mostrar("Cadastrando Jogadores, Aguarde......");
+		
 		ObjectMapper mapper = new ObjectMapper();
 	    File fileObj = new File("selecoesJogadores.json");  
 	    try {   

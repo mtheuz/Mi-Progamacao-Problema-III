@@ -27,33 +27,30 @@ public class Main extends Application {
 		FXMLLoader loader = new FXMLLoader();
 		URL xmlURL = getClass().getResource("/application/view/TelaInicio.fxml");
 		loader.setLocation(xmlURL);
-	
 		Parent parent = loader.load();
 		Scene scene = new Scene(parent);
-		primaryStage.setScene(scene);
+		primaryStage.setScene(scene); 
 		primaryStage.show();
-		
-	}
-	
+	}	
 	public static void trocaDeTela(String escolha,Object conteudo) throws IOException {
 
         switch (escolha){
-            case "Tela inical":
+            case "TelaInical":
                 stage.setScene(telaInicial);
                break;
-            case "Tela selecoes":
-                FXMLLoader fxmlLoaderTelaSelecoes = new FXMLLoader(Main.class.getResource("/application/view/TelaInicio.fxml"));
-                telaSelecoes = new Scene(fxmlLoaderTelaSelecoes.load(), 600, 400);
-                fxmlLoaderTelaSelecoes.setController(new TelaInicio());
-                Controller controllerTelaInicio = fxmlLoaderTelaSelecoes.getController();
+            case "TelaMenuCadastro":
+                FXMLLoader fxmlLoaderTelaMenuCadastro = new FXMLLoader(Main.class.getResource("/application/view/TelaMenuCadastros.fxml"));
+                telaSelecoes = new Scene(fxmlLoaderTelaMenuCadastro.load());
+                //fxmlLoaderTelaSelecoes.setController(new TelaInicio());
+                //Controller controllerTelaInicio = fxmlLoaderTelaSelecoes.getController();
                 stage.setScene(telaSelecoes);
                 break;
                 
             case "Tela cadastro selecoes":
                 FXMLLoader fxmlLoaderTelaCadastroSelecoes = new FXMLLoader(Main.class.getResource("/application/view/TelaInicio.fxml"));
                 telaCadastroSelecoes = new Scene(fxmlLoaderTelaCadastroSelecoes.load(), 600, 400);
-                fxmlLoaderTelaCadastroSelecoes.setController(new TelaInicio());
-                Controller controllerTelaCadastroSelecoes = fxmlLoaderTelaCadastroSelecoes.getController();
+                //fxmlLoaderTelaCadastroSelecoes.setController(new TelaInicio());
+                //Controller controllerTelaCadastroSelecoes = fxmlLoaderTelaCadastroSelecoes.getController();
                 stage.setScene(telaCadastroSelecoes);
                 break;
         }
