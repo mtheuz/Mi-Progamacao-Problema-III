@@ -13,13 +13,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import application.model.SelecaoPackage.Selecao;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import application.model.TratamentoDeExcecoesPackage.TratamentosExcecoes;
+
 /**
  *  A classe <b> JogadorDaoImpl </b> é responsável pelo CRUD de objetos da classe Árbitro
  * @author Mailson
  *	@since 2022
  */
 public class JogadorDaoImpl implements JogadorDAO{
-	JogadorView jogadorView = new JogadorView();
 	SelecaoDaoImpl selecao = new SelecaoDaoImpl();
 	private String[] posicoes = {"Goleiro", "Zagueiro","Lateral", "Volante", "Meio-Campo", "Atacante"};
 	/**
@@ -318,7 +318,7 @@ public void cadastrarUmJogador()
 	//Lista todos os jogadores
 
 	@Override
-	boolean listarJogadoresDados(int selecaoBusca) {
+	public boolean listarJogadoresDados(int selecaoBusca) {
 		System.out.printf("Lista de jogadores [%s]:",selecao.getListaSelecoes().get(selecaoBusca).getNome());
 		System.out.println("\n");
 		if(selecaoBusca != -1) {

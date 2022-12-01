@@ -9,9 +9,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import model.JogadorPackage.Jogador;
-import model.JogadorPackage.JogadorDaoImpl;
-import model.SelecaoPackage.SelecaoDaoImpl;
+import application.model.JogadorPackage.Jogador;
+import application.model.JogadorPackage.JogadorDaoImpl;
+import application.model.SelecaoPackage.SelecaoDaoImpl;
 
 class PartidaTest {
 
