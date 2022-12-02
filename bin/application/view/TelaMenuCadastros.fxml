@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TelaMenuCadastros">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
 
    <children>
       <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
@@ -82,8 +82,28 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="3.0" mnemonicParsing="false" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
+            <Button fx:id="btnVoltar" layoutX="10.0" layoutY="3.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
          </children>
       </AnchorPane>
+      <Button fx:id="btnAbrirMenuSelecao" layoutX="239.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnAbrirTelaSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAbrrMenuJogadores" layoutX="465.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnAbrirTelaJogadoresAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAbrirMenuTecnicos" layoutX="239.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnAbrirTelaTecnicosAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAbrirMenuArbitros" layoutX="465.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnAbrirTelaArbitrosAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
