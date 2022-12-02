@@ -28,7 +28,7 @@ class PartidaTest {
 			jogador.add(gols[i]);
 			listaGols.add(jogador);
 		}
-		int valorObtido = partida.somaGols(listaGols);
+		int valorObtido = partida.somaConteudo(listaGols);
 		assertEquals(19,valorObtido);
 		
 	}

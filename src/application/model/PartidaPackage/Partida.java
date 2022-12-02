@@ -10,6 +10,8 @@ public class Partida {
 	private String local;
 	private String selecao1;
 	private String selecao2;
+	private String vencedor;
+	private String perdedor;
 	private List<List<String>> golsSelecao1;
 	private List<List<String>> golsSelecao2;
 	private List<List<String>> cartoesVermelhosSelecao1;
@@ -17,6 +19,23 @@ public class Partida {
 	private List<List<String>> cartoesAmarelosSelecao1;
 	private List<List<String>> cartoesAmarelosSelecao2;
 	private boolean situacao;
+	public String getPerdedor() {
+		return perdedor;
+	}
+
+
+	public void setPerdedor(String perdedor) {
+		this.perdedor = perdedor;
+	}
+	public String getVencedor() {
+		return vencedor;
+	}
+
+
+	public void setVencedor(String vencedor) {
+		this.vencedor = vencedor;
+	}
+
 	public boolean isSituacao() {
 		return situacao;
 	}

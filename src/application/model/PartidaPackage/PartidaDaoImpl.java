@@ -12,10 +12,10 @@ import application.model.SelecaoPackage.SelecaoDaoImpl;
 import application.model.TratamentoDeExcecoesPackage.TratamentosExcecoes;
 
 public class PartidaDaoImpl implements PartidaDAO{
-	private SelecaoDaoImpl selecao = new SelecaoDaoImpl();
+	protected SelecaoDaoImpl selecao = new SelecaoDaoImpl();
 	TratamentosExcecoes tratamento = new TratamentosExcecoes();
 	
-	private Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
+	protected Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
 	
 	private String[] estadios = {"Al Bayt", "Khalifa International", "Al Thumama", "Ahmad Bin Ali",
 			"Lusail", "Ras Abu Aboud (974)", "Education City", "Al Janoub"};
@@ -152,7 +152,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 		}
 
 
-	private boolean verificaCadastroCompleto(String nome) {
+	protected boolean verificaCadastroCompleto(String nome) {
 		ArrayList<Selecao> listaSelecoes = selecao.getListaSelecoes();
 		for(Selecao selecao : listaSelecoes)
 		{
@@ -197,57 +197,6 @@ public class PartidaDaoImpl implements PartidaDAO{
 		return coddate;
 	}
 	
-
-	public void geraPartidas() throws InterruptedException {
-		String[] grupos = {"A","B","C","D","E","F","G","H"};
-		for (int i = 0; i < grupos.length; i++) {
-			List<String> grupoSelecao = organizaGrupo(grupos[i]);
-			List<Partida> partidaGrupo= new ArrayList<Partida>();
-			if(grupoSelecao.isEmpty() || grupoSelecao.size()<=4) {
-				for(int c = 0; c < grupoSelecao.size(); c++) {
-					for(int j = c+1; j < (grupoSelecao.size()); j++) {
-						String selecao1 = grupoSelecao.get(c);
-						String selecao2 = grupoSelecao.get(j);
-						Partida jogo = new Partida(selecao1,selecao2);
-						jogo.setCodigo(geraid());
-						partidaGrupo.add(jogo);
-						this.partidas.put(grupos[i], partidaGrupo);
-					}
-				}
-			}
-		}
-	}
-	
-	private List<String> organizaGrupo(String grupo) {
-		List<String> grupoSelecao = new ArrayList<>();
-		for(Selecao selecao: selecao.getListaSelecoes()) {
-			if(selecao.getGrupo().equals(grupo)) {
-				grupoSelecao.add(selecao.getNome());
-			}
-		}
-		return grupoSelecao;
-	}
-
-	public boolean imprimeGrupos(){
-
-		System.out.println("[Lista de Grupos]");
-		String[] grupos = {"A","B","C","D","E","F","G","H"};
-		if(!selecao.getListaSelecoes().isEmpty()) {
-			for (int i = 0; i < grupos.length; i++) {
-				System.out.printf("[%d] Grupo %s\n",i,grupos[i]);
-				for(Selecao selecao: selecao.getListaSelecoes()) {
-					if(selecao.getGrupo().equals(grupos[i])) {
-						System.out.printf("-%s\n",selecao.getNome());
-					}
-
-				}
-				System.out.println("-------------");
-			}
-			System.out.println("");
-			return true;
-		}
-		return false;
-	}
 	public void listarPartida(String grupo) {
 		List<Partida> jogo = partidas.get(grupo);
 		for (int i = 0; i < jogo.size(); i++) {
@@ -274,7 +223,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 		return false;
 	}
 	
-	public int somaGols(List<List<String>> listaGols) {
+	public int somaConteudo(List<List<String>> listaGols) {
 		int gols = 0;
 		if(!listaGols.isEmpty()) {
 			for(List<String> jogador: listaGols) {
@@ -289,7 +238,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 		if(partida != null) {
 			System.out.printf("Codigo da Partida: %s\n",partida.getCodigo());
 			System.out.printf("|%s X %s|\n",partida.getSelecao1(),partida.getSelecao2());
-			System.out.printf("Placar: [%d X %d]\n",somaGols(partida.getGolsSelecao1()),somaGols(partida.getGolsSelecao2()));
+			System.out.printf("Placar: [%d X %d]\n",somaConteudo(partida.getGolsSelecao1()),somaConteudo(partida.getGolsSelecao2()));
 			System.out.printf("Local: %s\n", partida.getLocal());
 			System.out.printf("Data: %s\n", partida.getData());
 			System.out.printf("Horaio: %s\n", partida.getHorario());
@@ -522,7 +471,6 @@ public class PartidaDaoImpl implements PartidaDAO{
 				return false;
 			}
 	}
-	
 }
 
 
