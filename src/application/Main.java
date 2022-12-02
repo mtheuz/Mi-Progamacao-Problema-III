@@ -17,9 +17,6 @@ import javafx.scene.Scene;
 public class Main extends Application { 
 	
 	private static Stage stage;
-	private static Scene telaInicial; 
-	private static Scene telaSelecoes;
-	private static Scene telaCadastroSelecoes;
 	
 	@Override
 	public void start(Stage primaryStage) throws IOException { 
@@ -32,29 +29,14 @@ public class Main extends Application {
 		primaryStage.setScene(scene); 
 		primaryStage.show();
 	}	
-	public static void trocaDeTela(String escolha,Object conteudo) throws IOException {
 
-        switch (escolha){
-            case "TelaInical":
-                stage.setScene(telaInicial);
-               break;
-            case "TelaMenuCadastro":
-                FXMLLoader fxmlLoaderTelaMenuCadastro = new FXMLLoader(Main.class.getResource("/application/view/TelaMenuCadastros.fxml"));
-                telaSelecoes = new Scene(fxmlLoaderTelaMenuCadastro.load());
-                //fxmlLoaderTelaSelecoes.setController(new TelaInicio());
-                //Controller controllerTelaInicio = fxmlLoaderTelaSelecoes.getController();
-                stage.setScene(telaSelecoes);
-                break;
-                
-            case "Tela cadastro selecoes":
-                FXMLLoader fxmlLoaderTelaCadastroSelecoes = new FXMLLoader(Main.class.getResource("/application/view/TelaInicio.fxml"));
-                telaCadastroSelecoes = new Scene(fxmlLoaderTelaCadastroSelecoes.load(), 600, 400);
-                //fxmlLoaderTelaCadastroSelecoes.setController(new TelaInicio());
-                //Controller controllerTelaCadastroSelecoes = fxmlLoaderTelaCadastroSelecoes.getController();
-                stage.setScene(telaCadastroSelecoes);
-                break;
-        }
-    }
+	public static void trocaDeTela(String endereco,Object conteudo) throws IOException {
+		FXMLLoader loaderFXML = new FXMLLoader(Main.class.getResource(endereco));
+        Scene tela = new Scene(loaderFXML.load());
+        //fxmlLoaderTelaSelecoes.setController(new TelaInicio());
+        //Controller controllerTelaInicio = fxmlLoaderTelaSelecoes.getController();
+        stage.setScene(tela);
+	}
 	
 	public static void main(String[] args) {
 		launch(args);

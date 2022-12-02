@@ -54,7 +54,7 @@ public class TelaInicio{
     }
     @FXML
     void btnAbrirTelaSelecaoAction(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("TelaMenuCadastro", null);
+    	Main.trocaDeTela("/application/view/Jogador/TelaMenuJogador.fxml", null);
     	System.out.println(num);
     }
     

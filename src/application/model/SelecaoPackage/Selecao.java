@@ -10,7 +10,7 @@ import application.model.TecnicoPackage.Tecnico;
  * @author Mailson
  *	@since 2022
  */
-public class Selecao {
+public class Selecao implements Comparable<Selecao>{
 	/**
 	 * Atributo grupo indica em que grupo a selção está
 	 */
@@ -28,6 +28,93 @@ public class Selecao {
 	 * Atributo técnico é um objeto da classe Tecnico
 	 */
 	private Tecnico tecnico;
+	
+	private int pontos;
+	private String vitoria;
+	private String derrota;
+	private String empate;
+	private int golsMarcados;
+	private int golsSofridos;
+	private int saldoGols = golsMarcados - golsSofridos;
+	private int quantidadeCartoesAmarelos;
+	private int quantidadeCartoesVermelhos;
+	public int getGolsMarcados() {
+		return golsMarcados;
+	}
+
+	public void setGolsMarcados(int golsMarcados) {
+		this.golsMarcados += golsMarcados;
+	}
+
+
+	public int getGolsSofridos() {
+		return golsSofridos;
+	}
+
+
+	public void setGolsSofridos(int golsSofridos) {
+		this.golsSofridos += golsSofridos;
+	}
+
+	public int getQuantidadeCartoesAmarelos() {
+		return quantidadeCartoesAmarelos;
+	}
+
+
+	public void setQuantidadeCartoesAmarelos(int quantidadeCartoesAmarelos) {
+		this.quantidadeCartoesAmarelos += quantidadeCartoesAmarelos;
+	}
+
+
+	public int getQuantidadeCartoesVermelhos() {
+		return quantidadeCartoesVermelhos;
+	}
+
+
+	public void setQuantidadeCartoesVermelhos(int quantidadeCartoesVermelhos) {
+		this.quantidadeCartoesVermelhos += quantidadeCartoesVermelhos;
+	}
+	
+	public String getEmpate() {
+		return empate;
+	}
+
+
+	public void setEmpate(String empate) {
+		this.empate = empate;
+	}
+
+
+	public int getPontos() {
+		return pontos;
+	}
+
+
+	public void setPontos(int pontos) {
+		this.pontos += pontos;
+	}
+
+
+	public String getVitoria() {
+		return vitoria;
+	}
+
+
+	public void setVitoria(String vitoria) {
+		this.vitoria = vitoria;
+	}
+
+
+	public String getDerrota() {
+		return derrota;
+	}
+
+
+	public void setDerrota(String derrota) {
+		this.derrota = derrota;
+	}
+	
+	
 	public Selecao()
 	{
 
@@ -99,6 +186,46 @@ public class Selecao {
 	}
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
+	}
+
+
+	@Override
+	public int compareTo(Selecao other) {
+		if(this.pontos > other.pontos) {
+			return -1;
+		}
+		else if(this.pontos < other.pontos) {
+			return 1;
+		}
+		else if(this.pontos == other.pontos) {
+			if(this.saldoGols > other.saldoGols) {
+				return -1;
+			}
+			else if(this.saldoGols < other.saldoGols) {
+				return 1;
+			}
+			else {
+				if(this.quantidadeCartoesVermelhos < other.quantidadeCartoesVermelhos) {
+					return -1;
+				}
+				else if(this.quantidadeCartoesVermelhos > other.quantidadeCartoesVermelhos) {
+					return 1;
+				}
+				else {
+					if(this.quantidadeCartoesAmarelos < other.quantidadeCartoesAmarelos) {
+						return -1;
+					}
+					else if(this.quantidadeCartoesAmarelos > other.quantidadeCartoesAmarelos) {
+						return 1;
+					}
+					
+				}
+			}
+		}
+		
+		
+		
+		return 0;
 	}
 	
 }
