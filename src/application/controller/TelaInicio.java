@@ -30,7 +30,7 @@ public class TelaInicio{
     private Button btnCadastrarSelecoes;
 
     @FXML
-    private Button btnAbrirMenuSelecao;
+    private Button btnAbrirMenuCadastros;
     
     @FXML
     private Button btnCarregarPreSet;
@@ -53,9 +53,9 @@ public class TelaInicio{
     	
     }
     @FXML
-    void btnAbrirTelaSelecaoAction(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("TelaMenuCadastro", null);
-    	System.out.println(num);
+    void btnAbrirTelaMenuCadastrosAction(ActionEvent event) throws IOException {
+    	Main.trocaDeTela("TelaMenuCadastro", selecaoDao);
+    	
     }
     
     @FXML

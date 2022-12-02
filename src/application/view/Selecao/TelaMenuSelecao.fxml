@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TelaInicio">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
 
    <children>
       <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
@@ -41,7 +41,7 @@
       </Label>
       <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
          <image>
-            <Image url="@copa.png" />
+            <Image url="@../copa.png" />
          </image>
       </ImageView>
       <Button layoutX="239.0" layoutY="384.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
@@ -82,7 +82,7 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="3.0" mnemonicParsing="false" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
+            <Button fx:id="btnVoltar" layoutY="-2.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="38.0" prefWidth="212.0" text="vOLTAR" />
          </children>
       </AnchorPane>
    </children>
