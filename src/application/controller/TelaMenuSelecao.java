@@ -23,6 +23,10 @@ public class TelaMenuSelecao {
     @FXML
     private Button btnVoltar;
     
+    @FXML
+    private Button btnCadastrarSelecao;
+    
+    
     private SelecaoDaoImpl selecaoDao;
     
     private ArrayList <Selecao> listaSelecoes;
@@ -35,6 +39,11 @@ public class TelaMenuSelecao {
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
     	Main.trocaDeTela("TelaInical", this.selecaoDao);
+    }
+    
+    @FXML
+    void btnCadastrarSelecaoAction(ActionEvent event) throws IOException {
+    	Main.trocaDeTela("TelaCadastrarSelecao", this.selecaoDao);
     }
     @FXML
     void initialize() {

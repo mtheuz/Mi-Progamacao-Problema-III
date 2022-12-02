@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
 import java.net.URL;
 
+import application.controller.TelaCadastrarSelecao;
 import application.controller.TelaInicio;
 import application.controller.TelaMenuCadastros;
 import application.controller.TelaMenuSelecao;
@@ -24,7 +25,7 @@ public class Main extends Application {
 	private static Scene telaMenuCadastros;
 	private static Scene telaMenuSelecoes;
 	private static Scene telaCadastroSelecoes;
-	
+	private static Scene telaCadastrarSelecao;
 	
 	@Override
 	public void start(Stage primaryStage) throws IOException { 
@@ -73,6 +74,16 @@ public class Main extends Application {
                 //fxmlLoaderTelaCadastroSelecoes.setController(new TelaInicio());
                 //Controller controllerTelaCadastroSelecoes = fxmlLoaderTelaCadastroSelecoes.getController();
                 stage.setScene(telaCadastroSelecoes);
+                break;
+           
+            case "TelaCadastrarSelecao":
+            	selecaoDao =  (SelecaoDaoImpl) conteudo;
+            	FXMLLoader fxmlLoaderTelaCadastrarSelecao = new FXMLLoader(Main.class.getResource("/application/view/Selecao/TelaCadastrarSelecao.fxml"));
+                fxmlLoaderTelaCadastrarSelecao.setController(new TelaCadastrarSelecao(selecaoDao));
+                telaCadastrarSelecao= new Scene(fxmlLoaderTelaCadastrarSelecao.load());
+                
+                //Controller controllerTelaMenuCadastros = fxmlLoaderTelaMenuCadastro.getController();
+                stage.setScene(telaCadastrarSelecao);
                 break;
         }
     }
