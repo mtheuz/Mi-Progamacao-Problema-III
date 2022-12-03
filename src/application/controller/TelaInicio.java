@@ -2,6 +2,7 @@ package application.controller;
 
 import java.awt.Menu;
 import java.io.IOException;
+import java.lang.ModuleLayer.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -40,22 +41,28 @@ public class TelaInicio{
     
     private int num;
    
-
+    
+    
+    
     SelecaoDaoImpl selecaoDao = new SelecaoDaoImpl();
-    //JogadorDaoImpl jogadorDao = new JogadorDaoImpl(selecaoDao.getListaSelecoes());
+    JogadorDaoImpl jogadorDao = new JogadorDaoImpl(selecaoDao.getListaSelecoes());
     
     @FXML
     void btnCarregarPreSetAction(ActionEvent event) throws IOException {
 
     	selecaoDao.leArquivoSelecoes();
-    	//jogadorDao.transformaEmMap();
+    	jogadorDao.transformaEmMap();
     	label.setText("Pré Set Carregado com sucesso");
     	
     }
+    
+    
+    
     @FXML
+
     void btnAbrirTelaMenuCadastrosAction(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("TelaMenuCadastro", selecaoDao);
-    	
+    	TelaMenuCadastros controller = new TelaMenuCadastros(selecaoDao);
+    	Main.trocaDeTela("/application/view/TelaMenuCadastros.fxml", controller, selecaoDao);
     }
     
     @FXML

@@ -58,7 +58,8 @@ public class TelaMenuCadastros {
 
     @FXML
     void btnAbrirTelaSelecaoAction(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("TelaMenuSelecoes", selecaoDao);
+    	TelaMenuSelecao controller = new TelaMenuSelecao(this.selecaoDao);
+    	Main.trocaDeTela("/application/view/Selecao/TelaMenuSelecao.fxml",controller, selecaoDao);
     }
 
     @FXML
@@ -68,7 +69,8 @@ public class TelaMenuCadastros {
 
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("TelaInical", null);
+    	TelaInicio controller = new TelaInicio();
+    	Main.trocaDeTela("/application/view/TelaInicio.fxml", controller, null);
     }
 
     @FXML

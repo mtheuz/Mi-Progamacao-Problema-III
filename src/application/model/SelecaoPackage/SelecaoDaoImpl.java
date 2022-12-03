@@ -20,12 +20,12 @@ import application.model.TratamentoDeExcecoesPackage.TratamentosExcecoes;
  * @author Mailson
  *	@since 2022
  */
-public class SelecaoDaoImpl implements SelecaoDAO
+public class SelecaoDaoImpl 
 {
 	/**
 	 * listaSelecoes é uma lista (ArrayList) que armazena todos os cadastro de Seleção do sistema
 	 */
-	private ArrayList<Selecao> listaSelecoes;
+	private static ArrayList<Selecao> listaSelecoes;
 
 /**
  * Construtor padrão da classe <b>SelecaoDaoImpl</b>
@@ -56,9 +56,9 @@ public void setListaSelecoes(ArrayList<Selecao> listaSelecoes) {
 public void cadastrarNomesDeTodasSelecoes()
 {
 	TratamentosExcecoes tratamento = new TratamentosExcecoes(); //Instanciando classe existe para validar dados de entrada no programa
-	SelecaoView selecaoView = new SelecaoView();
+	//SelecaoView selecaoView = new SelecaoView();
 	String[] grupos = {"A","B","C","D","E","F","G","H"};
-	selecaoView.mostrar("Cadastro dos grupos:\n");
+	//selecaoView.mostrar("Cadastro dos grupos:\n");
 	int indice =0;
 	for(String grupo:grupos)
 	{
@@ -77,8 +77,8 @@ public void cadastrarNomesDeTodasSelecoes()
 					indice++;
 					break;
 				}
-				selecaoView.mostrar("Essa selecao ja foi cadastrada");
-				selecaoView.mostrar("Tente novamente:");
+				//selecaoView.mostrar("Essa selecao ja foi cadastrada");
+				//selecaoView.mostrar("Tente novamente:");
 			}
 		}
 	}
@@ -118,9 +118,10 @@ public void leArquivoSelecoes() throws IOException
  * O limite de cadastros é de 32 seleções na copa do mundo
  * @param Str 
  */
+/**
 @Override
 public void procedimentoCadastrarSelecao(String nome) {
-		SelecaoView selecaoView = new SelecaoView();
+		//SelecaoView selecaoView = new SelecaoView();
 		int indice = buscaSelecao(nome);
 		Selecao selecao = new Selecao();
 		if(indice != -1)
@@ -150,7 +151,7 @@ public void procedimentoCadastrarSelecao(String nome) {
 	}
 	 
 
-
+*/
 
 /**
  * A função cadastrar Selecao insere uma nova seleção na lista de Selecoes.
@@ -185,6 +186,7 @@ public boolean ComparaSelecao(String nome) {
  * O método ProcedimentoditarSeleção é responsável por editar uma Seleção no sistema 
  * @param partidas 
  */
+/**
 @Override
 public void ProcedimentoEditarSelecao(PartidaDaoImpl partidas) {
 	TratamentosExcecoes tratamento = new TratamentosExcecoes();//Instanciando classe para validar dados de entrada no programa
@@ -241,6 +243,7 @@ public void ProcedimentoEditarSelecao(PartidaDaoImpl partidas) {
 	else
 		selecaoView.mostrar("Ainda nao foram cadastradas Selecoes no sistema");
 }
+*/
 /**
  * A função editarSelecao edita o nome de um objeto seleção na lista de seleções
  * @param novoNomeSelecao
@@ -282,7 +285,7 @@ private void atualizarSelecaoNoGrupo(String nome,String novoNomeSelecao, Partida
  * @param nomeSelecao
  * @return int
  */
-public int buscaSelecao(String nomeSelecao) {
+public int buscaSelecao( String nomeSelecao) {
 
 	for(int i=0; i<this.listaSelecoes.size();i++) /*Laço para procurar Tecnico nos cadastros*/
 	{
@@ -300,13 +303,13 @@ public int buscaSelecao(String nomeSelecao) {
 /**
  * O método listarSelecao é responsável por listar as Seleções no sistema
  */
-@Override
+ 	
 public void listarSelecao() {
-	SelecaoView selecaoView = new SelecaoView();
+	//SelecaoView selecaoView = new SelecaoView();
 	if(listaSelecoes.size()>0)
 	{
 		
-		selecaoView.mostrar("Lista de Selecoes:");
+		//selecaoView.mostrar("Lista de Selecoes:");
 		//Percorrendo a lista de cadastros
 		for(int i=0; i< listaSelecoes.size(); i++)
 		{
@@ -315,8 +318,8 @@ public void listarSelecao() {
 		System.out.println();
 		 
 	}
-	else
-		selecaoView.mostrar("Ainda nao foram cadastradas Selecoes no sistema");
+	//else
+		//selecaoView.mostrar("Ainda nao foram cadastradas Selecoes no sistema");
 		
 	}
 

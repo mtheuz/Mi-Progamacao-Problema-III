@@ -26,6 +26,8 @@ public class TelaMenuSelecao {
     @FXML
     private Button btnCadastrarSelecao;
     
+    @FXML
+    private Button btnEditarSelecao;
     
     private SelecaoDaoImpl selecaoDao;
     
@@ -38,12 +40,19 @@ public class TelaMenuSelecao {
     }
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("TelaInical", this.selecaoDao);
+    	TelaMenuCadastros controller = new TelaMenuCadastros(selecaoDao);
+    	Main.trocaDeTela("/application/view/TelaMenuCadastros.fxml",controller, this.selecaoDao);
     }
     
     @FXML
     void btnCadastrarSelecaoAction(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("TelaCadastrarSelecao", this.selecaoDao);
+    	TelaCadastrarSelecao controller = new TelaCadastrarSelecao(selecaoDao);
+    	Main.trocaDeTela("/application/view/Selecao/TelaCadastrarSelecao.fxml", controller, this.selecaoDao);
+    }
+    @FXML
+    void btnEditarSelecaoAction(ActionEvent event) throws IOException {
+    	TelaEditarSelecao controller = new TelaEditarSelecao(selecaoDao);
+    	Main.trocaDeTela("/application/view/Selecao/TelaEditarSelecao.fxml", controller, this.selecaoDao);
     }
     @FXML
     void initialize() {

@@ -36,22 +36,22 @@
             <Image url="@../copa.png" />
          </image>
       </ImageView>
-      <Label layoutX="110.0" layoutY="247.0" prefHeight="32.0" prefWidth="192.0" text="ESCOLHA A SELEÇÃO" textFill="WHITE" wrapText="true">
+      <Label layoutX="201.0" layoutY="243.0" prefHeight="32.0" prefWidth="192.0" text="ESCOLHA A SELEÇÃO" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="371.0" layoutY="417.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button layoutX="370.0" layoutY="382.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label layoutX="431.0" layoutY="431.0" prefHeight="76.0" prefWidth="90.0" text="SALVAR" textFill="#6b1839" wrapText="true">
+      <Label layoutX="430.0" layoutY="396.0" prefHeight="76.0" prefWidth="90.0" text="SALVAR" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="371.0" layoutY="557.0" prefHeight="35.0" prefWidth="210.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+      <AnchorPane layoutX="370.0" layoutY="522.0" prefHeight="35.0" prefWidth="210.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
          <children>
             <ImageView fitHeight="59.0" fitWidth="66.0" layoutX="-55.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="65.0" layoutY="3.0" prefHeight="32.0" prefWidth="90.0" text="VOLTAR" textFill="#6b1839" wrapText="true">
@@ -59,15 +59,25 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="3.0" mnemonicParsing="false" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
+            <Button fx:id="btnVoltar" layoutX="3.0" layoutY="-3.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="38.0" prefWidth="210.0" text="vOLTAR" />
          </children>
       </AnchorPane>
-      <Label layoutX="73.0" layoutY="308.0" prefHeight="32.0" prefWidth="227.0" text="NOVO NOME DA SELEÇÃO" textFill="WHITE" wrapText="true">
+      <Label layoutX="164.0" layoutY="304.0" prefHeight="32.0" prefWidth="227.0" text="NOVO NOME DA SELEÇÃO" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="308.0" layoutY="250.0" prefHeight="26.0" prefWidth="334.0" style="-fx-background-color: #FFFF; -fx-background-radius: 60px;" />
-      <TextField layoutX="308.0" layoutY="308.0" opacity="0.86" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;" />
+      <ChoiceBox fx:id="choiceBoxSelecoes" layoutX="400.0" layoutY="246.0" prefHeight="26.0" prefWidth="334.0" style="-fx-background-color: #FFFF; -fx-background-radius: 60px;" />
+      <TextField fx:id="NovoNomeSelecao" layoutX="399.0" layoutY="304.0" opacity="0.86" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;" />
+      <Button fx:id="btnSalvar" layoutX="372.0" layoutY="382.0" mnemonicParsing="false" onAction="#btnSalvarAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="379.0" layoutY="578.0" prefHeight="17.0" prefWidth="192.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

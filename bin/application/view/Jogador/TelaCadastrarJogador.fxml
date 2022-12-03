@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -13,6 +14,15 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
 
    <children>
+      <Pane layoutX="355.0" layoutY="135.0" prefHeight="59.0" prefWidth="233.0" style="-fx-background-color: #ffff; -fx-background-radius: 20px;">
+         <children>
+            <Label fx:id="labelNomeSelecao" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="38.0" prefWidth="233.0" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
          <children>
             <Label layoutX="385.0" layoutY="-3.0" prefHeight="45.0" prefWidth="183.0" text="SYSCOPA 3.0" textFill="WHITE">
@@ -23,32 +33,21 @@
          </children></Pane>
       <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
          <children>
-            <Label layoutX="217.0" prefHeight="36.0" prefWidth="307.0" text="CADASTRO DE SELEÇÃO" textFill="#a61f54">
+            <Label layoutX="217.0" prefHeight="36.0" prefWidth="307.0" text="CADASTRO DE JOGADOR" textFill="#a61f54">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <ImageView fitHeight="59.0" fitWidth="66.0" layoutX="-55.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
          <image>
-            <Image url="@copa.png" />
+            <Image url="@../copa.png" />
          </image>
       </ImageView>
-      <Label layoutX="120.0" layoutY="251.0" prefHeight="32.0" prefWidth="171.0" text="NOME DA SELEÇÃO" textFill="WHITE" wrapText="true">
+      <Label layoutX="108.0" layoutY="251.0" prefHeight="32.0" prefWidth="183.0" text="NOME DO JOGADOR" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="371.0" layoutY="417.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font>
-      </Button>
-      <Label layoutX="413.0" layoutY="431.0" prefHeight="76.0" prefWidth="143.0" text="CADASTRAR JOGADORES" textFill="#6b1839" wrapText="true">
-         <font>
-            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
       <AnchorPane layoutX="371.0" layoutY="557.0" prefHeight="35.0" prefWidth="210.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
@@ -59,10 +58,10 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button layoutX="10.0" layoutY="3.0" mnemonicParsing="false" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
+            <Button fx:id="btnVoltar" layoutX="10.0" layoutY="3.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
          </children>
       </AnchorPane>
-      <Label layoutX="120.0" layoutY="312.0" prefHeight="32.0" prefWidth="171.0" text="NOME DO TÉCNICO" textFill="WHITE" wrapText="true">
+      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="114.0" layoutY="312.0" prefHeight="32.0" prefWidth="171.0" text="POSIÇÃO" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -75,10 +74,14 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
+            <Label fx:id="labelTotal" alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="54.0" prefHeight="35.0" prefWidth="100.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <TextField layoutX="309.0" layoutY="249.0" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 60px;" />
-      <TextField layoutX="309.0" layoutY="310.0" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 60px;" />
+      <TextField fx:id="nomeJogador" layoutX="309.0" layoutY="249.0" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 60px;" />
       <Pane layoutX="794.0" layoutY="345.0" prefHeight="94.0" prefWidth="106.0" style="-fx-background-color: #ffff; -fx-background-radius: 20px;">
          <children>
             <Separator layoutY="52.0" prefHeight="3.0" prefWidth="106.0" />
@@ -87,7 +90,28 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
+            <Label fx:id="labelRestante" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="52.0" prefHeight="35.0" prefWidth="100.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
+      <Button layoutX="390.0" layoutY="416.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="164.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4); -fx-background-radius: 10px;" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Label layoutX="406.0" layoutY="413.0" prefHeight="76.0" prefWidth="132.0" style="-fx-background-radius: 20px;" text="CADASTRAR" textFill="#6b1839" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCadastrarJogadores" layoutX="390.0" layoutY="417.0" mnemonicParsing="false" onAction="#btnCadastrarJogadoresAction" opacity="0.0" prefHeight="59.0" prefWidth="164.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="choiceBoxSelecoes" layoutX="309.0" layoutY="317.0" prefHeight="26.0" prefWidth="334.0" style="-fx-background-color: #FFFF; -fx-background-radius: 60px;" />
    </children>
 </AnchorPane>

@@ -90,5 +90,10 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
+      <Button fx:id="btnEditarSelecao" layoutX="465.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnEditarSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
