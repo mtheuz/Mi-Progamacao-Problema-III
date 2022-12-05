@@ -1,23 +1,15 @@
 package application.controller;
-
-import java.awt.Menu;
 import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import application.Main;
 import application.model.JogadorPackage.JogadorDaoImpl;
-import application.model.SelecaoPackage.SelecaoDAO;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
 
 public class TelaInicio{
 
