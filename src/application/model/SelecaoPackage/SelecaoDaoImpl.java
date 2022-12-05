@@ -6,11 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Scanner;
-import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.PartidaPackage.Partida;
 import application.model.PartidaPackage.PartidaDaoImpl;
-import application.model.TecnicoPackage.TecnicoDaoImpl;
 import application.model.TratamentoDeExcecoesPackage.TratamentosExcecoes;
 
 
@@ -25,7 +22,8 @@ public class SelecaoDaoImpl
 	/**
 	 * listaSelecoes é uma lista (ArrayList) que armazena todos os cadastro de Seleção do sistema
 	 */
-	private static ArrayList<Selecao> listaSelecoes;
+	public static ArrayList<Selecao> listaSelecoes;
+
 
 /**
  * Construtor padrão da classe <b>SelecaoDaoImpl</b>

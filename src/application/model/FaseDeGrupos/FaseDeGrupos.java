@@ -11,13 +11,13 @@ import application.model.PartidaPackage.PartidaDaoImpl;
 import application.model.SelecaoPackage.Selecao;
 
 public class FaseDeGrupos extends PartidaDaoImpl {
-	protected Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
+	public static Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
 	
 	public FaseDeGrupos(ArrayList<Selecao> selecoes) {
 		super(selecoes);
 	}
 
-	private Map<String,List<Selecao>> grupos = new HashMap<String,List<Selecao>>();
+	public static Map<String,List<Selecao>> grupos = new HashMap<String,List<Selecao>>();
 
 	
 	private List<String> organizaGrupo(String grupo) {
@@ -48,6 +48,22 @@ public class FaseDeGrupos extends PartidaDaoImpl {
 				}
 			}
 		}
+	}
+	public boolean verificaPartidas(String grupo) {
+		String[] grupos = {"A","B","C","D","E","F","G","H"};
+		for (int i = 0; i < grupos.length; i++) {
+			List<Partida> jogo = partidas.get(grupo);
+			int controle = 0;
+			for (int j = 0; j < jogo.size(); j++) {
+				if(jogo.get(j).isSituacao()) {
+					controle = 1;
+				}
+			}
+			if(controle == 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public boolean formaGrupo() {
