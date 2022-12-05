@@ -25,7 +25,7 @@ public class SelecaoDaoImpl implements SelecaoDAO
 	/**
 	 * listaSelecoes é uma lista (ArrayList) que armazena todos os cadastro de Seleção do sistema
 	 */
-	private ArrayList<Selecao> listaSelecoes;
+	public static ArrayList<Selecao> listaSelecoes;
 
 /**
  * Construtor padrão da classe <b>SelecaoDaoImpl</b>

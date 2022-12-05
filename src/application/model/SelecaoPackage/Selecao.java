@@ -36,6 +36,15 @@ public class Selecao implements Comparable<Selecao>{
 	private int golsMarcados;
 	private int golsSofridos;
 	private int saldoGols = golsMarcados - golsSofridos;
+	public int getSaldoGols() {
+		return saldoGols;
+	}
+
+	public void setSaldoGols(int saldoGols) {
+		this.saldoGols = saldoGols;
+	}
+
+
 	private int quantidadeCartoesAmarelos;
 	private int quantidadeCartoesVermelhos;
 	public int getGolsMarcados() {
@@ -134,6 +143,11 @@ public class Selecao implements Comparable<Selecao>{
 		this.nome = nomeSelecao;
 		this.grupo = grupo;
 		this.tecnico = new Tecnico();
+		this.derrota = "0";
+		this.empate ="0";
+		this.vitoria = "0";
+		this.golsMarcados = 0;
+		this.golsSofridos = 0;
 		tecnico.setNome("Sem Tecnico");
 	}
 	/**

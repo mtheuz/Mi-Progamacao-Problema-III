@@ -3,7 +3,10 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+
+import application.controller.ControllerClassificacao;
 import application.controller.TelaInicio;
+import application.controller.TelaTabelaDeGrupos;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -20,9 +23,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException { 
 		stage = primaryStage;
 		FXMLLoader loader = new FXMLLoader();
-		URL xmlURL = getClass().getResource("/application/view/Jogador/TelaCadastrarJogador.fxml");
+		URL xmlURL = getClass().getResource("/application/view/Partida/TelaTodasPartidas.fxml");
+		loader.setController(new TelaTabelaDeGrupos());
 		loader.setLocation(xmlURL);
-		loader.setController(new TelaInicio());
 		Parent parent = loader.load();
 		Scene telaInicial = new Scene(parent);
 		primaryStage.setScene(telaInicial); 

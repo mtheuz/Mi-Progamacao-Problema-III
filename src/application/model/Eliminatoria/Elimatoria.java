@@ -68,7 +68,7 @@ public class Elimatoria extends PartidaDaoImpl{
 		}
 	
 	public boolean SemiFinal(){
-		if(verificaPartidas(this.quartas)) {
+		if(verificaPartidas(this.quartas) && verificaPartidas(this.oitavas)) {
 			for (int i = 0; i < (this.quartas.size()-1); i+=2) {
 				String selecao1 = this.quartas.get(i).getVencedor();
 				String selecao2 = this.quartas.get(i+1).getVencedor();
@@ -82,7 +82,7 @@ public class Elimatoria extends PartidaDaoImpl{
 		return true;
 	}
 	public boolean Final() {
-		if(verificaPartidas(this.semiFinal)) {
+		if(verificaPartidas(this.semiFinal) && verificaPartidas(this.quartas) && verificaPartidas(this.oitavas)) {
 			String selecao1 = this.semiFinal.get(0).getVencedor();
 			String selecao2 = this.semiFinal.get(1).getVencedor();
 			String selecaoperdodora1 = this.semiFinal.get(0).getPerdedor();
