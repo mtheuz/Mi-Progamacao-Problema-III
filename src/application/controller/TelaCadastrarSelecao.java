@@ -91,6 +91,7 @@ public class TelaCadastrarSelecao {
 				else 
 				{
 					int indice = selecaoDao.buscaSelecao(selecao);
+					
 					if(listaSelecoes.get(indice).getListaJogadores().size() >25)
 					{
 						label.setText("Lista de Jogadores Completa!");
