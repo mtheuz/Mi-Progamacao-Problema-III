@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 public class TelaPartida {
 
     @FXML
-    private Button FaseDeGruos;
+    private Button btnAbrirFaseDeGrupos;
 
     @FXML
     private Button otavasDeFinla;
@@ -36,15 +36,30 @@ public class TelaPartida {
     
     private ArrayList <Selecao> listaSelecoes;
     
+    private SelecaoDaoImpl selecaoDao;
+    
     public TelaPartida(SelecaoDaoImpl selecaoDao) {
-
+    	this.selecaoDao = selecaoDao;
     	this.listaSelecoes = new ArrayList<Selecao>();
 		listaSelecoes = selecaoDao.getListaSelecoes();
+		
     }
     
     @FXML
-    void btnFaseDeGrupos(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("/application/view/Partida/TelaFaseDeGrupos.fxml", null);
+    void btnAbrirFaseDeGrupos(ActionEvent event) throws IOException {
+    	TelaFaseDeGrupos controller = new TelaFaseDeGrupos(selecaoDao);
+    	Main.trocaDeTela("/application/view/Partida/TelaFaseDeGrupos.fxml", controller, selecaoDao);
+    }
+    @FXML
+    void initialize() {
+        assert btnAbrirFaseDeGrupos != null : "fx:id=\"FaseDeGruos\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
+        assert Final != null : "fx:id=\"Final\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
+        assert otavasDeFinla != null : "fx:id=\"otavasDeFinla\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
+        assert quartasDeFinal != null : "fx:id=\"quartasDeFinal\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
+        assert semiFinal != null : "fx:id=\"semiFinal\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
+        assert terceiroLugar != null : "fx:id=\"terceiroLugar\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
+        assert voltar != null : "fx:id=\"voltar\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
+        
     }
     
 

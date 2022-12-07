@@ -169,11 +169,14 @@ public void cadastrarSelecao(Selecao selecao) {
  */
 public boolean ComparaSelecao(String nome) {
 	//Percorrendo a lista de seleções
-	if(this.listaSelecoes.size()> 1) {
+	if(this.listaSelecoes.size()> 0) {
 	for(int i=0; i<listaSelecoes.size();i++)
 	{
 		if(((Selecao) listaSelecoes.get(i)).getNome().toUpperCase().equals(nome.toUpperCase()))
+		{
 			return false;
+	
+		}
 	}
 	return true;
 	}
@@ -320,6 +323,15 @@ public void listarSelecao() {
 		//selecaoView.mostrar("Ainda nao foram cadastradas Selecoes no sistema");
 		
 	}
+
+public void removerSelecao(String selecao) {
+	int indice = buscaSelecao(selecao); /*Função para buscar Seleção na lista de cadastros*/
+	if(indice != -1) /*caso encontre algum resultado*/
+	{
+		listaSelecoes.remove(indice);
+	}
+	
+}
 
  
 

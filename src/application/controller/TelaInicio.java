@@ -29,6 +29,9 @@ public class TelaInicio{
     private Button btnCarregarPreSet;
     
     @FXML
+    private Button btnIniciarFaseDeGrupos;
+    
+    @FXML
     private Label label;
     
     private int num;
@@ -44,23 +47,32 @@ public class TelaInicio{
 
     	selecaoDao.leArquivoSelecoes();
     	jogadorDao.transformaEmMap();
-    	label.setText("Pré Set Carregado com sucesso");
+    	label.setText("Pré Set Carregado com sucesso!");
     	
     }
     
     
-    
+    @FXML
+    void btnIniciarFaseDeGruposAction(ActionEvent event) throws IOException {
+    	TelaPartida controller = new TelaPartida(selecaoDao);
+    	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", controller, selecaoDao);
+    	
+    }
+
     @FXML
 
     void btnAbrirTelaMenuCadastrosAction(ActionEvent event) throws IOException {
     	TelaMenuCadastros controller = new TelaMenuCadastros(selecaoDao);
     	Main.trocaDeTela("/application/view/TelaMenuCadastros.fxml", controller, selecaoDao);
+    	
     }
     
     @FXML
     void initialize() {
+    	assert btnAbrirMenuCadastros != null : "fx:id=\"btnAbrirMenuCadastros\" was not injected: check your FXML file 'TelaInicio.fxml'.";
         assert btnCadastrarSelecoes != null : "fx:id=\"btnCadastrarSelecoes\" was not injected: check your FXML file 'TelaInicio.fxml'.";
         assert btnCarregarPreSet != null : "fx:id=\"btnCarregarPreSet\" was not injected: check your FXML file 'TelaInicio.fxml'.";
-        
+        assert btnIniciarFaseDeGrupos != null : "fx:id=\"btnIniciarFaseDeGrupos\" was not injected: check your FXML file 'TelaInicio.fxml'.";
+        assert label != null : "fx:id=\"label\" was not injected: check your FXML file 'TelaInicio.fxml'.";
     }
 }

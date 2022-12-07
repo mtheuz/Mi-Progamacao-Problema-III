@@ -8,14 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
 
    <children>
-      <Button layoutX="239.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
-         <font>
-            <Font name="System Bold" size="32.0" />
-         </font>
-      </Button>
       <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
          <children>
             <Label layoutX="385.0" layoutY="-3.0" prefHeight="45.0" prefWidth="183.0" text="SYSCOPA 3.0" textFill="WHITE">
@@ -26,7 +21,7 @@
          </children></Pane>
       <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
          <children>
-            <Label layoutX="312.0" layoutY="2.0" prefHeight="36.0" prefWidth="118.0" text="SELEÇÕES" textFill="#a61f54">
+            <Label layoutX="288.0" layoutY="1.0" prefHeight="36.0" prefWidth="90.0" text="MENU" textFill="#a61f54">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -34,22 +29,27 @@
             <ImageView fitHeight="59.0" fitWidth="66.0" layoutX="-55.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <Label layoutX="278.0" layoutY="303.0" prefHeight="32.0" prefWidth="132.0" text="CADASTRAR" textFill="#6b1839" wrapText="true">
+      <Button layoutX="239.0" layoutY="267.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Label layoutX="294.0" layoutY="303.0" prefHeight="32.0" prefWidth="116.0" text="PARTIDAS" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
       <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
          <image>
-            <Image url="@../copa.png" />
+            <Image url="@copa.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnListarSelecao" layoutX="239.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnListarSelecaoAction" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button layoutX="239.0" layoutY="384.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label layoutX="303.0" layoutY="420.0" prefHeight="32.0" prefWidth="82.0" text="LISTAR" textFill="#6b1839" wrapText="true">
+      <Label layoutX="291.0" layoutY="420.0" prefHeight="32.0" prefWidth="122.0" text="TÉCNICOS" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -59,7 +59,7 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label layoutX="529.0" layoutY="303.0" prefHeight="32.0" prefWidth="82.0" text="EDITAR" textFill="#6b1839" wrapText="true">
+      <Label layoutX="507.0" layoutY="303.0" prefHeight="32.0" prefWidth="141.0" text="PESQUISAS" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -69,7 +69,7 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label layoutX="521.0" layoutY="420.0" prefHeight="32.0" prefWidth="98.0" text="DELETAR" textFill="#6b1839" wrapText="true">
+      <Label layoutX="521.0" layoutY="420.0" prefHeight="32.0" prefWidth="122.0" text="ÁRBITROS" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -82,20 +82,25 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button fx:id="btnVoltar" layoutY="-2.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="38.0" prefWidth="212.0" text="vOLTAR" />
+            <Button fx:id="btnVoltar" layoutX="10.0" layoutY="3.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnCadastrarSelecao" layoutX="239.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnCadastrarSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnPartida" layoutX="239.0" layoutY="268.0" mnemonicParsing="false" onAction="#clickPartida" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Button fx:id="btnEditarSelecao" layoutX="465.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnEditarSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnPesquias" layoutX="465.0" layoutY="268.0" mnemonicParsing="false" onAction="#clickPesquisa" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Button fx:id="btnRemoverSelecao" layoutX="465.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnRemoverSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnTecnicos" layoutX="239.0" layoutY="384.0" mnemonicParsing="false" onAction="#clickTecnico" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnArbitros" layoutX="465.0" layoutY="384.0" mnemonicParsing="false" onAction="#clickArbitro" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

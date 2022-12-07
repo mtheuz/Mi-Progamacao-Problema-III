@@ -29,6 +29,12 @@ public class TelaMenuSelecao {
     @FXML
     private Button btnEditarSelecao;
     
+    @FXML
+    private Button btnListarSelecao;
+    
+    @FXML
+    private Button btnRemoverSelecao;
+
     private SelecaoDaoImpl selecaoDao;
     
     private ArrayList <Selecao> listaSelecoes;
@@ -37,6 +43,12 @@ public class TelaMenuSelecao {
     	this.selecaoDao = selecaoDao;
     	this.listaSelecoes = new ArrayList<Selecao>();
 		listaSelecoes = selecaoDao.getListaSelecoes();
+    }
+
+    @FXML
+    void btnRemoverSelecaoAction(ActionEvent event) throws IOException {
+    	TelaRemoverSelecao controller = new TelaRemoverSelecao(selecaoDao);
+    	Main.trocaDeTela("/application/view/Selecao/TelaRemoverSelecao.fxml",controller, this.selecaoDao);
     }
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
@@ -53,6 +65,13 @@ public class TelaMenuSelecao {
     void btnEditarSelecaoAction(ActionEvent event) throws IOException {
     	TelaEditarSelecao controller = new TelaEditarSelecao(selecaoDao);
     	Main.trocaDeTela("/application/view/Selecao/TelaEditarSelecao.fxml", controller, this.selecaoDao);
+    }
+    
+
+    @FXML
+    void btnListarSelecaoAction(ActionEvent event) throws IOException {
+    	TelaListarSelecoes controller = new TelaListarSelecoes(selecaoDao);
+    	Main.trocaDeTela("/application/view/Selecao/TelaListarSelecao.fxml", controller, this.selecaoDao);
     }
     @FXML
     void initialize() {

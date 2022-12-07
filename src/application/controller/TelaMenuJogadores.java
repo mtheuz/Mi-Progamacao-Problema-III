@@ -45,8 +45,9 @@ public class TelaMenuJogadores {
     }
 
     @FXML
-    void btnCadastrarJogadorAction(ActionEvent event) {
-
+    void btnCadastrarJogadorAction(ActionEvent event) throws IOException {
+    	TelaEscolherSelecaoCadastrarJogador controller = new TelaEscolherSelecaoCadastrarJogador(this.selecaoDao);
+		Main.trocaDeTela("/application/view/Jogador/TelaEscolherSelecaoCadastrarJogador.fxml",controller, selecaoDao);
     }
 
     @FXML

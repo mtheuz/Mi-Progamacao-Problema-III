@@ -49,7 +49,7 @@ public class TelaCadastrarJogador {
     @FXML
     private Label label;
     
-    private String nomeDaSelecao;
+    private static String nomeDaSelecao;
     
     private SelecaoDaoImpl selecaoDao;
     
@@ -58,13 +58,14 @@ public class TelaCadastrarJogador {
    public TelaCadastrarJogador(SelecaoDaoImpl selecaoDao, String selecao)
    {
 	   	this.selecaoDao = selecaoDao;
-   		this.listaSelecoes = new ArrayList<Selecao>();
-		listaSelecoes = selecaoDao.getListaSelecoes();
-		this.nomeDaSelecao = selecao;
+   		listaSelecoes = new ArrayList<Selecao>();
+		listaSelecoes = this.selecaoDao.getListaSelecoes();
+		nomeDaSelecao = selecao;
+		
    }
     
     @FXML
-    void btnCadastrarJogadoresAction(ActionEvent event) {
+    void btnCadastrarJogadoresAction(ActionEvent event) throws IOException {
     	String nomeJogador = this.nomeJogador.getText();
 		String posicao = this.choiceBoxSelecoes.getValue();
 		
@@ -74,11 +75,11 @@ public class TelaCadastrarJogador {
 			{
 				Jogador jogador = new Jogador(nomeJogador);
 				jogador.setPosicao(posicao);
-				int indice = this.selecaoDao.buscaSelecao(nomeDaSelecao);
+				int indice = selecaoDao.buscaSelecao(nomeDaSelecao);
 				listaSelecoes.get(indice).getListaJogadores().add(jogador);
-				nomeJogador = null;
-				choiceBoxSelecoes = null;
-				initialize();
+				TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, TelaCadastrarJogador.nomeDaSelecao);
+	    		Main.trocaDeTela("/application/view/Jogador/TelaCadastrarJogador.fxml",controller, selecaoDao);
+				
 			}
 			else
 				label.setText("Escolha a Posição");
@@ -109,20 +110,13 @@ public class TelaCadastrarJogador {
         choiceBoxSelecoes.getItems().addAll(posicoes);
         
         
-        int indice = selecaoDao.buscaSelecao(nomeDaSelecao);
-        if(indice != -1)
-        {    
-        	int total = listaSelecoes.get(indice).getListaJogadores().size();
-			String total1 = Integer.toString(total);
-			labelTotal.setText(total1);
-			int restante = 26 -  listaSelecoes.get(indice).getListaJogadores().size();
-			String restante1 = Integer.toString(restante);
-			labelRestante.setText(restante1);
-        }
-        else {
-        	labelTotal.setText("0");
-        	labelRestante.setText("26");
-        }
+        int indice = this.selecaoDao.buscaSelecao(this.nomeDaSelecao);
+        int total = listaSelecoes.get(indice).getListaJogadores().size();
+		String total1 = Integer.toString(total);
+		labelTotal.setText(total1);
+		int restante = 26 -  listaSelecoes.get(indice).getListaJogadores().size();
+		String restante1 = Integer.toString(restante);
+		labelRestante.setText(restante1);
     }
 
 }
