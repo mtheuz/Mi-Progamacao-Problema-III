@@ -30,7 +30,7 @@ public class TelaPartida {
 
     @FXML
     private Button terceiroLugar;
-
+    
     @FXML
     private Button Final;
     
@@ -46,10 +46,12 @@ public class TelaPartida {
     }
     
     @FXML
-    void btnAbrirFaseDeGrupos(ActionEvent event) throws IOException {
+    void btnAbrirFaseDeGruposAction(ActionEvent event) throws IOException {
     	TelaFaseDeGrupos controller = new TelaFaseDeGrupos(selecaoDao);
     	Main.trocaDeTela("/application/view/Partida/TelaFaseDeGrupos.fxml", controller, selecaoDao);
+    	
     }
+   
     @FXML
     void initialize() {
         assert btnAbrirFaseDeGrupos != null : "fx:id=\"FaseDeGruos\" was not injected: check your FXML file 'TelaPartidas.fxml'.";

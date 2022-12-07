@@ -1,9 +1,11 @@
 package application.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import application.Main;
 import application.model.SelecaoPackage.Selecao;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
@@ -42,8 +44,9 @@ public class TelaFaseDeGrupos{
     }
 
     @FXML
-    void btnVoltarAction(ActionEvent event) {
-
+    void btnVoltarAction(ActionEvent event) throws IOException {
+    	TelaPartida controller = new TelaPartida(selecaoDao);
+    	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", controller, selecaoDao);
     }
 
     @FXML
