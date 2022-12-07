@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.JogadorPackage.Jogador;
 import application.model.SelecaoPackage.Selecao;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
@@ -29,7 +30,7 @@ public class TelaCadastrarJogador {
     private Button btnVoltar;
 
     @FXML
-    private ChoiceBox<?> choiceBoxSelecoes;
+    private ChoiceBox<String> choiceBoxSelecoes;
 
     @FXML
     private Label labelNomeSelecao;
@@ -40,12 +41,15 @@ public class TelaCadastrarJogador {
     @FXML
     private Label labelTotal;
 
-  
-
+    private String[] posicoes = {"Goleiro","Defensor", "Lateral Esquerdo", "Lateral Direito", "Volante", "Meio Campista","Atacante"};
+    
     @FXML
     private TextField nomeJogador;
+
+    @FXML
+    private Label label;
     
-    private String nomeDaSelecao;
+    private static String nomeDaSelecao;
     
     private SelecaoDaoImpl selecaoDao;
     
@@ -54,19 +58,40 @@ public class TelaCadastrarJogador {
    public TelaCadastrarJogador(SelecaoDaoImpl selecaoDao, String selecao)
    {
 	   	this.selecaoDao = selecaoDao;
-   		this.listaSelecoes = new ArrayList<Selecao>();
-		listaSelecoes = selecaoDao.getListaSelecoes();
-		this.nomeDaSelecao = selecao;
+   		listaSelecoes = new ArrayList<Selecao>();
+		listaSelecoes = this.selecaoDao.getListaSelecoes();
+		nomeDaSelecao = selecao;
+		
    }
     
     @FXML
-    void btnCadastrarJogadoresAction(ActionEvent event) {
-
+    void btnCadastrarJogadoresAction(ActionEvent event) throws IOException {
+    	String nomeJogador = this.nomeJogador.getText();
+		String posicao = this.choiceBoxSelecoes.getValue();
+		
+		if(nomeJogador!= null && nomeJogador != "")
+		{
+			if(posicao!= null && posicao != "")
+			{
+				Jogador jogador = new Jogador(nomeJogador);
+				jogador.setPosicao(posicao);
+				int indice = selecaoDao.buscaSelecao(nomeDaSelecao);
+				listaSelecoes.get(indice).getListaJogadores().add(jogador);
+				TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, TelaCadastrarJogador.nomeDaSelecao);
+	    		Main.trocaDeTela("/application/view/Jogador/TelaCadastrarJogador.fxml",controller, selecaoDao);
+				
+			}
+			else
+				label.setText("Escolha a Posição");
+		}
+		else
+			label.setText("Digite o nome do Jogador");
     }
 
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
-    	
+    	TelaCadastrarSelecao controller = new TelaCadastrarSelecao(selecaoDao);
+    	Main.trocaDeTela("/application/view/Selecao/TelaCadastrarSelecao.fxml", controller, this.selecaoDao);
     }
 
     @FXML
@@ -77,11 +102,15 @@ public class TelaCadastrarJogador {
         assert labelNomeSelecao != null : "fx:id=\"labelNomeSelecao\" was not injected: check your FXML file 'TelaCadastrarJogador.fxml'.";
         assert labelRestante != null : "fx:id=\"labelRestante\" was not injected: check your FXML file 'TelaCadastrarJogador.fxml'.";
         assert labelTotal != null : "fx:id=\"labelTotal\" was not injected: check your FXML file 'TelaCadastrarJogador.fxml'.";
-        
+        assert label != null : "fx:id=\"label\" was not injected: check your FXML file 'TelaCadastrarSelecao.fxml'.";
         assert nomeJogador != null : "fx:id=\"nomeJogador\" was not injected: check your FXML file 'TelaCadastrarJogador.fxml'.";
-        labelNomeSelecao.setText(nomeDaSelecao);
-        int indice = selecaoDao.buscaSelecao(nomeDaSelecao);
         
+        labelNomeSelecao.setText(nomeDaSelecao);
+        
+        choiceBoxSelecoes.getItems().addAll(posicoes);
+        
+        
+        int indice = this.selecaoDao.buscaSelecao(this.nomeDaSelecao);
         int total = listaSelecoes.get(indice).getListaJogadores().size();
 		String total1 = Integer.toString(total);
 		labelTotal.setText(total1);

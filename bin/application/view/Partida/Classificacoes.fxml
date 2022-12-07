@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+      <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
+         <children>
+            <Label layoutX="385.0" layoutY="-3.0" prefHeight="45.0" prefWidth="183.0" text="SYSCOPA 3.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <Label fx:id="grupoTitle" layoutX="309.0" layoutY="1.0" prefHeight="36.0" prefWidth="124.0" text="GRUPO X" textFill="#a61f54">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="59.0" fitWidth="66.0" layoutX="-55.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
+         <image>
+            <Image url="@../copa.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="116.0" layoutY="244.0" prefHeight="233.0" prefWidth="721.0" style="-fx-background-color: #373737; -fx-background-radius: 20;">
+         <children>
+            <Label fx:id="grupoLabel" layoutX="20.0" layoutY="38.0" prefHeight="21.0" prefWidth="87.0" text="GRUPO A" textFill="#ff3f8a">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="73.0" prefHeight="30.0" prefWidth="12.0" text="1" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="103.0" prefHeight="30.0" prefWidth="12.0" text="2" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="133.0" prefHeight="30.0" prefWidth="12.0" text="3" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="163.0" prefHeight="30.0" prefWidth="12.0" text="4" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="20.0" layoutY="96.0" opacity="0.2" prefHeight="15.0" prefWidth="650.0" />
+            <Separator layoutX="20.0" layoutY="126.0" opacity="0.2" prefHeight="15.0" prefWidth="650.0" />
+            <Separator layoutX="20.0" layoutY="156.0" opacity="0.2" prefHeight="15.0" prefWidth="650.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#58b956" height="38.0" layoutX="18.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#58b956" height="38.0" layoutX="18.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+            <Label fx:id="selecao1" layoutX="64.0" layoutY="73.0" prefHeight="30.0" prefWidth="150.0" text="A CONFIRMAR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao2" layoutX="64.0" layoutY="103.0" prefHeight="30.0" prefWidth="150.0" text="A CONFIRMAR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao3" layoutX="64.0" layoutY="133.0" prefHeight="30.0" prefWidth="150.0" text="A CONFIRMAR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao4" layoutX="64.0" layoutY="163.0" prefHeight="30.0" prefWidth="150.0" text="A CONFIRMAR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="423.0" layoutY="32.0" prefHeight="30.0" prefWidth="35.0" text="Pts" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao1pts" layoutX="429.0" layoutY="69.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao2pts" layoutX="429.0" layoutY="101.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao3pts" layoutX="429.0" layoutY="131.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao4pts" layoutX="429.0" layoutY="161.0" prefHeight="30.0" prefWidth="30.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="471.0" layoutY="32.0" prefHeight="30.0" prefWidth="35.0" text="V" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao1V" layoutX="471.0" layoutY="69.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao2V" layoutX="471.0" layoutY="101.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao3V" layoutX="471.0" layoutY="131.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao4V" layoutX="471.0" layoutY="161.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="508.0" layoutY="32.0" prefHeight="30.0" prefWidth="35.0" text="D" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao1D" layoutX="508.0" layoutY="69.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao2D" layoutX="508.0" layoutY="101.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao3D" layoutX="508.0" layoutY="131.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao4D" layoutX="508.0" layoutY="161.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="544.0" layoutY="32.0" prefHeight="30.0" prefWidth="35.0" text="E" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao1E" layoutX="544.0" layoutY="69.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao2E" layoutX="544.0" layoutY="101.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao3E" layoutX="544.0" layoutY="131.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao4E" layoutX="544.0" layoutY="161.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="572.0" layoutY="32.0" prefHeight="30.0" prefWidth="35.0" text="SG" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao1Sg" layoutX="579.0" layoutY="69.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao2Sg" layoutX="579.0" layoutY="101.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao3Sg" layoutX="579.0" layoutY="131.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="selecao4Sg" layoutX="579.0" layoutY="161.0" prefHeight="30.0" prefWidth="35.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ChoiceBox fx:id="grupos" layoutX="382.0" layoutY="205.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ffff;" />
+   </children>
+</AnchorPane>

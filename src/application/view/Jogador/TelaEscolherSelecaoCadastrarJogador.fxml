@@ -22,7 +22,7 @@
          </children></Pane>
       <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
          <children>
-            <Label layoutX="255.0" prefHeight="36.0" prefWidth="233.0" text="REMOVER SELEÇÃO" textFill="#a61f54">
+            <Label layoutX="255.0" prefHeight="36.0" prefWidth="243.0" text="ESCOLHER SELEÇÃO" textFill="#a61f54">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -45,7 +45,7 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Button>
-      <Label layoutX="421.0" layoutY="396.0" prefHeight="76.0" prefWidth="124.0" text="REMOVER" textFill="#6b1839" wrapText="true">
+      <Label layoutX="410.0" layoutY="396.0" prefHeight="76.0" prefWidth="139.0" text="CADASTRAR JOGADOR" textFill="#6b1839" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -62,7 +62,7 @@
          </children>
       </AnchorPane>
       <ChoiceBox fx:id="choiceBoxSelecoes" layoutX="400.0" layoutY="246.0" prefHeight="26.0" prefWidth="334.0" style="-fx-background-color: #FFFF; -fx-background-radius: 60px;" />
-      <Button fx:id="btnDeletar" layoutX="370.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnDeletarAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnCadastrarJogador" layoutX="370.0" layoutY="382.0" mnemonicParsing="false" onAction="#btnCadastrrarJogadorAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

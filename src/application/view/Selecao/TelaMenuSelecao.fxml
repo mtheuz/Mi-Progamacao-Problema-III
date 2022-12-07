@@ -44,7 +44,7 @@
             <Image url="@../copa.png" />
          </image>
       </ImageView>
-      <Button layoutX="239.0" layoutY="384.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnListarSelecao" layoutX="239.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnListarSelecaoAction" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -91,6 +91,11 @@
          </font>
       </Button>
       <Button fx:id="btnEditarSelecao" layoutX="465.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnEditarSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRemoverSelecao" layoutX="465.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnRemoverSelecaoAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

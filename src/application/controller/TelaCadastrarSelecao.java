@@ -56,6 +56,7 @@ public class TelaCadastrarSelecao {
     	this.selecaoDao = selecaoDao;
     	this.listaSelecoes = new ArrayList<Selecao>();
 		listaSelecoes = selecaoDao.getListaSelecoes();
+		
 	}
 
     @FXML
@@ -79,7 +80,7 @@ public class TelaCadastrarSelecao {
 				if(resultado == true)
 				{
 					Selecao selecaoo = new Selecao();
-					selecaoo.setNome(nomeTecnico);
+					selecaoo.setNome(selecao);
 					Tecnico tecnico = new Tecnico();
 					tecnico.setNome(nomeTecnico);
 					selecaoo.setTecnico(tecnico);
@@ -88,19 +89,23 @@ public class TelaCadastrarSelecao {
 					TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, selecao);
 					Main.trocaDeTela("/application/view/Jogador/TelaCadastrarJogador.fxml",controller, selecaoDao);
 				} 
-				else 
+				if(resultado == false) 
 				{
-					int indice = selecaoDao.buscaSelecao(selecao);
+					label.setText("Seleção Já cadastrada");
+					
+					/**
+					 * int indice = selecaoDao.buscaSelecao(selecao);
+					s
 					if(listaSelecoes.get(indice).getListaJogadores().size() >25)
 					{
-						label.setText("Lista de Jogadores Completa!");
+						
 					}
 					else
 					{
 						TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, selecao);
 						Main.trocaDeTela("/application/view/Jogador/TelaCadastrarJogador.fxml",controller, selecaoDao);
 					}
-					
+					***/
 					
 			}
 			}

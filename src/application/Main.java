@@ -35,7 +35,9 @@ public class Main extends Application {
 
 	public static void trocaDeTela(String endereco,Object controller, Object conteudo) throws IOException {
 		FXMLLoader loaderFXML = new FXMLLoader(Main.class.getResource(endereco));
-		loaderFXML.setController(controller);
+		if(controller != null) {
+			loaderFXML.setController(controller);
+		}
 		Scene tela = new Scene(loaderFXML.load());
         stage.setScene(tela);
 	}

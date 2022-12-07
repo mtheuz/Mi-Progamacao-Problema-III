@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+      <TextField fx:id="placarSelecao1" alignment="CENTER" layoutX="408.0" layoutY="171.0" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="placarSelecao2" alignment="CENTER" layoutX="486.0" layoutY="172.0" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </TextField>
+      <Pane layoutX="92.0" layoutY="235.0" prefHeight="45.0" prefWidth="248.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;" />
+      <Pane layoutX="584.0" layoutY="220.0" prefHeight="59.0" prefWidth="155.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <TextField fx:id="hora" alignment="CENTER" layoutX="25.0" layoutY="21.0" prefHeight="30.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="minuto" alignment="CENTER" layoutX="85.0" layoutY="21.0" prefHeight="30.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+         </children></Pane>
+      <Pane layoutX="353.0" layoutY="220.0" prefHeight="59.0" prefWidth="211.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="55.0" layoutY="5.0" prefHeight="17.0" prefWidth="112.0" text="DATA DA PARTIDA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dia" alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="31.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mes" alignment="CENTER" layoutX="75.0" layoutY="21.0" prefHeight="31.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="ano" alignment="CENTER" layoutX="134.0" layoutY="21.0" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER_RIGHT" layoutX="59.0" layoutY="18.0" prefHeight="25.0" prefWidth="3.0" text="/" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="116.0" layoutY="18.0" prefHeight="25.0" prefWidth="3.0" text="/" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="31.0" layoutY="509.0" prefHeight="88.0" prefWidth="418.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="65.0" layoutY="6.0" prefHeight="17.0" prefWidth="211.0" text="CADASTRO DE CARTÕES VERMELHO" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="309.0" layoutY="6.0" prefHeight="17.0" prefWidth="34.0" text="CARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cartaoAmareloSelecao1" alignment="CENTER" layoutX="306.0" layoutY="29.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="19.0" layoutY="60.0" prefHeight="17.0" prefWidth="380.0" text="TEST" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="31.0" layoutY="409.0" prefHeight="88.0" prefWidth="418.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="6.0" prefHeight="17.0" prefWidth="211.0" text="CADASTRO DE CARTÕES AMARELO" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="309.0" layoutY="6.0" prefHeight="17.0" prefWidth="34.0" text="CARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cartaoVermelhosSelecao1" alignment="CENTER" layoutX="306.0" layoutY="29.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="19.0" layoutY="66.0" prefHeight="17.0" prefWidth="380.0" text="TEST" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
+         <children>
+            <Label layoutX="385.0" layoutY="-3.0" prefHeight="45.0" prefWidth="183.0" text="SYSCOPA 3.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <ImageView fitHeight="59.0" fitWidth="66.0" layoutX="-55.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="CENTER_RIGHT" layoutX="247.0" layoutY="1.0" prefHeight="36.0" prefWidth="248.0" text="CADASTRO PARTIDA" textFill="#a61f54">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
+         <image>
+            <Image url="@../copa.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="31.0" layoutY="311.0" prefHeight="88.0" prefWidth="418.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="86.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" text="CADASTRO DE GOLS JOGADORES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="310.0" layoutY="14.0" prefHeight="17.0" prefWidth="34.0" text="GOLS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="golsSelecao1" alignment="CENTER" layoutX="307.0" layoutY="34.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="68.0" prefHeight="17.0" prefWidth="380.0" text="TEST" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label alignment="CENTER_RIGHT" layoutX="458.0" layoutY="173.0" prefHeight="36.0" prefWidth="21.0" text="X" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomeSelecao1" alignment="CENTER_RIGHT" layoutX="162.0" layoutY="172.0" prefHeight="36.0" prefWidth="240.0" text="SELECÃO 1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomeSelecao2" layoutX="540.0" layoutY="173.0" prefHeight="36.0" prefWidth="248.0" text="SELECÃO 2" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Separator layoutX="464.0" layoutY="286.0" opacity="0.41" orientation="VERTICAL" prefHeight="341.0" prefWidth="15.0" />
+      <ChoiceBox fx:id="choiceBoxEstadios" layoutX="110.0" layoutY="244.0" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: ffff;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label alignment="CENTER_RIGHT" layoutX="655.0" layoutY="239.0" prefHeight="25.0" prefWidth="3.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceBoxJogadoresSelecao1G" layoutX="47.0" layoutY="348.0" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: ffff;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label alignment="CENTER_RIGHT" layoutX="596.0" layoutY="225.0" prefHeight="17.0" prefWidth="133.0" text="HORARIO DA PARTIDA" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonGolsSelecao1" layoutX="386.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: ffff;" text="ADD">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ChoiceBox fx:id="choiceBoxJogadoresSelecao1CA" layoutX="47.0" layoutY="440.0" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: ffff;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Button fx:id="buttonCartoesAmarelosSelecao1" layoutX="386.0" layoutY="441.0" mnemonicParsing="false" style="-fx-background-color: ffff;" text="ADD">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ChoiceBox fx:id="choiceBoxJogadoresSelecao1" layoutX="47.0" layoutY="539.0" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: ffff;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Button fx:id="buttonCartoesVermelhosSelecao1" layoutX="386.0" layoutY="540.0" mnemonicParsing="false" style="-fx-background-color: ffff;" text="ADD">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Pane layoutX="490.0" layoutY="509.0" prefHeight="88.0" prefWidth="418.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="72.0" layoutY="6.0" prefHeight="17.0" prefWidth="211.0" text="CADASTRO DE CARTÕES VERMELHO" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="308.0" layoutY="6.0" prefHeight="17.0" prefWidth="34.0" text="CARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cartaoVermelhosSelecao1" alignment="CENTER" layoutX="305.0" layoutY="29.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="19.0" layoutY="62.0" prefHeight="17.0" prefWidth="380.0" text="TEST" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="490.0" layoutY="409.0" prefHeight="88.0" prefWidth="418.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="86.0" layoutY="6.0" prefHeight="17.0" prefWidth="197.0" text="CADASTRO DE CARTÕES AMRELO" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="308.0" layoutY="6.0" prefHeight="17.0" prefWidth="34.0" text="CARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cartaoVermelhosSelecao1" alignment="CENTER" layoutX="305.0" layoutY="29.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="19.0" layoutY="66.0" prefHeight="17.0" prefWidth="380.0" text="TEST" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="490.0" layoutY="311.0" prefHeight="88.0" prefWidth="418.0" style="-fx-background-color: #a12760; -fx-background-radius: 10;">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="88.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" text="CADASTRO DE GOLS JOGADORES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="golsSelecao2" alignment="CENTER" layoutX="308.0" layoutY="35.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: ffff; -fx-background-radius: 10;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="19.0" layoutY="66.0" prefHeight="17.0" prefWidth="380.0" text="TEST" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label alignment="CENTER_RIGHT" layoutX="799.0" layoutY="326.0" prefHeight="17.0" prefWidth="34.0" text="GOLS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceBoxJogadoresSelecao2G" layoutX="506.0" layoutY="348.0" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: ffff;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Button layoutX="845.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: ffff;" text="ADD">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ChoiceBox fx:id="choiceBoxJogadoresSelecao2CA" layoutX="506.0" layoutY="440.0" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: ffff;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Button layoutX="845.0" layoutY="441.0" mnemonicParsing="false" style="-fx-background-color: ffff;" text="ADD">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ChoiceBox fx:id="choiceBoxJogadoresSelecao2" layoutX="506.0" layoutY="539.0" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: ffff;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Button layoutX="845.0" layoutY="540.0" mnemonicParsing="false" style="-fx-background-color: ffff;" text="ADD">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>
