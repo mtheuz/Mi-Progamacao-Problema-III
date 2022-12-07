@@ -37,7 +37,7 @@ public class ControllerMenuPrincipal {
     void clickPartida(ActionEvent event) {
     	FaseDeGrupos faseDeGrupos = new FaseDeGrupos(SelecaoDaoImpl.listaSelecoes);
     	faseDeGrupos.geraPartidas();
-    	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", null);
+    	//Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", null);
     }
 
     @FXML

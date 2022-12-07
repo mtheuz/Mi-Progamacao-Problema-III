@@ -17,7 +17,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 	
 	protected Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
 	
-	private String[] estadios = {"Al Bayt", "Khalifa International", "Al Thumama", "Ahmad Bin Ali",
+	public static String[] estadios = {"Al Bayt", "Khalifa International", "Al Thumama", "Ahmad Bin Ali",
 			"Lusail", "Ras Abu Aboud (974)", "Education City", "Al Janoub"};
 	
 	public String[] getEstadios() {

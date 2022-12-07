@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+      <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <ImageView fitHeight="59.0" fitWidth="66.0" layoutX="-55.0" layoutY="-49.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="nomeSelecao1" alignment="CENTER_RIGHT" layoutX="164.0" layoutY="2.0" prefHeight="36.0" prefWidth="240.0" text="SELECÃO 1" textFill="#a61f54">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="nomeSelecao2" layoutX="453.0" layoutY="1.0" prefHeight="36.0" prefWidth="248.0" text="SELECÃO 2" textFill="#a61f54">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="414.0" layoutY="2.0" prefHeight="36.0" prefWidth="21.0" text="X" textFill="#a61f54">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="129.0" fitWidth="74.0" layoutX="73.0" layoutY="61.0">
+         <image>
+            <Image url="@../copa.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="402.0" layoutY="203.0" prefHeight="420.0" prefWidth="445.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="nomeSelecao11" alignment="CENTER_RIGHT" layoutX="41.0" layoutY="27.0" prefHeight="36.0" prefWidth="124.0" text="BRASIL" textFill="#96184b">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="nomeSelecao111" layoutX="265.0" layoutY="27.0" prefHeight="36.0" prefWidth="142.0" text="ITALIA" textFill="#96184b">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="nomeSelecao112" alignment="CENTER" layoutX="172.0" layoutY="27.0" prefHeight="36.0" prefWidth="37.0" text="2">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="nomeSelecao1121" alignment="CENTER" layoutX="225.0" layoutY="27.0" prefHeight="36.0" prefWidth="37.0" text="2">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="nomeSelecao1122" alignment="CENTER" layoutX="200.0" layoutY="27.0" prefHeight="36.0" prefWidth="37.0" text="X" textFill="#8a7d82">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aeaeae" height="110.0" layoutX="217.0" layoutY="55.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" />
+            <Label fx:id="nomeSelecao113" alignment="CENTER_RIGHT" layoutX="161.0" layoutY="165.0" prefHeight="22.0" prefWidth="115.0" text="CARTÕES AMARELOS" textFill="#96184b">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aeaeae" height="104.0" layoutX="217.0" layoutY="187.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" />
+            <Label fx:id="nomeSelecao1131" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="291.0" prefHeight="22.0" prefWidth="115.0" text="CARTÕES VERMELHO" textFill="#96184b">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aeaeae" height="90.0" layoutX="216.0" layoutY="316.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0" />
+            <Circle fill="#ffe70c" layoutX="41.0" layoutY="182.0" radius="18.0" stroke="#ffe70c" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fill="#ffe70c" layoutX="400.0" layoutY="182.0" radius="18.0" stroke="#ffe70c" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fill="#ff0d0d" layoutX="401.0" layoutY="302.0" radius="18.0" stroke="#ffe70c" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fill="#ff0d0d" layoutX="41.0" layoutY="308.0" radius="18.0" stroke="#ff0d0d" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label alignment="CENTER" layoutX="27.0" layoutY="172.0" prefHeight="21.0" prefWidth="29.0" text="12">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="298.0" prefHeight="21.0" prefWidth="29.0" text="12">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="387.0" layoutY="292.0" prefHeight="21.0" prefWidth="29.0" text="12">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="386.0" layoutY="172.0" prefHeight="21.0" prefWidth="29.0" text="12">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="69.0" layoutY="203.0" prefHeight="205.0" prefWidth="321.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 10;">
+         <children>
+            <Pane layoutX="24.0" layoutY="44.0" prefHeight="136.0" prefWidth="271.0" style="-fx-background-color: #898880; -fx-background-radius: 10;">
+               <children>
+                  <Label fx:id="nomeSelecao114" layoutX="26.0" layoutY="14.0" prefHeight="36.0" prefWidth="74.0" text="DATA :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomeSelecao1141" layoutX="84.0" layoutY="14.0" prefHeight="36.0" prefWidth="115.0" text="17/12/2020" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomeSelecao1142" layoutX="26.0" layoutY="44.0" prefHeight="36.0" prefWidth="98.0" text="HORARIO :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomeSelecao11411" layoutX="124.0" layoutY="44.0" prefHeight="36.0" prefWidth="56.0" text="17:30" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomeSelecao11421" layoutX="26.0" layoutY="73.0" prefHeight="36.0" prefWidth="108.0" text="ESTADIO:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomeSelecao114111" layoutX="114.0" layoutY="73.0" prefHeight="36.0" prefWidth="218.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label fx:id="nomeSelecao1143" layoutX="24.0" layoutY="8.0" prefHeight="36.0" prefWidth="288.0" text="INFORMAÇÕES DA PARTIDA" textFill="#898880">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

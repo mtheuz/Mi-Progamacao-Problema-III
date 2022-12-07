@@ -4,6 +4,7 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 
+import application.controller.ControllerCadastroPartida;
 import application.controller.TelaInicio;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +23,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException { 
 		stage = primaryStage;
 		FXMLLoader loader = new FXMLLoader();
-		URL xmlURL = getClass().getResource("/application/view/TelaInicio.fxml");
-		loader.setController(new TelaInicio());
+		URL xmlURL = getClass().getResource("/application/view/Partida/CadastroDePartida.fxml");
+		loader.setController(new ControllerCadastroPartida());
 		loader.setLocation(xmlURL);
 		Parent parent = loader.load();
 		Scene telaInicial = new Scene(parent);
