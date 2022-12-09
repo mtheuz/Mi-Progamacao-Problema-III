@@ -65,6 +65,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 	public boolean inputCartosAmarelosSelecao1(Partida partida, String cartaoAmarelo, String codigo) {
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		List<String> cartoesAmarelos = new ArrayList<String>();
+		if( Integer.parseInt(codigo) <= 2) {
 		cartoesAmarelos.add(codigo);
 		cartoesAmarelos.add(cartaoAmarelo);
 		if(jogadores.verificaExistencia(codigo)) {
@@ -75,15 +76,17 @@ public class PartidaDaoImpl implements PartidaDAO{
 		else {
 			return false;
 		}
+		}
+		return false;
 
 	}
-	public boolean inputCartosVermelhoSelecao1(Partida partida, String cartaoVermelho, String codigo) {
+	public boolean inputCartosVermelhoSelecao1(Partida partida, String codigo) {
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		List<String> cartoesVermelhos = new ArrayList<String>();
 		cartoesVermelhos.add(codigo);
-		cartoesVermelhos.add(cartaoVermelho);
+		cartoesVermelhos.add("1");
 		if(jogadores.verificaExistencia(codigo)) {
-			jogadores.atualizarCartoesVermelhos(codigo, partida.getSelecao1(), cartaoVermelho);
+			jogadores.atualizarCartoesVermelhos(codigo, partida.getSelecao1(), "1");
 			partida.setCartoesVermelhosSelecao1(cartoesVermelhos);
 			return true;
 		}
@@ -96,6 +99,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 	public boolean inputCartosAmarelosSelecao2(Partida partida, String cartaoAmarelo, String codigo) {
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		List<String> cartoesAmarelos = new ArrayList<String>();
+		if( Integer.parseInt(codigo) <= 2) {
 		cartoesAmarelos.add(codigo);
 		cartoesAmarelos.add(cartaoAmarelo);
 		if(jogadores.verificaExistencia(codigo)) {
@@ -107,16 +111,18 @@ public class PartidaDaoImpl implements PartidaDAO{
 		else {
 			return false;
 		}
+	}
+		return false;
 
 	}
 
-	public boolean inputCartosVermelhoSelecao2(Partida partida, String cartaoVermelho, String codigo) {
+	public boolean inputCartosVermelhoSelecao2(Partida partida, String codigo) {
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		List<String> cartoesVermelhos = new ArrayList<String>();
 		cartoesVermelhos.add(codigo);
-		cartoesVermelhos.add(cartaoVermelho);
+		cartoesVermelhos.add("1");
 		if(jogadores.verificaExistencia(codigo)) {
-			jogadores.atualizarCartoesVermelhos(codigo, partida.getSelecao2(), cartaoVermelho);
+			jogadores.atualizarCartoesVermelhos(codigo, partida.getSelecao2(), "1");
 			partida.setCartoesVermelhosSelecao2(cartoesVermelhos);
 			mostrarPartida(codigo);
 			return true;

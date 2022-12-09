@@ -9,20 +9,24 @@ import java.util.Map;
 import application.model.PartidaPackage.Partida;
 import application.model.PartidaPackage.PartidaDaoImpl;
 import application.model.SelecaoPackage.Selecao;
+import application.model.SelecaoPackage.SelecaoDaoImpl;
 
-public class FaseDeGrupos extends PartidaDaoImpl {
-	public static Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
-	
+public class FaseDeGrupos extends PartidaDaoImpl{
+	SelecaoDaoImpl selecao = new SelecaoDaoImpl();
+	PartidaDaoImpl partida = new PartidaDaoImpl(selecao.getListaSelecoes());
 	public FaseDeGrupos(ArrayList<Selecao> selecoes) {
 		super(selecoes);
+		selecao.setListaSelecoes(selecoes);
 	}
-
-	public static Map<String,List<Selecao>> grupos = new HashMap<String,List<Selecao>>();
+	public static  Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
+	public static  Map<String,List<Selecao>> grupos = new HashMap<String,List<Selecao>>();
+	
 
 	
-	private List<String> organizaGrupo(String grupo) {
+	private List<String> organizaGrupo(String grupo){
+		
 		List<String> grupoSelecao = new ArrayList<>();
-		for(Selecao selecao: selecao.getListaSelecoes()) {
+		for(Selecao selecao: SelecaoDaoImpl.listaSelecoes) {
 			if(selecao.getGrupo().equals(grupo)) {
 				grupoSelecao.add(selecao.getNome());
 			}
@@ -41,7 +45,7 @@ public class FaseDeGrupos extends PartidaDaoImpl {
 						String selecao1 = grupoSelecao.get(c);
 						String selecao2 = grupoSelecao.get(j);
 						Partida jogo = new Partida(selecao1,selecao2);
-						jogo.setCodigo(geraid());
+						jogo.setCodigo(this.partida.geraid());
 						partidaGrupo.add(jogo);
 						this.partidas.put(grupos[i], partidaGrupo);
 					}
@@ -115,17 +119,17 @@ public class FaseDeGrupos extends PartidaDaoImpl {
 			final Selecao selecao2 = selecao.getListaSelecoes().get(IndiceSelecao2);
 			final Selecao selecao1 = selecao.getListaSelecoes().get(IndiceSelecao1);
 			
-			int golsSelecao1 = somaConteudo(partida.getGolsSelecao1());
-			int cartoesVermelhosSelecao1 = somaConteudo(partida.getCartoesVermelhosSelecao1());
-			int cartoesAmarelosSelecao1 = somaConteudo(partida.getCartoesAmarelosSelecao1());
+			int golsSelecao1 = this.partida.somaConteudo(partida.getGolsSelecao1());
+			int cartoesVermelhosSelecao1 = this.partida.somaConteudo(partida.getCartoesVermelhosSelecao1());
+			int cartoesAmarelosSelecao1 = this.partida.somaConteudo(partida.getCartoesAmarelosSelecao1());
 
 			selecao1.setGolsMarcados(golsSelecao1);
 			selecao1.setQuantidadeCartoesAmarelos(cartoesAmarelosSelecao1);
 			selecao1.setQuantidadeCartoesVermelhos(cartoesVermelhosSelecao1);
 
-			int golsSelecao2 = somaConteudo(partida.getGolsSelecao2());
-			int cartoesVermelhosSelecao2 = somaConteudo(partida.getCartoesVermelhosSelecao2());
-			int cartoesAmarelosSelecao2 = somaConteudo(partida.getCartoesAmarelosSelecao2());
+			int golsSelecao2 = this.partida.somaConteudo(partida.getGolsSelecao2());
+			int cartoesVermelhosSelecao2 = this.partida.somaConteudo(partida.getCartoesVermelhosSelecao2());
+			int cartoesAmarelosSelecao2 = this.partida.somaConteudo(partida.getCartoesAmarelosSelecao2());
 
 			selecao2.setGolsMarcados(golsSelecao2);
 			selecao2.setQuantidadeCartoesAmarelos(cartoesAmarelosSelecao2);

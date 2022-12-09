@@ -8,7 +8,7 @@ import application.model.PartidaPackage.Partida;
 import application.model.PartidaPackage.PartidaDaoImpl;
 import application.model.SelecaoPackage.Selecao;
 
-public class Elimatoria extends PartidaDaoImpl{
+public class Elimatoria{
 	
 	private Map<String,List<Selecao>> grupos;
 	private List<Partida> oitavas;
@@ -18,7 +18,6 @@ public class Elimatoria extends PartidaDaoImpl{
 	private Partida Final;
 	
 	public Elimatoria(ArrayList<Selecao> selecoes, Map<String,List<Selecao>> grupos) {
-		super(selecoes);
 		this.grupos = grupos;
 		this.oitavas = new ArrayList<Partida>();
 	}

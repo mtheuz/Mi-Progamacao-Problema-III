@@ -5,7 +5,11 @@ import java.io.IOException;
 import java.net.URL;
 
 import application.controller.ControllerCadastroPartida;
+import application.controller.ControllerFaseDeGrupos;
 import application.controller.TelaInicio;
+import application.controller.TelaPartida;
+import application.controller.TelaTabelaDeGrupos;
+import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -23,8 +27,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException { 
 		stage = primaryStage;
 		FXMLLoader loader = new FXMLLoader();
-		URL xmlURL = getClass().getResource("/application/view/Partida/CadastroDePartida.fxml");
-		loader.setController(new ControllerCadastroPartida());
+		URL xmlURL = getClass().getResource("/application/view/Partida/TelaPartidas.fxml");
+		loader.setController(new TelaPartida());
 		loader.setLocation(xmlURL);
 		Parent parent = loader.load();
 		Scene telaInicial = new Scene(parent);

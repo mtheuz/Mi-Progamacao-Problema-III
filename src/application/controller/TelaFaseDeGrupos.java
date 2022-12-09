@@ -27,10 +27,10 @@ public class TelaFaseDeGrupos{
 
 	private ArrayList<Selecao> listaSelecoes;
 
-    public TelaFaseDeGrupos(SelecaoDaoImpl selecaoDao) {
-		this.selecaoDao = selecaoDao;
-		this.listaSelecoes = new ArrayList<Selecao>();
-		listaSelecoes = selecaoDao.getListaSelecoes();
+    public TelaFaseDeGrupos() {
+		//this.selecaoDao = selecaoDao;
+		//this.listaSelecoes = new ArrayList<Selecao>();
+		this.listaSelecoes = SelecaoDaoImpl.listaSelecoes;
 	}
 
 	@FXML
@@ -45,7 +45,7 @@ public class TelaFaseDeGrupos{
 
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
-    	TelaPartida controller = new TelaPartida(selecaoDao);
+    	TelaPartida controller = new TelaPartida();
     	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", controller, selecaoDao);
     }
 
