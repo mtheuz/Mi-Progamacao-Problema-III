@@ -47,8 +47,9 @@ public class TelaMenuCadastros {
 	}
 
 	@FXML
-    void btnAbrirTelaArbitrosAction(ActionEvent event) {
-		
+    void btnAbrirTelaArbitrosAction(ActionEvent event) throws IOException {
+		TelaMenuArbitro controller = new TelaMenuArbitro(this.selecaoDao);
+    	Main.trocaDeTela("/application/view/Arbitro/TelaMenuArbitro.fxml",controller, selecaoDao);
     }
 
     @FXML
@@ -64,8 +65,9 @@ public class TelaMenuCadastros {
     }
 
     @FXML
-    void btnAbrirTelaTecnicosAction(ActionEvent event) {
-
+    void btnAbrirTelaTecnicosAction(ActionEvent event) throws IOException {
+    	TelaMenuTecnicos controller = new TelaMenuTecnicos(this.selecaoDao);
+    	Main.trocaDeTela("/application/view/Tecnico/TelaMenuTecnico.fxml",controller, selecaoDao);
     }
 
     @FXML
@@ -81,7 +83,7 @@ public class TelaMenuCadastros {
         assert btnAbrirMenuTecnicos != null : "fx:id=\"btnAbrirMenuTecnicos\" was not injected: check your FXML file 'TelaMenuCadastros.fxml'.";
         assert btnAbrrMenuJogadores != null : "fx:id=\"btnAbrrMenuJogadores\" was not injected: check your FXML file 'TelaMenuCadastros.fxml'.";
         assert btnVoltar != null : "fx:id=\"btnVoltar\" was not injected: check your FXML file 'TelaMenuCadastros.fxml'.";
-
+        
     }
 
 }

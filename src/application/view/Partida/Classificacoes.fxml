@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #A61F54;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
 
    <children>
       <Pane prefHeight="38.0" prefWidth="952.0" style="-fx-background-color: #6B1839;">
@@ -36,7 +36,7 @@
             <Image url="@../copa.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="116.0" layoutY="244.0" prefHeight="233.0" prefWidth="721.0" style="-fx-background-color: #373737; -fx-background-radius: 20;">
+      <AnchorPane layoutX="147.0" layoutY="263.0" prefHeight="226.0" prefWidth="694.0" style="-fx-background-color: #373737; -fx-background-radius: 20;">
          <children>
             <Label fx:id="grupoLabel" layoutX="20.0" layoutY="38.0" prefHeight="21.0" prefWidth="87.0" text="GRUPO A" textFill="#ff3f8a">
                <font>
@@ -66,7 +66,7 @@
             <Separator layoutX="20.0" layoutY="96.0" opacity="0.2" prefHeight="15.0" prefWidth="650.0" />
             <Separator layoutX="20.0" layoutY="126.0" opacity="0.2" prefHeight="15.0" prefWidth="650.0" />
             <Separator layoutX="20.0" layoutY="156.0" opacity="0.2" prefHeight="15.0" prefWidth="650.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#58b956" height="38.0" layoutX="18.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#58b956" height="30.0" layoutX="18.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#58b956" height="38.0" layoutX="18.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
             <Label fx:id="selecao1" layoutX="64.0" layoutY="73.0" prefHeight="30.0" prefWidth="150.0" text="A CONFIRMAR" textFill="WHITE">
                <font>
@@ -213,8 +213,10 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="30.0" layoutX="18.0" layoutY="131.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="38.0" layoutX="18.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
          </children>
       </AnchorPane>
-      <ChoiceBox fx:id="grupos" layoutX="382.0" layoutY="205.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ffff;" />
+      <ChoiceBox fx:id="choceBoxGrupos" layoutX="382.0" layoutY="205.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ffff;" />
    </children>
 </AnchorPane>

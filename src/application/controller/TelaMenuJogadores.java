@@ -51,18 +51,23 @@ public class TelaMenuJogadores {
     }
 
     @FXML
-    void btnDeletarJogadorAction(ActionEvent event) {
+    void btnDeletarJogadorAction(ActionEvent event) throws IOException {
 
+    	TelaRemoverJogador controller = new TelaRemoverJogador(this.selecaoDao);
+		Main.trocaDeTela("/application/view/Jogador/TelaRemoverrJogador.fxml",controller, selecaoDao);
     }
 
     @FXML
-    void btnEditarJogadorAction(ActionEvent event) {
-
+    void btnEditarJogadorAction(ActionEvent event) throws IOException {
+    	
+    	TelaEscolherEditarJogador controller = new TelaEscolherEditarJogador(this.selecaoDao);
+		Main.trocaDeTela("/application/view/Jogador/TelaEscolherEditarJogador.fxml",controller, selecaoDao);
     }
 
     @FXML
-    void btnListarJogadoresAction(ActionEvent event) {
-
+    void btnListarJogadoresAction(ActionEvent event) throws IOException {
+    	TelaEscolherSelecaoListarJogador controller = new TelaEscolherSelecaoListarJogador(selecaoDao);
+    	Main.trocaDeTela("/application/view/Jogador/TelaEscolherSelecaoListarJogador.fxml", controller, selecaoDao);
     }
 
     @FXML

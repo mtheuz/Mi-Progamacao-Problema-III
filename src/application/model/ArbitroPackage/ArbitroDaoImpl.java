@@ -16,7 +16,7 @@ public class  ArbitroDaoImpl implements ArbitroDAO
 	/**
 	 * listaArbitros é uma lista (ArrayList) que armazena todos os cadastro de Árbitro do sistema
 	 */
-	private ArrayList<Arbitro> listaArbitros;
+	static ArrayList<Arbitro> listaArbitros;
 
 /**
  * Construtor padrão da classe <b>ArbitroDaoImpl</b>
@@ -62,7 +62,6 @@ boolean cadastrarArbitro(String nome)
 					juiz.setNome(nome); /*Chamando método setter para guardar o nome*/
 					listaArbitros.add(juiz); /*Adicionando o cadastro a lista de cadastros de arbitros*/
 					return true;
-					break;
 				}
 				
 				else
@@ -103,7 +102,7 @@ public boolean comparaArbitro(String nome) {
 
 @Override
 public void listarArbitros() {
-	ArbitroView arbitroView = new ArbitroView();
+	//ArbitroView arbitroView = new ArbitroView();
 	if (listaArbitros.size()> 0) /*Verificação para checar se a lista de Árbitros está vazia*/
 	{
 		arbitroView.mostrar("Lista de Arbitros:");
@@ -122,7 +121,7 @@ public void listarArbitros() {
  * O método editarArbitro é responsável por editar um cadastro de árbitro no sistema
  * @return Void
  */
-@Override
+/**
 public void editarArbitro(String nomeArbitro) {
 	TratamentosExcecoes tratamento = new TratamentosExcecoes();
 	
@@ -167,6 +166,7 @@ public void editarArbitro(String nomeArbitro) {
 	
 	}
 }
+
 /**
  * O método cadastrarArbitro é responsável por editar um cadastro de árbitro no sistema
  * @return Void
@@ -216,6 +216,18 @@ private int buscaArbitro(ArrayList listaArbitros, String nomeArbitro)
 	}
 	return 0;
 	
+	
+}
+
+@Override
+public void cadastrarArbitro() {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void editarArbitro() {
+	// TODO Auto-generated method stub
 	
 }
 

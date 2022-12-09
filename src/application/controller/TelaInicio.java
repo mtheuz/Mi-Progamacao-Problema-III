@@ -2,8 +2,10 @@ package application.controller;
 import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import application.Main;
+import application.model.ArbitroPackage.Arbitro;
 import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
@@ -41,6 +43,8 @@ public class TelaInicio{
     
     SelecaoDaoImpl selecaoDao = new SelecaoDaoImpl();
     JogadorDaoImpl jogadorDao = new JogadorDaoImpl(selecaoDao.getListaSelecoes());
+    
+    public static ArrayList<Arbitro> listaArbitros = new ArrayList<Arbitro>();
     
     @FXML
     void btnCarregarPreSetAction(ActionEvent event) throws IOException {
