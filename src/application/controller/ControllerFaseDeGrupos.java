@@ -27,7 +27,7 @@ public class ControllerFaseDeGrupos {
     private FaseDeGrupos faseDeGrupos;
     
     void btnCadastrarPartidas(ActionEvent event) throws IOException {
-    	Main.trocaDeTela("/application/view/Partida/TelaTodasPartidas.fxml", null);
+    	//Main.trocaDeTela("/application/view/Partida/TelaTodasPartidas.fxml", null);
     }
 
 }

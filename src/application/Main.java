@@ -4,7 +4,12 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 
+import application.controller.ControllerCadastroPartida;
+import application.controller.ControllerFaseDeGrupos;
 import application.controller.TelaInicio;
+import application.controller.TelaPartida;
+import application.controller.TelaTabelaDeGrupos;
+import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -22,8 +27,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException { 
 		stage = primaryStage;
 		FXMLLoader loader = new FXMLLoader();
-		URL xmlURL = getClass().getResource("/application/view/TelaInicio.fxml");
-		loader.setController(new TelaInicio());
+		URL xmlURL = getClass().getResource("/application/view/Partida/TelaPartidas.fxml");
+		loader.setController(new TelaPartida());
 		loader.setLocation(xmlURL);
 		Parent parent = loader.load();
 		Scene telaInicial = new Scene(parent);
@@ -34,7 +39,9 @@ public class Main extends Application {
 
 	public static void trocaDeTela(String endereco,Object controller, Object conteudo) throws IOException {
 		FXMLLoader loaderFXML = new FXMLLoader(Main.class.getResource(endereco));
-		loaderFXML.setController(controller);
+		if(controller != null) {
+			loaderFXML.setController(controller);
+		}
 		Scene tela = new Scene(loaderFXML.load());
         stage.setScene(tela);
 	}

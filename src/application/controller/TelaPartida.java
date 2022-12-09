@@ -37,23 +37,42 @@ public class TelaPartida {
     private ArrayList <Selecao> listaSelecoes;
     
     private SelecaoDaoImpl selecaoDao;
+    private FaseDeGrupos fase;
+
     
-    public TelaPartida(SelecaoDaoImpl selecaoDao) {
-    	this.selecaoDao = selecaoDao;
-    	this.listaSelecoes = new ArrayList<Selecao>();
-		listaSelecoes = selecaoDao.getListaSelecoes();
+    public TelaPartida() {
+    	SelecaoDaoImpl selecao = new SelecaoDaoImpl();
+    	try {
+			selecao.leArquivoSelecoes();
+			System.out.println(SelecaoDaoImpl.listaSelecoes.size());
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+    	System.out.println(SelecaoDaoImpl.listaSelecoes.size());
+    	this.listaSelecoes =SelecaoDaoImpl.listaSelecoes;
+
+    	System.out.println(SelecaoDaoImpl.listaSelecoes.size());
+    	FaseDeGrupos fase = new FaseDeGrupos(this.listaSelecoes);
+		try {
+			System.out.println(SelecaoDaoImpl.listaSelecoes.size());
+			fase.geraPartidas();
+			System.out.println(SelecaoDaoImpl.listaSelecoes.size());
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		
 		
     }
     
     @FXML
     void btnAbrirFaseDeGruposAction(ActionEvent event) throws IOException {
-    	TelaFaseDeGrupos controller = new TelaFaseDeGrupos(selecaoDao);
-    	Main.trocaDeTela("/application/view/Partida/TelaFaseDeGrupos.fxml", controller, selecaoDao);
-    	
+    	TelaTabelaDeGrupos controller = new TelaTabelaDeGrupos();
+    	Main.trocaDeTela("/application/view/Partida/TelaTodasPartidas.fxml", controller, null);
     }
    
     @FXML
     void initialize() {
+    	
         assert btnAbrirFaseDeGrupos != null : "fx:id=\"FaseDeGruos\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
         assert Final != null : "fx:id=\"Final\" was not injected: check your FXML file 'TelaPartidas.fxml'.";
         assert otavasDeFinla != null : "fx:id=\"otavasDeFinla\" was not injected: check your FXML file 'TelaPartidas.fxml'.";

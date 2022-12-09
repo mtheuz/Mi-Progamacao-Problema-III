@@ -30,7 +30,7 @@ public class SelecaoDaoImpl
  */
 public SelecaoDaoImpl()
 {
-	this.listaSelecoes = new ArrayList<Selecao>(); 
+	SelecaoDaoImpl.listaSelecoes = new ArrayList<Selecao>(); 
 }
 
 /**
@@ -38,13 +38,13 @@ public SelecaoDaoImpl()
  * @return Arraylist
  */
 public ArrayList<Selecao> getListaSelecoes() {
-	return listaSelecoes; 
+	return SelecaoDaoImpl.listaSelecoes; 
 }
 /**
  * Método para setar a lista listaSelecoes
  */
 public void setListaSelecoes(ArrayList<Selecao> listaSelecoes) {
-	this.listaSelecoes = listaSelecoes;
+	SelecaoDaoImpl.listaSelecoes = listaSelecoes;
 }
 
 
@@ -103,7 +103,7 @@ public void leArquivoSelecoes() throws IOException
 	    	for(int i =0; i<4; i++)
 	    	{
 	    		Selecao selecao = new Selecao(linha, grupo);
-				this.listaSelecoes.add(selecao);
+				SelecaoDaoImpl.listaSelecoes.add(selecao);
 		        linha = br.readLine();
 		        if(linha == null)
 		        	break; 
@@ -158,7 +158,7 @@ public void procedimentoCadastrarSelecao(String nome) {
  */
 public void cadastrarSelecao(Selecao selecao) {
 	 
-	this.listaSelecoes.add(selecao);
+	SelecaoDaoImpl.listaSelecoes.add(selecao);
 	
 }
 
@@ -287,11 +287,12 @@ private void atualizarSelecaoNoGrupo(String nome,String novoNomeSelecao, Partida
  * @return int
  */
 public int buscaSelecao( String nomeSelecao) {
-
-	for(int i=0; i<this.listaSelecoes.size();i++) /*Laço para procurar Tecnico nos cadastros*/
+	System.out.println(SelecaoDaoImpl.listaSelecoes.size());
+	for(int i=0; i<SelecaoDaoImpl.listaSelecoes.size();i++) /*Laço para procurar Tecnico nos cadastros*/
 	{
-		if(( this.listaSelecoes.get(i)).getNome().toUpperCase().equals(nomeSelecao.toUpperCase())) /*verificação de cada cada cadastro na lista com o nome a ser procurado*/
-		{
+		if(( SelecaoDaoImpl.listaSelecoes.get(i)).getNome().toUpperCase().equals(nomeSelecao.toUpperCase())) /*verificação de cada cada cadastro na lista com o nome a ser procurado*/
+		{	
+			
 			return i; /*A função retorna o indice do cadastro na lista, caso encontre*/
 		}
 		

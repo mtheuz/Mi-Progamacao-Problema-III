@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -36,29 +35,11 @@
             <Image url="@../copa.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="240.0" layoutY="225.0" prefHeight="372.0" prefWidth="472.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 20px;">
+      <AnchorPane layoutX="246.0" layoutY="223.0" prefHeight="289.0" prefWidth="461.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 20px;">
          <children>
             <Pane fx:id="pane3" layoutX="29.0" layoutY="151.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
                <children>
                   <Label fx:id="labelOpcao3" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane fx:id="pane5" layoutX="29.0" layoutY="252.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
-               <children>
-                  <Label fx:id="labelOpcao5" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane fx:id="pane6" layoutX="243.0" layoutY="253.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
-               <children>
-                  <Label fx:id="labelOpcao6" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -97,7 +78,7 @@
                   <Font name="System Bold" size="32.0" />
                </font>
             </Button>
-            <Button layoutX="37.0" layoutY="63.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
+            <Button layoutX="38.0" layoutY="63.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
@@ -105,7 +86,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label id="primeiraPartidaSelecao1GrupoA" fx:id="clickSelecao1Nome" alignment="CENTER" layoutX="52.0" layoutY="72.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+            <Label id="primeiraPartidaSelecao1GrupoA" fx:id="clickSelecao1Nome" alignment="CENTER" layoutX="53.0" layoutY="72.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -123,32 +104,17 @@
                   <Font name="System Bold" size="32.0" />
                </font>
             </Button>
-            <Button layoutX="37.0" layoutY="268.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
-               <font>
-                  <Font name="System Bold" size="32.0" />
-               </font>
-            </Button>
-            <Button layoutX="250.0" layoutY="268.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF;" textFill="#6b1839">
-               <font>
-                  <Font name="System Bold" size="32.0" />
-               </font>
-            </Button>
-            <Label fx:id="grupo" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="87.0" text="GRUPO A" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao2GrupoA" fx:id="clickSelecao2Nome" alignment="CENTER" layoutX="52.0" layoutY="101.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+            <Label id="primeiraPartidaSelecao2GrupoA" fx:id="clickSelecao2Nome" alignment="CENTER" layoutX="53.0" layoutY="101.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label id="primeiraPartidaSelecao1PlacarGrupoA" fx:id="clickSelecao1Placar" alignment="CENTER" layoutX="187.0" layoutY="72.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+            <Label id="primeiraPartidaSelecao1PlacarGrupoA" fx:id="clickSelecao1Placar" alignment="CENTER" layoutX="188.0" layoutY="72.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label id="primeiraPartidaSelecao2PlacarGrupoA" fx:id="clickSelecao2Placar" alignment="CENTER" layoutX="187.0" layoutY="101.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+            <Label id="primeiraPartidaSelecao2PlacarGrupoA" fx:id="clickSelecao2Placar" alignment="CENTER" layoutX="188.0" layoutY="101.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -213,54 +179,6 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label id="primeiraPartidaSelecao1GrupoA" fx:id="clickSelecao1Nome5" alignment="CENTER" layoutX="52.0" layoutY="277.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao2GrupoA" fx:id="clickSelecao2Nome5" alignment="CENTER" layoutX="52.0" layoutY="306.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao1PlacarGrupoA" fx:id="clickSelecao1Placar5" alignment="CENTER" layoutX="187.0" layoutY="277.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao2PlacarGrupoA" fx:id="clickSelecao2Placar5" alignment="CENTER" layoutX="187.0" layoutY="306.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao1GrupoA" fx:id="clickSelecao1Nome6" alignment="CENTER" layoutX="265.0" layoutY="278.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao2GrupoA" fx:id="clickSelecao2Nome6" alignment="CENTER" layoutX="265.0" layoutY="307.0" prefHeight="30.0" prefWidth="111.0" text="A CONFIRMAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao1PlacarGrupoA" fx:id="clickSelecao1Placar6" alignment="CENTER" layoutX="400.0" layoutY="278.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label id="primeiraPartidaSelecao2PlacarGrupoA" fx:id="clickSelecao2Placar6" alignment="CENTER" layoutX="400.0" layoutY="307.0" prefHeight="30.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Button fx:id="partida1" layoutX="37.0" layoutY="64.0" mnemonicParsing="false" onMouseClicked="#buttonPartida1" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
-               <font>
-                  <Font name="System Bold" size="32.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
             <Button fx:id="partida2" layoutX="251.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#buttonPartida2" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
@@ -269,7 +187,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="partida4" layoutX="251.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#buttonPartida4" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
+            <Button fx:id="partida4" layoutX="250.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#buttonPartida4" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
@@ -285,15 +203,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="partida5" layoutX="37.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#buttonPartida5" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
-               <font>
-                  <Font name="System Bold" size="32.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="partida6" layoutX="251.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#buttonPartida6" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
+            <Button fx:id="partida1" layoutX="38.0" layoutY="64.0" mnemonicParsing="false" onMouseClicked="#buttonPartida1" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
@@ -303,10 +213,5 @@
             </Button>
          </children>
       </AnchorPane>
-      <ChoiceBox fx:id="choicebox" layoutX="391.0" layoutY="178.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ffff;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ChoiceBox>
    </children>
 </AnchorPane>

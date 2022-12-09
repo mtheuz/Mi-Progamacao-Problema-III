@@ -1,5 +1,5 @@
+package application.controller;
 import java.awt.event.ActionEvent;
-
 import application.Main;
 import application.model.FaseDeGrupos.FaseDeGrupos;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
@@ -34,10 +34,10 @@ public class ControllerMenuPrincipal {
     }
 
     @FXML
-    void clickPartida(ActionEvent event) {
+    void clickPartida(ActionEvent event) throws InterruptedException {
     	FaseDeGrupos faseDeGrupos = new FaseDeGrupos(SelecaoDaoImpl.listaSelecoes);
     	faseDeGrupos.geraPartidas();
-    	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", null);
+    	//Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", null);
     }
 
     @FXML
