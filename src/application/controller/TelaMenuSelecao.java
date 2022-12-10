@@ -11,6 +11,7 @@ import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class TelaMenuSelecao {
 
@@ -22,6 +23,9 @@ public class TelaMenuSelecao {
     
     @FXML
     private Button btnVoltar;
+
+    @FXML
+    private Label label;
     
     @FXML
     private Button btnCadastrarSelecao;
@@ -47,15 +51,25 @@ public class TelaMenuSelecao {
 
     @FXML
     void btnRemoverSelecaoAction(ActionEvent event) throws IOException {
-    	TelaRemoverSelecao controller = new TelaRemoverSelecao(selecaoDao);
-    	Main.trocaDeTela("/application/view/Selecao/TelaRemoverSelecao.fxml",controller, this.selecaoDao);
+    	if(listaSelecoes.size()>0)
+    	{
+	    	TelaRemoverSelecao controller = new TelaRemoverSelecao(selecaoDao);
+	    	Main.trocaDeTela("/application/view/Selecao/TelaRemoverSelecao.fxml",controller, this.selecaoDao);
+    
+    	}
+    	else
+    		label.setText("Nenhuma Seleção Cadastrada");
     }
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
-    	TelaMenuCadastros controller = new TelaMenuCadastros(selecaoDao);
-    	Main.trocaDeTela("/application/view/TelaMenuCadastros.fxml",controller, this.selecaoDao);
-    }
+    	
+    	
+	    	TelaMenuCadastros controller = new TelaMenuCadastros(selecaoDao);
+	    	Main.trocaDeTela("/application/view/TelaMenuCadastros.fxml",controller, this.selecaoDao);
     
+    	
+    	
+    }
     @FXML
     void btnCadastrarSelecaoAction(ActionEvent event) throws IOException {
     	TelaCadastrarSelecao controller = new TelaCadastrarSelecao(selecaoDao);
@@ -63,19 +77,34 @@ public class TelaMenuSelecao {
     }
     @FXML
     void btnEditarSelecaoAction(ActionEvent event) throws IOException {
-    	TelaEditarSelecao controller = new TelaEditarSelecao(selecaoDao);
-    	Main.trocaDeTela("/application/view/Selecao/TelaEditarSelecao.fxml", controller, this.selecaoDao);
-    }
+    	if(listaSelecoes.size()>0)
+    	{
+	    	TelaEditarSelecao controller = new TelaEditarSelecao(selecaoDao);
+	    	Main.trocaDeTela("/application/view/Selecao/TelaEditarSelecao.fxml", controller, this.selecaoDao);
     
+    	}
+    	else
+    		label.setText("Nenhuma Seleção Cadastrada");
+    }
 
     @FXML
     void btnListarSelecaoAction(ActionEvent event) throws IOException {
-    	TelaListarSelecoes controller = new TelaListarSelecoes(selecaoDao);
-    	Main.trocaDeTela("/application/view/Selecao/TelaListarSelecao.fxml", controller, this.selecaoDao);
+    	if(listaSelecoes.size()>0)
+    	{
+	    	TelaListarSelecoes controller = new TelaListarSelecoes(selecaoDao);
+	    	Main.trocaDeTela("/application/view/Selecao/TelaListarSelecao.fxml", controller, this.selecaoDao);
+    	}
+    	else
+    		label.setText("Nenhuma Seleção Cadastrada");
     }
     @FXML
     void initialize() {
-
+    	assert btnCadastrarSelecao != null : "fx:id=\"btnCadastrarSelecao\" was not injected: check your FXML file 'TelaMenuSelecao.fxml'.";
+        assert btnEditarSelecao != null : "fx:id=\"btnEditarSelecao\" was not injected: check your FXML file 'TelaMenuSelecao.fxml'.";
+        assert btnListarSelecao != null : "fx:id=\"btnListarSelecao\" was not injected: check your FXML file 'TelaMenuSelecao.fxml'.";
+        assert btnRemoverSelecao != null : "fx:id=\"btnRemoverSelecao\" was not injected: check your FXML file 'TelaMenuSelecao.fxml'.";
+        assert btnVoltar != null : "fx:id=\"btnVoltar\" was not injected: check your FXML file 'TelaMenuSelecao.fxml'.";
+        assert label != null : "fx:id=\"label\" was not injected: check your FXML file 'TelaMenuSelecao.fxml'.";
     }
 
 }

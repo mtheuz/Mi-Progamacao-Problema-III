@@ -49,8 +49,13 @@ public class TelaRemoverSelecao{
     @FXML
     void btnDeletarAction(ActionEvent event) {
     	String selecao = this.choiceBoxSelecoes.getValue();
-    	selecaoDao.removerSelecao(selecao);
-    	label.setText("Seleção Removida!");
+    	if(selecao != null && selecao != "")
+    	{
+    		selecaoDao.removerSelecao(selecao);
+    		label.setText("Seleção Removida!");
+    	}
+    	else
+    		label.setText("Selecione a Seleção");
     }
 
     @FXML

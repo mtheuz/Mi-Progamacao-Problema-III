@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -62,7 +63,10 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button fx:id="btnVoltar" layoutX="10.0" layoutY="3.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR" />
+            <Button fx:id="btnVoltar" layoutX="10.0" layoutY="3.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="32.0" prefWidth="192.0" text="vOLTAR">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </AnchorPane>
       <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="119.0" layoutY="314.0" prefHeight="32.0" prefWidth="171.0" text="EDITAR POSIÇÃO" textFill="WHITE" wrapText="true">
@@ -85,6 +89,9 @@
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <ChoiceBox fx:id="choiceBoxPosicoes" layoutX="309.0" layoutY="317.0" prefHeight="26.0" prefWidth="334.0" style="-fx-background-color: #FFFF; -fx-background-radius: 60px;" />
       <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="376.0" layoutY="505.0" prefHeight="17.0" prefWidth="192.0" textAlignment="CENTER" textFill="WHITE">

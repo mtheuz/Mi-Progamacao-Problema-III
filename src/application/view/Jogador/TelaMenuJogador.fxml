@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -82,28 +83,43 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button fx:id="btnVoltar" layoutX="2.0" layoutY="-2.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="37.0" prefWidth="210.0" text="vOLTAR" />
+            <Button fx:id="btnVoltar" layoutX="2.0" layoutY="-2.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="37.0" prefWidth="210.0" text="vOLTAR">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </AnchorPane>
       <Button fx:id="btnCadastrarJogador" layoutX="239.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnCadastrarJogadorAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btnEditarJogador" layoutX="465.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnEditarJogadorAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btnListarJogadores" layoutX="239.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnListarJogadoresAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btnDeletarJogador" layoutX="465.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnDeletarJogadorAction" opacity="0.0" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>
