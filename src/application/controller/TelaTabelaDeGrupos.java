@@ -217,7 +217,8 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					Main.trocaDeTela("/application/view/Partida/MostrarPartida.fxml", null, null);
+					TelaMostrarPartida controller = new TelaMostrarPartida(listaPartida.get(0));
+					Main.trocaDeTela("/application/view/Partida/MostrarPartida.fxml", controller, null);
 				}
 			}
 			break;

@@ -53,7 +53,8 @@ public class TelaMenuArbitro
 
     @FXML
     void btnDeletarArbitroAction(ActionEvent event) throws IOException {
-    	
+    	TelaDeletarArbitro controller = new TelaDeletarArbitro(selecaoDao);
+		Main.trocaDeTela("/application/view/Arbitro/TelaDeletarArbitro.fxml", controller, selecaoDao);
     }
 
     @FXML
@@ -64,7 +65,8 @@ public class TelaMenuArbitro
 
     @FXML
     void btnListarArbitroAction(ActionEvent event) throws IOException {
-    	
+    	TelaListarArbitro controller = new TelaListarArbitro(selecaoDao);
+    	Main.trocaDeTela("/application/view/Arbitro/TelaListarArbitro.fxml", controller, selecaoDao);
     
     }
 

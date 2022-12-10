@@ -15,10 +15,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class TelaEditarArbitro {
+public class TelaDeletarArbitro {
 
     @FXML
-    private Button btnSalvar;
+    private Button btnDeletar;
 
     @FXML
     private Button btnVoltar;
@@ -33,8 +33,7 @@ public class TelaEditarArbitro {
     
     private ArrayList <Selecao> listaSelecoes;
     
-    @FXML
-    private TextField NovoNomeArbitro;
+  
     
     @FXML
 	public void initialize() {
@@ -46,13 +45,13 @@ public class TelaEditarArbitro {
     	}
     	choiceBoxArbitros.getItems().addAll(nomesArbitros);
     	
-    	 assert NovoNomeArbitro != null : "fx:id=\"NovoNomeSelecao\" was not injected: check your FXML file 'TelaEditarSelecao.fxml'.";
-         assert btnSalvar != null : "fx:id=\"btnSalvar\" was not injected: check your FXML file 'TelaEditarSelecao.fxml'.";
+    	 
+         assert btnDeletar != null : "fx:id=\"btnSalvar\" was not injected: check your FXML file 'TelaEditarSelecao.fxml'.";
          assert btnVoltar != null : "fx:id=\"btnVoltar\" was not injected: check your FXML file 'TelaEditarSelecao.fxml'.";
          assert choiceBoxArbitros != null : "fx:id=\"choiceBoxSelecoes\" was not injected: check your FXML file 'TelaEditarSelecao.fxml'.";
          assert label != null : "fx:id=\"label\" was not injected: check your FXML file 'TelaEditarSelecao.fxml'.";
     }
-    public TelaEditarArbitro(SelecaoDaoImpl selecaoDao) 
+    public TelaDeletarArbitro(SelecaoDaoImpl selecaoDao) 
     {
     	this.selecaoDao = selecaoDao;
     	this.listaSelecoes = new ArrayList<Selecao>();
@@ -61,30 +60,30 @@ public class TelaEditarArbitro {
 		
 
 	@FXML
-    void btnSalvarAction(ActionEvent event) {
+    void btnDeletarAction(ActionEvent event) {
 		
 		String arbitro = this.choiceBoxArbitros.getValue();
-		String novoNome = this.NovoNomeArbitro.getText();
+		
 		if( arbitro!= null)
 		{
-			if(novoNome!=null && novoNome != "")
+			for(int i = 0; i <TelaInicio.listaArbitros.size(); i++)
 			{
-				for(int i = 0; i <TelaInicio.listaArbitros.size(); i++)
+				if(TelaInicio.listaArbitros.get(i).getNome().equals(arbitro))
 				{
-					if(TelaInicio.listaArbitros.get(i).getNome().equals(arbitro))
-					{
-						TelaInicio.listaArbitros.get(i).setNome(novoNome);
-						label.setText("Arbitro Atualizado!");
-					}
+					TelaInicio.listaArbitros.remove(i);
+					label.setText("Árbitro Removido!");
 				}
 			}
-			else
-				label.setText("Digite um novo nome");
 		}
+			
+				
+		
 		else
-			label.setText("Escolha uma Árbitro");
-    }
+		{
+			label.setText("Escolha um Árbitro");
+		}
 
+	}
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
     	TelaMenuArbitro controller = new TelaMenuArbitro(this.selecaoDao);

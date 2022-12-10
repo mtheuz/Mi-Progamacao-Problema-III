@@ -27,8 +27,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException { 
 		stage = primaryStage;
 		FXMLLoader loader = new FXMLLoader();
-		URL xmlURL = getClass().getResource("/application/view/Partida/TelaPartidas.fxml");
-		loader.setController(new TelaPartida());
+		URL xmlURL = getClass().getResource("/application/view/TelaInicio.fxml");
+		loader.setController(new TelaInicio());
 		loader.setLocation(xmlURL);
 		Parent parent = loader.load();
 		Scene telaInicial = new Scene(parent);

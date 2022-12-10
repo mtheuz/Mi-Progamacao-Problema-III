@@ -48,7 +48,6 @@ public class TelaInicio{
     
     @FXML
     void btnCarregarPreSetAction(ActionEvent event) throws IOException {
-
     	selecaoDao.leArquivoSelecoes();
     	jogadorDao.transformaEmMap();
     	label.setText("Pré Set Carregado com sucesso!");
@@ -58,7 +57,7 @@ public class TelaInicio{
     
     @FXML
     void btnIniciarFaseDeGruposAction(ActionEvent event) throws IOException {
-    	TelaPartida controller = new TelaPartida(selecaoDao);
+    	TelaPartida controller = new TelaPartida();
     	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", controller, selecaoDao);
     	
     }

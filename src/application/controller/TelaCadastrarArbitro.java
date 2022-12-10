@@ -44,19 +44,29 @@ public class TelaCadastrarArbitro {
     }
 
     @FXML
-    void btnCadastrarAction(ActionEvent event) {
+    void btnCadastrarAction(ActionEvent event) throws IOException {
     	String nome = nomeArbitro.getText();
-    	if(nome != null && nome != "")
+    	if(TelaInicio.listaArbitros.size() <= 10)
     	{
-    		Arbitro arbitro = new Arbitro();
-    		arbitro.setNome(nome);
-    		TelaInicio.listaArbitros.add(arbitro);
-    		label.setText("Árbitro Cadastrado!");
+	    	if(nome != null && nome != "")
+	    	{
+	    		Arbitro arbitro = new Arbitro();
+	    		arbitro.setNome(nome);
+	    		TelaInicio.listaArbitros.add(arbitro);
+	    		label.setText("Árbitro Cadastrado!");
+	    		nomeArbitro.setText("");
+	    		
+	    	}
+	    	else
+	    		label.setText("Digite o Nome");
     	}
     	else
-    		label.setText("Digite o Nome");
-    }
+    	{
+    		label.setText("Lista de Árbitro Completa!");
 
+    	}
+
+    }	
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
     	TelaMenuArbitro controller = new TelaMenuArbitro(selecaoDao);
