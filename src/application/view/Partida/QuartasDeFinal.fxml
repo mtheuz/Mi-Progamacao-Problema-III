@@ -22,7 +22,7 @@
          </children></Pane>
       <AnchorPane layoutX="105.0" layoutY="117.0" prefHeight="32.0" prefWidth="742.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
          <children>
-            <Label layoutX="266.0" layoutY="1.0" prefHeight="36.0" prefWidth="210.0" text="FASE DE GRUPOS" textFill="#a61f54">
+            <Label layoutX="250.0" layoutY="1.0" prefHeight="36.0" prefWidth="242.0" text="QUARTAS DE FINAL" textFill="#a61f54">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -35,7 +35,7 @@
             <Image url="@../copa.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="246.0" layoutY="223.0" prefHeight="289.0" prefWidth="461.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 20px;">
+      <AnchorPane layoutX="246.0" layoutY="222.0" prefHeight="289.0" prefWidth="461.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 20px;">
          <children>
             <Pane fx:id="pane3" layoutX="29.0" layoutY="151.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
                <children>
@@ -207,6 +207,20 @@
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="430.0" layoutY="542.0" prefHeight="38.0" prefWidth="94.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <Label layoutX="15.0" layoutY="5.0" prefHeight="32.0" prefWidth="74.0" text="VOLTAR" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnVoltar" layoutX="5.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="38.0" prefWidth="84.0" text="vOLTAR">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

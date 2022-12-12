@@ -15,7 +15,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 	protected SelecaoDaoImpl selecao = new SelecaoDaoImpl();
 	TratamentosExcecoes tratamento = new TratamentosExcecoes();
 	
-	protected Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
+	protected static Map<String,List<Partida>> partidas = new HashMap<String,List<Partida>>();
 	
 	public static String[] estadios = {"Al Bayt", "Khalifa International", "Al Thumama", "Ahmad Bin Ali",
 			"Lusail", "Ras Abu Aboud (974)", "Education City", "Al Janoub"};
@@ -36,7 +36,6 @@ public class PartidaDaoImpl implements PartidaDAO{
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		if(jogadores.verificaExistencia(codigo)) {
 			List<String> gols1 = new ArrayList<String>();
-			
 			gols1.add(codigo);
 			gols1.add(gols);
 			jogadores.atualizarGolsMarcados(codigo, partida.getSelecao1(), gols);
@@ -66,7 +65,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 	public boolean inputCartosAmarelosSelecao1(Partida partida, String cartaoAmarelo, String codigo) {
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		List<String> cartoesAmarelos = new ArrayList<String>();
-		if( Integer.parseInt(codigo) <= 2) {
+		if( Integer.parseInt(cartaoAmarelo) <= 2) {
 		cartoesAmarelos.add(codigo);
 		cartoesAmarelos.add(cartaoAmarelo);
 		if(jogadores.verificaExistencia(codigo)) {
@@ -100,13 +99,12 @@ public class PartidaDaoImpl implements PartidaDAO{
 	public boolean inputCartosAmarelosSelecao2(Partida partida, String cartaoAmarelo, String codigo) {
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		List<String> cartoesAmarelos = new ArrayList<String>();
-		if( Integer.parseInt(codigo) <= 2) {
+		if( Integer.parseInt(cartaoAmarelo) <= 2) {
 		cartoesAmarelos.add(codigo);
 		cartoesAmarelos.add(cartaoAmarelo);
 		if(jogadores.verificaExistencia(codigo)) {
 			jogadores.atulizarCartoesAmarelos(codigo, partida.getSelecao2(), cartaoAmarelo);
 			partida.setCartoesAmarelosSelecao2(cartoesAmarelos);
-			mostrarPartida(codigo);
 			return true;
 		}
 		else {
@@ -125,7 +123,6 @@ public class PartidaDaoImpl implements PartidaDAO{
 		if(jogadores.verificaExistencia(codigo)) {
 			jogadores.atualizarCartoesVermelhos(codigo, partida.getSelecao2(), "1");
 			partida.setCartoesVermelhosSelecao2(cartoesVermelhos);
-			mostrarPartida(codigo);
 			return true;
 		}
 		else {
@@ -176,20 +173,20 @@ public class PartidaDaoImpl implements PartidaDAO{
 
 	
 	public static boolean deletar(Partida partida) {
-		//final Partida partida = findPartida(codigo);
 		if(partida != null) {
+			partida.setPlacarSelecao1("X");
+			partida.setPlacarSelecao2("X");
 			partida.setData("");
 			partida.setData("");
 			partida.setHorario("");
 			partida.setLocal("");
 			partida.setSituacao(false);
-			resetaListasPartida(partida.getCartoesAmarelosSelecao1());
-			resetaListasPartida(partida.getCartoesAmarelosSelecao2());
-			resetaListasPartida(partida.getCartoesVermelhosSelecao1());
-			resetaListasPartida(partida.getCartoesVermelhosSelecao2());
-			resetaListasPartida(partida.getGolsSelecao1());
-			resetaListasPartida(partida.getGolsSelecao2());
-			//mostrarPartida(codigo);
+			PartidaDaoImpl.resetaListasPartida(partida.getCartoesAmarelosSelecao1());
+			PartidaDaoImpl.resetaListasPartida(partida.getCartoesAmarelosSelecao2());
+			PartidaDaoImpl.resetaListasPartida(partida.getCartoesVermelhosSelecao1());
+			PartidaDaoImpl.resetaListasPartida(partida.getCartoesVermelhosSelecao2());
+			PartidaDaoImpl.resetaListasPartida(partida.getGolsSelecao1());
+			PartidaDaoImpl.resetaListasPartida(partida.getGolsSelecao2());
 			return true;
 		}
 		return false;
@@ -203,31 +200,6 @@ public class PartidaDaoImpl implements PartidaDAO{
 		return coddate;
 	}
 	
-	public void listarPartida(String grupo) {
-		List<Partida> jogo = partidas.get(grupo);
-		for (int i = 0; i < jogo.size(); i++) {
-			if(!jogo.get(i).isSituacao())
-				System.out.printf("[%d] %s X %s\n",i,jogo.get(i).getSelecao1(),jogo.get(i).getSelecao2());
-		}
-		System.out.println("");
-
-	}
-	
-	public boolean listarTodasPartidas() {
-		System.out.println("[Lista de Partidas]");
-		String[] grupos = {"A","B","C","D","E","F","G","H"};
-		if(!partidas.isEmpty()) {
-		for (int i = 0; i < grupos.length; i++) {
-			System.out.printf("Grupo [%s]\n",grupos[i]);
-			listarPartida(grupos[i]);
-			System.out.println("");
-
-		}
-		System.out.println("");
-		return true;
-		}
-		return false;
-	}
 	
 	public int somaConteudo(List<List<String>> listaGols) {
 		int gols = 0;
@@ -239,136 +211,16 @@ public class PartidaDaoImpl implements PartidaDAO{
 		}
 		return 0;
 	}
-	public boolean mostrarPartida(String codigo) {
-		final Partida partida = findPartida(codigo);
-		if(partida != null) {
-			System.out.printf("Codigo da Partida: %s\n",partida.getCodigo());
-			System.out.printf("|%s X %s|\n",partida.getSelecao1(),partida.getSelecao2());
-			System.out.printf("Placar: [%d X %d]\n",somaConteudo(partida.getGolsSelecao1()),somaConteudo(partida.getGolsSelecao2()));
-			System.out.printf("Local: %s\n", partida.getLocal());
-			System.out.printf("Data: %s\n", partida.getData());
-			System.out.printf("Horaio: %s\n", partida.getHorario());
-			System.out.println("\n");
 
+		
 
-			if(partida.getGolsSelecao1().size()>0)
-				System.out.printf("Gols [%s] \n",partida.getSelecao1());
-			for(List<String> jogador: partida.getGolsSelecao1()) {
-				if(jogador.size()> 0 && Integer.parseInt(jogador.get(1))>0) {
-					System.out.printf("%s - [%s] Gols\n",jogadores.retornaJogadorNome(jogador.get(0),selecao.getListaSelecoes()),jogador.get(1));
-				}	
-			}
-
-			if(partida.getGolsSelecao2().size()>0)
-				System.out.printf("Gols [%s] \n",partida.getSelecao2());
-			for(List<String> jogador: partida.getGolsSelecao2()) {
-				if(jogador.size()> 0 && Integer.parseInt(jogador.get(1))>0) {
-					System.out.printf("%s - [%s] Gols\n",jogadores.retornaJogadorNome(jogador.get(0),selecao.getListaSelecoes()),jogador.get(1));
-				}	
-			}
-
-			System.out.printf("Cartoes Amarelos [%s]:\n", partida.getSelecao1());
-			if(partida.getCartoesAmarelosSelecao1().size()>0) {
-				for(List<String> jogador: partida.getCartoesAmarelosSelecao1()) {
-					if(jogador.size()> 0 && Integer.parseInt(jogador.get(1))>0) {
-						System.out.printf("%s - [%s] Cartao amarelo\n",jogadores.retornaJogadorNome(jogador.get(0),selecao.getListaSelecoes()),jogador.get(1));
-					}	
-				}
-			}else {
-				System.out.printf("0\n");
-			}
-
-			System.out.printf("Cartoes Amarelos [%s]:\n", partida.getSelecao2());
-			if(partida.getCartoesAmarelosSelecao2().size()>0) {
-				for(List<String> jogador: partida.getCartoesAmarelosSelecao2()) {
-					if(jogador.size()> 0 && Integer.parseInt(jogador.get(1))>0) {
-						System.out.printf("%s - [%s] Cartao Amarelo\n",jogadores.retornaJogadorNome(jogador.get(0),selecao.getListaSelecoes()),jogador.get(1));
-					}
-				}
-			}else {
-				System.out.printf("0\n");
-			}
-
-			System.out.printf("Cartoes Vermelhos [%s]:\n", partida.getSelecao1());
-			if(partida.getCartoesVermelhosSelecao1().size()>0) {
-				for(List<String> jogador: partida.getCartoesVermelhosSelecao1()) {
-					if(jogador.size()> 0 && Integer.parseInt(jogador.get(1))>0) {
-						System.out.printf("%s - [%s] Cartao Vermelho\n",jogadores.retornaJogadorNome(jogador.get(0),selecao.getListaSelecoes()),jogador.get(1));
-					}
-				}
-			}else {
-				System.out.printf("0\n");
-			}
-
-
-			System.out.printf("Cartoes Vermelhos [%s]:\n", partida.getSelecao2());
-			if(partida.getCartoesVermelhosSelecao2().size()>0) {
-				for(List<String> jogador: partida.getCartoesVermelhosSelecao2()) {
-					if(jogador.size()> 0) {
-						System.out.printf("%s - [%s] Cartao Vermelho\n",jogadores.retornaJogadorNome(jogador.get(0),selecao.getListaSelecoes()),jogador.get(1));
-					}
-				}
-			}else{
-				System.out.printf("0\n");
-				return true;
-			}
-
-			System.out.println("---------------------------------------\n");
-		}
-		return false;
-	}
-
-	public boolean listarPartidaCodigoJogados(String grupo) {
-		List<Partida> jogo = partidas.get(grupo);
-		String selecao1 = "";
-		String selecao2 = "";
-		int controle = 0;
-		for (int i = 0; i < jogo.size(); i++) {
-			if(jogo.get(i).isSituacao()) {
-				selecao1 = jogo.get(i).getSelecao1();
-				selecao2 = jogo.get(i).getSelecao2();
-				System.out.printf("[%s] %s X %s\n",jogo.get(i).getCodigo(),jogo.get(i).getSelecao1(),jogo.get(i).getSelecao2());
-				controle = 1;
-			}
-		}
-		if(controle == 0) {
-			System.out.println("Nenhuma partida foi realizada!");
-			return false;
-		}
-		System.out.println("\n");
-		return true;
-	}
-	
-
-	public boolean listarPartidaCodigoNaoJogadas(String grupo) {
-		List<Partida> jogo = partidas.get(grupo);
-		String selecao1 = "";
-		String selecao2 = "";
-		int controle = 0;
-		for (int i = 0; i < jogo.size(); i++) {
-			if(jogo.get(i).isSituacao() == false) {
-				selecao1 = jogo.get(i).getSelecao1();
-				selecao2 = jogo.get(i).getSelecao2();
-				System.out.printf("[%s] %s X %s\n",jogo.get(i).getCodigo(),jogo.get(i).getSelecao1(),jogo.get(i).getSelecao2());
-				controle = 1;
-			}
-		}
-		if(controle == 0) {
-			System.out.println("Todas partidas ja forma realizadas");
-			return false;
-		}
-		System.out.println("\n");
-		return true;
-
-	}
-	
 	private static void resetaListasPartida(List<List<String>> lista) {
 		for(List<String> jogador: lista) {
 			jogador.set(1, "0");
 		}
 	}
 
-	public Partida findPartida(String codigo) {
+	public static Partida findPartida(String codigo) {
 		Partida dPartida = null;
 		for (Map.Entry<String, List<Partida>> partida : partidas.entrySet()) {
 			for (int i = 0; i < partida.getValue().size(); i++) {
@@ -391,20 +243,6 @@ public class PartidaDaoImpl implements PartidaDAO{
 
 	public void atualizarLocal(Partida partida, int local) {
 		partida.setLocal(estadios[local]);
-	}
-
-	public boolean listarJogadoresCartoes(List<List<String>> jogadoresList) {
-		if(jogadoresList.size() > 0) {
-			for (int j = 0; j < jogadoresList.size(); j++) {
-				List<String> jogador = jogadoresList.get(j);
-				System.out.printf("[%d] %s - %s\n",j,jogadores.retornaJogadorNome(jogador.get(0),selecao.getListaSelecoes()),jogador.get(1));
-
-			}
-		}
-		else {
-			return false;
-		}
-		return true;
 	}
 
 	public boolean adicionarCartaoAmarelo(int cartao, List<String> jogador) {
@@ -478,9 +316,9 @@ public class PartidaDaoImpl implements PartidaDAO{
 			}
 	}
 	@Override
-	public boolean deletar(String codigo) {
+	public void listarPartida(String grupo) {
 		// TODO Auto-generated method stub
-		return false;
+		
 	}
 }
 

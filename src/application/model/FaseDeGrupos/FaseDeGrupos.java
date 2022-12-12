@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import application.model.PartidaPackage.Partida;
 import application.model.PartidaPackage.PartidaDaoImpl;
@@ -47,29 +48,62 @@ public class FaseDeGrupos extends PartidaDaoImpl{
 						Partida jogo = new Partida(selecao1,selecao2);
 						jogo.setCodigo(this.partida.geraid());
 						partidaGrupo.add(jogo);
-						this.partidas.put(grupos[i], partidaGrupo);
+						FaseDeGrupos.partidas.put(grupos[i], partidaGrupo);
 					}
 				}
 			}
 		}
 	}
-	public boolean verificaPartidas(String grupo) {
+	
+	public void cadastraPartidasAleatorias(){
+		Random random = new Random();
 		String[] grupos = {"A","B","C","D","E","F","G","H"};
 		for (int i = 0; i < grupos.length; i++) {
-			List<Partida> jogo = partidas.get(grupo);
-			int controle = 0;
-			for (int j = 0; j < jogo.size(); j++) {
-				if(jogo.get(j).isSituacao()) {
-					controle = 1;
+			List<Partida> jogo = partidas.get(grupos[i]);
+			if(grupos[i] == "H") {
+				for (int j = 0; j < jogo.size()-1; j++) {
+					int placar1 = random.nextInt(10);
+					int placar2 = random.nextInt(10);
+					jogo.get(j).setSituacao(true);
+					jogo.get(j).setPlacarSelecao1(String.valueOf(placar1));
+					jogo.get(j).setPlacarSelecao2(String.valueOf(placar2));
+					pontuacao(jogo.get(j),placar1,placar2);
+				}
+			}else {
+				for (int j = 0; j < jogo.size(); j++) {
+					int placar1 = random.nextInt(10);
+					int placar2 = random.nextInt(10);
+					jogo.get(j).setSituacao(true);
+					jogo.get(j).setPlacarSelecao1(String.valueOf(placar1));
+					jogo.get(j).setPlacarSelecao2(String.valueOf(placar2));
+					pontuacao(jogo.get(j),placar1,placar2);
 				}
 			}
-			if(controle == 0) {
-				return false;
+		}
+	}
+	
+	public boolean verificaPartidas() {
+		String[] grupos = {"A","B","C","D","E","F","G","H"};
+		for (int i = 0; i < grupos.length; i++) {
+			List<Partida> jogo = partidas.get(grupos[i]);
+			for (int j = 0; j < jogo.size(); j++) {
+				if(jogo.get(j).isSituacao() == false) {
+					return false;
+				}
 			}
 		}
 		return true;
 	}
 	
+	
+	public boolean verificaExistePartida(List<Partida> disputas) {
+		for (int j = 0; j < disputas.size(); j++) {
+			if(disputas.get(j).isSituacao() == true) {
+				return false;
+			}
+		}
+	return true;
+}
 	public boolean formaGrupo() {
 		String[] grupos = {"A","B","C","D","E","F","G","H"};
 		for (int i = 0; i < grupos.length; i++) {
@@ -80,7 +114,7 @@ public class FaseDeGrupos extends PartidaDaoImpl{
 						grupoSelecao.add(selecao);
 					}
 				}
-				this.grupos.put(grupos[i], grupoSelecao);
+				FaseDeGrupos.grupos.put(grupos[i], grupoSelecao);
 			}
 			else {
 				return false;
@@ -91,35 +125,13 @@ public class FaseDeGrupos extends PartidaDaoImpl{
 	}
 
 	
-	public boolean imprimeGrupos(){
-
-		System.out.println("[Lista de Grupos]");
-		String[] grupos = {"A","B","C","D","E","F","G","H"};
-		if(!selecao.getListaSelecoes().isEmpty()) {
-			for (int i = 0; i < grupos.length; i++) {
-				System.out.printf("[%d] Grupo %s\n",i,grupos[i]);
-				for(Selecao selecao: selecao.getListaSelecoes()) {
-					if(selecao.getGrupo().equals(grupos[i])) {
-						System.out.printf("-%s\n",selecao.getNome());
-					}
-
-				}
-				System.out.println("-------------");
-			}
-			System.out.println("");
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean pontuacao(Partida partida) {
+	public boolean pontuacao(Partida partida, int golsSelecao1, int golsSelecao2) {
 		int IndiceSelecao1 = selecao.buscaSelecao(partida.getSelecao1());
 		int IndiceSelecao2 = selecao.buscaSelecao(partida.getSelecao2());
 		if((IndiceSelecao1 != -1) && (IndiceSelecao2 != -1)){
 			final Selecao selecao2 = selecao.getListaSelecoes().get(IndiceSelecao2);
 			final Selecao selecao1 = selecao.getListaSelecoes().get(IndiceSelecao1);
 			
-			int golsSelecao1 = this.partida.somaConteudo(partida.getGolsSelecao1());
 			int cartoesVermelhosSelecao1 = this.partida.somaConteudo(partida.getCartoesVermelhosSelecao1());
 			int cartoesAmarelosSelecao1 = this.partida.somaConteudo(partida.getCartoesAmarelosSelecao1());
 
@@ -127,7 +139,6 @@ public class FaseDeGrupos extends PartidaDaoImpl{
 			selecao1.setQuantidadeCartoesAmarelos(cartoesAmarelosSelecao1);
 			selecao1.setQuantidadeCartoesVermelhos(cartoesVermelhosSelecao1);
 
-			int golsSelecao2 = this.partida.somaConteudo(partida.getGolsSelecao2());
 			int cartoesVermelhosSelecao2 = this.partida.somaConteudo(partida.getCartoesVermelhosSelecao2());
 			int cartoesAmarelosSelecao2 = this.partida.somaConteudo(partida.getCartoesAmarelosSelecao2());
 

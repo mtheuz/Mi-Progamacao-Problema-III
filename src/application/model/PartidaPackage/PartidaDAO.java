@@ -1,7 +1,6 @@
 package application.model.PartidaPackage;
 
 public interface PartidaDAO {
-	public boolean deletar(String codigo);
 	public boolean inserir(String dia, String mes, String ano, String hora, String minuto, String local, Partida partida);
 	public void listarPartida(String grupo);
 	public void atualizarData(Partida partida, String dia, String mes, String ano);

@@ -2,10 +2,10 @@ package application.controller;
 import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import application.Main;
-import application.model.ArbitroPackage.Arbitro;
+import application.model.Eliminatoria.Eliminatoria;
+import application.model.FaseDeGrupos.FaseDeGrupos;
 import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
@@ -43,8 +43,8 @@ public class TelaInicio{
     
     SelecaoDaoImpl selecaoDao = new SelecaoDaoImpl();
     JogadorDaoImpl jogadorDao = new JogadorDaoImpl(selecaoDao.getListaSelecoes());
-    
-    public static ArrayList<Arbitro> listaArbitros = new ArrayList<Arbitro>();
+    FaseDeGrupos fase = new FaseDeGrupos(SelecaoDaoImpl.listaSelecoes);
+    Eliminatoria eliminatoria = new Eliminatoria(SelecaoDaoImpl.listaSelecoes,FaseDeGrupos.grupos);
     
     @FXML
     void btnCarregarPreSetAction(ActionEvent event) throws IOException {
@@ -56,8 +56,11 @@ public class TelaInicio{
     
     
     @FXML
-    void btnIniciarFaseDeGruposAction(ActionEvent event) throws IOException {
-    	TelaPartida controller = new TelaPartida();
+    void btnIniciarFaseDeGruposAction(ActionEvent event) throws IOException, InterruptedException {
+    	fase.geraPartidas();
+    	fase.formaGrupo();
+    	fase.cadastraPartidasAleatorias();
+    	TelaPartida controller = new TelaPartida(selecaoDao,fase);
     	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", controller, selecaoDao);
     	
     }

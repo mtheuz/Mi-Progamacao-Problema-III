@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Partida { 
+	private String placarSelecao1;
+	private String placarSelecao2;
 	private String codigo;
 	private String data;
 	private String horario;
@@ -19,6 +21,39 @@ public class Partida {
 	private List<List<String>> cartoesAmarelosSelecao1;
 	private List<List<String>> cartoesAmarelosSelecao2;
 	private boolean situacao;
+	private boolean eliminatoria;
+	
+	public boolean isEliminatoria() {
+		return eliminatoria;
+	}
+
+
+	public void setEliminatoria(boolean eliminatoria) {
+		this.eliminatoria = eliminatoria;
+	}
+
+
+	public String getPlacarSelecao1() {
+		return placarSelecao1;
+	}
+
+
+	public void setPlacarSelecao1(String placarSelecao1) {
+		this.placarSelecao1 = placarSelecao1;
+	}
+
+
+	public String getPlacarSelecao2() {
+		return placarSelecao2;
+	}
+
+
+	public void setPlacarSelecao2(String placarSelecao2) {
+		this.placarSelecao2 = placarSelecao2;
+	}
+
+
+
 	public String getPerdedor() {
 		return perdedor;
 	}
@@ -145,6 +180,8 @@ public class Partida {
 	
 	
 	public Partida(String selecao1,String selecao2) {
+		this.placarSelecao1 = "X";
+		this.placarSelecao2 = "X";
 		this.selecao1 = selecao1;
 		this.selecao2 = selecao2;
 		this.situacao = false;
@@ -155,6 +192,7 @@ public class Partida {
 		this.golsSelecao2 = new ArrayList<List<String>>();
 		this.golsSelecao1 = new ArrayList<List<String>>();
 		this.data = "00/00/00";
+		this.eliminatoria = false;
 		
 	}
 

@@ -38,7 +38,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <graphic>
-            <Label alignment="CENTER" onDragDetected="#btnAbrirFaseDeGruposAction" prefHeight="79.0" prefWidth="154.0" text="FASE DE GRUPOS" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+            <Label alignment="CENTER" onDragDetected="#btnAbrirFaseDeGruposAction" prefHeight="79.0" prefWidth="196.0" text="FASE DE GRUPOS" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -53,55 +53,83 @@
             <Image url="@../copa.png" />
          </image>
       </ImageView>
-      <Button fx:id="otavasDeFinla" layoutX="371.0" layoutY="217.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="oitavasDeFinal" disable="true" layoutX="371.0" layoutY="217.0" mnemonicParsing="false" onAction="#btnabrirOitavas" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <graphic>
+            <Label fx:id="oitavasDeFinalLabel" alignment="CENTER" contentDisplay="CENTER" disable="true" onDragDetected="#btnabrirOitavas" prefHeight="79.0" prefWidth="189.0" text="OITAVAS DE FINAL" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="228.0" prefHeight="79.0" prefWidth="119.0" text="OITAVAS DE FINAL" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
-      <Button fx:id="quartasDeFinal" layoutX="604.0" layoutY="218.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="quartasDeFinal" disable="true" layoutX="604.0" layoutY="218.0" mnemonicParsing="false" onAction="#btnabrirQuartas" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <graphic>
+            <Label fx:id="quartasDeFinalLabel" alignment="CENTER" disable="true" onDragDetected="#btnabrirQuartas" prefHeight="79.0" prefWidth="222.0" text="QUARTAS DE FINAL" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label alignment="CENTER" layoutX="643.0" layoutY="228.0" prefHeight="79.0" prefWidth="132.0" text="QUARTAS DE FINAL" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
-      <Button fx:id="semiFinal" layoutX="134.0" layoutY="347.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="semiFinal" disable="true" layoutX="134.0" layoutY="347.0" mnemonicParsing="false" onAction="#btnabrirSemiFinal" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <graphic>
+            <Label fx:id="semiFinalLabel" alignment="CENTER" disable="true" onDragDetected="#btnabrirSemiFinal" prefHeight="81.0" prefWidth="189.0" text="SEMI FINAL" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label layoutX="173.0" layoutY="385.0" prefHeight="32.0" prefWidth="132.0" text="SEMI FINAL" textFill="#6b1839" wrapText="true">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
-      <Button fx:id="terceiroLugar" layoutX="371.0" layoutY="348.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="terceiroLugar" disable="true" layoutX="371.0" layoutY="348.0" mnemonicParsing="false" onAction="#btnabrirTerceiroLugar" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <graphic>
+            <Label fx:id="terceiroLugarLabel" alignment="CENTER" disable="true" onDragDetected="#btnabrirTerceiroLugar" prefHeight="156.0" prefWidth="166.0" text="DISPUTA 3° LUGAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label alignment="CENTER" layoutX="411.0" layoutY="365.0" prefHeight="72.0" prefWidth="132.0" text="DISPUTA 3° LUGAR" textAlignment="CENTER" textFill="#6b1839" wrapText="true">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
-      <Button fx:id="Final" layoutX="604.0" layoutY="349.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="Final" disable="true" layoutX="604.0" layoutY="349.0" mnemonicParsing="false" onAction="#btnabrirFinal" prefHeight="103.0" prefWidth="210.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
+         <graphic>
+            <Label fx:id="finalLabel" alignment="CENTER" disable="true" onDragDetected="#btnabrirFinal" prefHeight="81.0" prefWidth="223.0" text="FINAL" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label layoutX="676.0" layoutY="384.0" prefHeight="32.0" prefWidth="66.0" text="FINAL" textFill="#6b1839" wrapText="true">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

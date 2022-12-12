@@ -287,7 +287,6 @@ private void atualizarSelecaoNoGrupo(String nome,String novoNomeSelecao, Partida
  * @return int
  */
 public int buscaSelecao( String nomeSelecao) {
-	System.out.println(SelecaoDaoImpl.listaSelecoes.size());
 	for(int i=0; i<SelecaoDaoImpl.listaSelecoes.size();i++) /*Laço para procurar Tecnico nos cadastros*/
 	{
 		if(( SelecaoDaoImpl.listaSelecoes.get(i)).getNome().toUpperCase().equals(nomeSelecao.toUpperCase())) /*verificação de cada cada cadastro na lista com o nome a ser procurado*/

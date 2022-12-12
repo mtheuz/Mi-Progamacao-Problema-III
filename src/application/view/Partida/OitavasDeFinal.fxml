@@ -179,7 +179,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="partida2" layoutX="251.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#buttonPartida2" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
+            <Button fx:id="partida2" layoutX="250.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#buttonPartida2" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
@@ -215,36 +215,36 @@
       </AnchorPane>
       <AnchorPane layoutX="482.0" layoutY="217.0" prefHeight="289.0" prefWidth="462.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 20px;">
          <children>
-            <Pane fx:id="pane31" layoutX="29.0" layoutY="151.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
+            <Pane fx:id="pane7" layoutX="29.0" layoutY="151.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
                <children>
-                  <Label fx:id="labelOpcao31" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
+                  <Label fx:id="labelOpcao7" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="pane41" layoutX="243.0" layoutY="151.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
+            <Pane fx:id="pane8" layoutX="243.0" layoutY="151.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
                <children>
-                  <Label fx:id="labelOpcao41" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
+                  <Label fx:id="labelOpcao8" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="pane21" layoutX="243.0" layoutY="48.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
+            <Pane fx:id="pane6" layoutX="243.0" layoutY="48.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
                <children>
-                  <Label fx:id="labelOpcao21" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
+                  <Label fx:id="labelOpcao6" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="pane11" layoutX="30.0" layoutY="48.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
+            <Pane fx:id="pane5" layoutX="30.0" layoutY="48.0" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: #726e6e; -fx-background-radius: 10;" visible="false">
                <children>
-                  <Label fx:id="labelOpcao11" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
+                  <Label fx:id="labelOpcao5" alignment="CENTER" layoutX="40.0" layoutY="-5.0" prefHeight="25.0" prefWidth="122.0" text="Click para cadastrar" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -357,7 +357,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="partida8" layoutX="251.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#buttonPartida4" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
+            <Button fx:id="partida8" layoutX="251.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#buttonPartida8" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
@@ -365,7 +365,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="partida7" layoutX="37.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#buttonPartida3" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
+            <Button fx:id="partida7" layoutX="37.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#buttonPartida7" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
@@ -373,7 +373,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="partida5" layoutX="38.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#buttonPartida1" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
+            <Button fx:id="partida5" layoutX="38.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#buttonPartida5" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
@@ -381,10 +381,24 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="partida6" layoutX="250.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#buttonPartida2" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
+            <Button fx:id="partida6" layoutX="250.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#buttonPartida6" onMouseEntered="#entrarBotao" onMouseExited="#sairBotao" prefHeight="76.0" prefWidth="183.0" style="-fx-background-color: #FFFF; -fx-background-color: none;" textFill="#6b1839">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="435.0" layoutY="538.0" prefHeight="38.0" prefWidth="94.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <Label layoutX="15.0" layoutY="5.0" prefHeight="32.0" prefWidth="74.0" text="VOLTAR" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnVoltar" layoutX="5.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="38.0" prefWidth="84.0" text="vOLTAR">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

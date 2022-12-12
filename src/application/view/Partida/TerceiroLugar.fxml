@@ -84,5 +84,19 @@
             </Button>
          </children>
       </AnchorPane>
+      <AnchorPane layoutX="429.0" layoutY="425.0" prefHeight="38.0" prefWidth="94.0" style="-fx-background-radius: 60px; -fx-background-color: #ffff;">
+         <children>
+            <Label layoutX="15.0" layoutY="5.0" prefHeight="32.0" prefWidth="74.0" text="VOLTAR" textFill="#6b1839" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnVoltar" layoutX="5.0" mnemonicParsing="false" onAction="#btnVoltarAction" opacity="0.05" prefHeight="38.0" prefWidth="84.0" text="vOLTAR">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

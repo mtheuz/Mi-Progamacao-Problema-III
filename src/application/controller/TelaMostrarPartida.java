@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.FaseDeGrupos.FaseDeGrupos;
 import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.PartidaPackage.Partida;
 import application.model.PartidaPackage.PartidaDaoImpl;
@@ -19,10 +20,12 @@ public class TelaMostrarPartida {
 
 	private Partida partida;
 	private SelecaoDaoImpl selecaoDao;
+	private FaseDeGrupos fase;
 	
-    public TelaMostrarPartida(SelecaoDaoImpl selecaoDao, Partida partida) {
+    public TelaMostrarPartida(FaseDeGrupos fase, SelecaoDaoImpl selecaoDao, Partida partida) {
 		this.selecaoDao = selecaoDao;
     	this.partida = partida;
+    	this.fase = fase;
     }
    
     @FXML
@@ -240,19 +243,21 @@ public class TelaMostrarPartida {
     
    
     @FXML
-    void btnCancelarPartidaAction(ActionEvent event) {
+    void btnCancelarPartidaAction(ActionEvent event) throws IOException {
     	PartidaDaoImpl.deletar(partida);
+    	TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, partida);
+		Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
     }
 
     @FXML
     void btnEditarPartidaAction(ActionEvent event) throws IOException {
-    	ControllerCadastroPartida cadastroPartida = new ControllerCadastroPartida(this.partida);
+    	ControllerCadastroPartida cadastroPartida = new ControllerCadastroPartida(this.partida, selecaoDao, null, null);
 		Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
     }
 
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
-    	TelaPartida controller = new TelaPartida();
+    	TelaPartida controller = new TelaPartida(selecaoDao, fase);
     	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", controller, selecaoDao);
     }
 
@@ -268,8 +273,8 @@ public class TelaMostrarPartida {
         nomeSelecao2.setText(partida.getSelecao2());
         nomeSelecao3.setText(partida.getSelecao1());
         nomeSelecao4.setText(partida.getSelecao2());
-        gols1.setText(Integer.toString(partida.getGolsSelecao1().size()));
-        gols2.setText(Integer.toString(partida.getGolsSelecao2().size()));
+        gols1.setText(partida.getPlacarSelecao1());
+        gols2.setText(partida.getPlacarSelecao2());
         
         ArrayList<Label> labelsJogadoresGolstime1= new ArrayList<Label>();
         labelsJogadoresGolstime1.add( golJog1Time1);

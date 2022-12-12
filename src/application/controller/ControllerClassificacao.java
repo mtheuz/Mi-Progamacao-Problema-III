@@ -3,10 +3,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import application.Main;
 import application.model.FaseDeGrupos.FaseDeGrupos;
 import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.SelecaoPackage.Selecao;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -95,22 +98,16 @@ public class ControllerClassificacao implements Initializable{
     @FXML
     private ChoiceBox<String> grupos;
     
+    FaseDeGrupos fase;
+    SelecaoDaoImpl selecaoDao;
     private String[] gruposNome = {"GRUPO A", "GRUPO B","GRUPO C","GRUPO D","GRUPO E","GRUPO F","GRUPO G","GRUPO H"};
 
+    public ControllerClassificacao(FaseDeGrupos fase, SelecaoDaoImpl selecaoDao) {
+		this.fase = fase;
+		this.selecaoDao = selecaoDao;
+	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//Teste
-		SelecaoDaoImpl selecao = new SelecaoDaoImpl();
-		JogadorDaoImpl jogador = new JogadorDaoImpl(selecao.getListaSelecoes());
-		FaseDeGrupos fase = new FaseDeGrupos(selecao.getListaSelecoes());
-		
-		try {
-			selecao.leArquivoSelecoes();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		fase.formaGrupo();
-		//
 		
 		grupos.getItems().addAll(gruposNome);
 		grupos.setValue("GRUPO A");
@@ -150,6 +147,12 @@ public class ControllerClassificacao implements Initializable{
 		grupos.setOnAction(e -> checkchoicebox(grupos));
 		
 	}
+	 	@FXML
+	    void btnVoltarAction(ActionEvent event) throws IOException {
+		 TelaTabelaDeGrupos controller = new TelaTabelaDeGrupos(selecaoDao, fase);
+		Main.trocaDeTela("/application/view/Partida/TelaTodasPartidas.fxml", controller, null);
+	    }
+
 	public void checkchoicebox(ChoiceBox<String> choicebox) {
 		String grupoChoiceBox = choicebox.getValue();
 		grupoTitle.setText(grupoChoiceBox);
