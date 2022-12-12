@@ -71,52 +71,55 @@ public class TelaCadastrarSelecao {
 		String nomeTecnico = this.nomeTecnico.getText();
 		
 		
-		
-		if(selecao!= null && selecao!="")
+		if(selecaoDao.getListaSelecoes().size()<32)
 		{
-			if(nomeTecnico!= null && nomeTecnico != "")
+			if(selecao!= null && selecao!="")
 			{
-				boolean resultado = selecaoDao.ComparaSelecao(selecao);
-				if(resultado == true)
+				if(nomeTecnico!= null && nomeTecnico != "")
 				{
-					Selecao selecaoo = new Selecao();
-					selecaoo.setNome(selecao);
-					Tecnico tecnico = new Tecnico();
-					tecnico.setNome(nomeTecnico);
-					selecaoo.setTecnico(tecnico);
-					selecaoDao.getListaSelecoes().add(selecaoo);
-					
-					TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, selecao);
-					Main.trocaDeTela("/application/view/Jogador/TelaCadastrarJogador.fxml",controller, selecaoDao);
-				} 
-				if(resultado == false) 
-				{
-					label.setText("Seleção Já cadastrada");
-					
-					/**
-					 * int indice = selecaoDao.buscaSelecao(selecao);
-					s
-					if(listaSelecoes.get(indice).getListaJogadores().size() >25)
+					boolean resultado = selecaoDao.ComparaSelecao(selecao);
+					if(resultado == true)
 					{
+						Selecao selecaoo = new Selecao();
+						selecaoo.setNome(selecao);
+						Tecnico tecnico = new Tecnico();
+						tecnico.setNome(nomeTecnico);
+						selecaoo.setTecnico(tecnico);
+						selecaoDao.getListaSelecoes().add(selecaoo);
 						
-					}
-					else
-					{
 						TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, selecao);
 						Main.trocaDeTela("/application/view/Jogador/TelaCadastrarJogador.fxml",controller, selecaoDao);
-					}
-					***/
-					
-			}
+					} 
+					if(resultado == false) 
+					{
+						label.setText("Seleção Já cadastrada");
+						
+						/**
+						 * int indice = selecaoDao.buscaSelecao(selecao);
+						s
+						if(listaSelecoes.get(indice).getListaJogadores().size() >25)
+						{
+							
+						}
+						else
+						{
+							TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, selecao);
+							Main.trocaDeTela("/application/view/Jogador/TelaCadastrarJogador.fxml",controller, selecaoDao);
+						}
+						***/
+						
+				}
+				}
+				else
+					label.setText("Digite o nome do Técnico");
 			}
 			else
-				label.setText("Digite o nome do Técnico");
+				label.setText("Digite o nome da Seleção");
 		}
 		else
-			label.setText("Digite o nome da Seleção");
-    }
+			label.setText("Lista de Seleções Completa!");
 
-		
+    }
     
    
 

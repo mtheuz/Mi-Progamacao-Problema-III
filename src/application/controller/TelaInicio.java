@@ -2,8 +2,10 @@ package application.controller;
 import java.io.IOException;
 import java.lang.ModuleLayer.Controller;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import application.Main;
+import application.model.ArbitroPackage.Arbitro;
 import application.model.Eliminatoria.Eliminatoria;
 import application.model.FaseDeGrupos.FaseDeGrupos;
 import application.model.JogadorPackage.JogadorDaoImpl;
@@ -31,14 +33,20 @@ public class TelaInicio{
     private Button btnCarregarPreSet;
     
     @FXML
+    private Button btnIniciarFaseDeGrupos2;
+    
+    @FXML
     private Button btnIniciarFaseDeGrupos;
     
     @FXML
     private Label label;
     
+    @FXML
+    private Label label1;
+    
     private int num;
    
-    
+    public static ArrayList<Arbitro> listaArbitros = new ArrayList<Arbitro>();
     
     
     SelecaoDaoImpl selecaoDao = new SelecaoDaoImpl();
@@ -46,12 +54,15 @@ public class TelaInicio{
     FaseDeGrupos fase = new FaseDeGrupos(SelecaoDaoImpl.listaSelecoes);
     Eliminatoria eliminatoria = new Eliminatoria(SelecaoDaoImpl.listaSelecoes,FaseDeGrupos.grupos);
     
+    
     @FXML
-    void btnCarregarPreSetAction(ActionEvent event) throws IOException {
+    void btnCarregarPreSetAction(ActionEvent event) throws IOException, InterruptedException {
+    	label1.setText("Carregando...");
     	selecaoDao.leArquivoSelecoes();
     	jogadorDao.transformaEmMap();
+    	label1.setText(null);
     	label.setText("Pré Set Carregado com sucesso!");
-    	
+    	initialize();
     }
     
     
@@ -80,5 +91,30 @@ public class TelaInicio{
         assert btnCarregarPreSet != null : "fx:id=\"btnCarregarPreSet\" was not injected: check your FXML file 'TelaInicio.fxml'.";
         assert btnIniciarFaseDeGrupos != null : "fx:id=\"btnIniciarFaseDeGrupos\" was not injected: check your FXML file 'TelaInicio.fxml'.";
         assert label != null : "fx:id=\"label\" was not injected: check your FXML file 'TelaInicio.fxml'.";
+        assert label1 != null : "fx:id=\"label\" was not injected: check your FXML file 'TelaInicio.fxml'.";
+        btnIniciarFaseDeGrupos.setDisable(true);
+        btnIniciarFaseDeGrupos2.setDisable(true);
+        
+        
+       
+        boolean teste = false;
+        
+        if(selecaoDao.getListaSelecoes().size()==32)
+        {
+        	 for(int i =0; selecaoDao.getListaSelecoes().size()<32; i++)
+        	 {
+        		 if(selecaoDao.getListaSelecoes().get(i).getListaJogadores().size()!= 26)
+        		 {
+        			 teste = false;
+        		 }
+        	 }
+        	 teste = true;
+        }
+        
+        if(teste == true)
+        {
+        	btnIniciarFaseDeGrupos.setDisable(false);
+            btnIniciarFaseDeGrupos2.setDisable(false);
+        }
     }
 }

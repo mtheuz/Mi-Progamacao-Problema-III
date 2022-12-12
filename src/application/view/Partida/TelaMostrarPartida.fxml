@@ -88,7 +88,7 @@
             </Label>
          </children>
       </Pane>
-      <Button layoutX="128.0" layoutY="395.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="202.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnEditarPartida1" layoutX="128.0" layoutY="395.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="202.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -119,7 +119,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="128.0" layoutY="478.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="202.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
+      <Button fx:id="btnCancelarPartida1" layoutX="128.0" layoutY="478.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="202.0" style="-fx-background-color: #FFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 4, 4);" textFill="#6b1839">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

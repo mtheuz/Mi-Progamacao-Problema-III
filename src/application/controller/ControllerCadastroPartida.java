@@ -212,8 +212,9 @@ public class ControllerCadastroPartida implements Initializable{
 	void clickbuttonCVSelecao1(ActionEvent event) {
 		String jogadorSelecao1CartaoVermelho = choiceBoxJogadoresSelecao1CV.getValue();
 		String codigo = codigoSelecao1.get(jogadorSelecao1CartaoVermelho);
+		System.out.println(codigo);
 		if(!fase.inputCartosVermelhoSelecao1(partida,codigo)) 
-			erroCVSelecao1.setText("Quantidade de Gols não coerente");
+			erroCVSelecao1.setText("Quantidade de Cartões não coerente");
 		else {
 			erroCVSelecao1.setText("Cartões adicionado ao jogador");
 		}
@@ -242,23 +243,21 @@ public class ControllerCadastroPartida implements Initializable{
 	void clickbuttonCASelecao2(Event event) {
 		String cartoes = cartaoAmareloSelecao2.getText();
 		String jogadorSelecao2Gol = choiceBoxJogadoresSelecao2CA.getValue();
-		String codigo = codigoSelecao1.get(jogadorSelecao2Gol);
-		if(!fase.inputCartosAmarelosSelecao2(partida, cartoes, codigo)) 
-			erroCASelecao2.setText("Quantidade de Cartões não coerente");
-		else {
-			erroCASelecao2.setText("Cartões adicionado ao jogador");
-		}
+		String codigo = codigoSelecao2.get(jogadorSelecao2Gol);
+		fase.inputCartosAmarelosSelecao2(partida, cartoes, codigo);
+			
+		
 		
 	}
 	@FXML
 	void clickbuttonCVSelecao2(Event event) {
 		String jogadorSelecao2CartaoVermelho = choiceBoxJogadoresSelecao2CV.getValue();
-		String codigo = codigoSelecao1.get(jogadorSelecao2CartaoVermelho);
-		if(!fase.inputCartosVermelhoSelecao2(partida,codigo)) 
-			erroCVSelecao2.setText("Quantidade de Gols não coerente");
-		else {
-			erroCVSelecao2.setText("Cartões adicionado ao jogador");
-		}
+		String codigo = codigoSelecao2.get(jogadorSelecao2CartaoVermelho);
+		fase.inputCartosVermelhoSelecao2(partida,codigo);
+		erroGolsSelecao2.setText("Gols adicionado ao jogador");
+		System.out.println(codigo);
+			
+		
 	}
 	
 	@FXML
@@ -266,7 +265,7 @@ public class ControllerCadastroPartida implements Initializable{
 		if(placarSelecao2.getText() != "" ){
 		String gols = golsSelecao2.getText();
 		String jogadorSelecao2Gol = choiceBoxJogadoresSelecao2G.getValue();
-		String codigo = codigoSelecao1.get(jogadorSelecao2Gol);
+		String codigo = codigoSelecao2.get(jogadorSelecao2Gol);
 		if(Integer.parseInt(placarSelecao2.getText()) == 0){
 			erroGolsSelecao2.setText("A " + nomeSelecao2 + " não fez gol");
 		}

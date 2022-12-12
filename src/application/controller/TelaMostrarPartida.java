@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.Main;
+import application.model.Eliminatoria.Eliminatoria;
 import application.model.FaseDeGrupos.FaseDeGrupos;
 import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.PartidaPackage.Partida;
@@ -21,11 +22,14 @@ public class TelaMostrarPartida {
 	private Partida partida;
 	private SelecaoDaoImpl selecaoDao;
 	private FaseDeGrupos fase;
+	private String endereco;
 	
-    public TelaMostrarPartida(FaseDeGrupos fase, SelecaoDaoImpl selecaoDao, Partida partida) {
+    public TelaMostrarPartida(FaseDeGrupos fase, SelecaoDaoImpl selecaoDao, Partida partida, String endereco ) {
 		this.selecaoDao = selecaoDao;
     	this.partida = partida;
     	this.fase = fase;
+    	this.endereco = endereco;
+    	
     }
    
     @FXML
@@ -126,9 +130,15 @@ public class TelaMostrarPartida {
 
     @FXML
     private Button btnCancelarPartida;
+    
+    @FXML
+    private Button btnCancelarPartida1;
 
     @FXML
     private Button btnEditarPartida;
+    
+    @FXML
+    private Button btnEditarPartida1;
 
     @FXML
     private Button btnVoltar;
@@ -245,7 +255,7 @@ public class TelaMostrarPartida {
     @FXML
     void btnCancelarPartidaAction(ActionEvent event) throws IOException {
     	PartidaDaoImpl.deletar(partida);
-    	TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, partida);
+    	TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, partida, endereco);
 		Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
     }
 
@@ -349,48 +359,106 @@ public class TelaMostrarPartida {
         int selecao1 = selecaoDao.buscaSelecao(this.partida.getSelecao1());
         int selecao2 = selecaoDao.buscaSelecao(this.partida.getSelecao2());
        
+       
         
         for(int i =0;i <partida.getGolsSelecao1().size();i++)
         {
-             int jogador = JogadorDaoImpl.buscarJogador(partida.getGolsSelecao1().get(0).get(1));
+             int jogador = JogadorDaoImpl.buscarJogador(partida.getGolsSelecao1().get(i).get(0));
              labelsJogadoresGolstime1.get(i).setText(selecaoDao.getListaSelecoes().get(selecao1).getListaJogadores().get(jogador).getNome());
         }
         
         for(int i =0;i <partida.getGolsSelecao2().size();i++)
         {
-        	int jogador = JogadorDaoImpl.buscarJogador(partida.getGolsSelecao2().get(0).get(1));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getGolsSelecao2().get(i).get(0));
         	labelsJogadoresGolstime2.get(i).setText(selecaoDao.getListaSelecoes().get(selecao2).getListaJogadores().get(jogador).getNome());
         }
         
         for(int i =0;i <partida.getCartoesAmarelosSelecao1().size();i++)
         {
-        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesAmarelosSelecao1().get(0).get(1));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesAmarelosSelecao1().get(i).get(0));
         	labelsYellowCardstime1.get(i).setText(selecaoDao.getListaSelecoes().get(selecao1).getListaJogadores().get(jogador).getNome());
         	 
         }
         
         for(int i =0;i <partida.getCartoesAmarelosSelecao2().size();i++)
         {
-        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesAmarelosSelecao2().get(0).get(1)); 
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesAmarelosSelecao2().get(i).get(0)); 
         	labelsYellowCardstime2.get(i).setText(selecaoDao.getListaSelecoes().get(selecao2).getListaJogadores().get(jogador).getNome());
         }
 
-
+        
         for(int i =0;i <partida.getCartoesVermelhosSelecao1().size();i++)
         {
-        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesVermelhosSelecao1().get(0).get(1));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesVermelhosSelecao1().get(i).get(0));
         	labelsRedCardstime1.get(i).setText(selecaoDao.getListaSelecoes().get(selecao1).getListaJogadores().get(jogador).getNome());
         }
         
         for(int i =0;i <partida.getCartoesVermelhosSelecao2().size();i++)
         {
-        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesVermelhosSelecao2().get(0).get(1));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesVermelhosSelecao2().get(i).get(0));
         	labelsRedCardstime2.get(i).setText(selecaoDao.getListaSelecoes().get(selecao2).getListaJogadores().get(jogador).getNome());
         }
-    }
-
     
         
+        switch(endereco)
+        {
+        	case "fase de grupos":
+        	if(fase.verificaPartidas())
+        	{
+        		btnEditarPartida.setDisable(true);
+        		btnCancelarPartida.setDisable(true);
+        		btnEditarPartida1.setDisable(true);
+        		btnCancelarPartida1.setDisable(true);
+        		
+        	}
+        	break;
+        	case "oitavas":
+            	if(Eliminatoria.verificaPartidas(Eliminatoria.oitavas))
+            	{
+            		btnEditarPartida.setDisable(true);
+            		btnCancelarPartida.setDisable(true);
+            		btnEditarPartida1.setDisable(true);
+            		btnCancelarPartida1.setDisable(true);
+            		
+            	}
+            	break;
+        	case "quartas":
+            	if(Eliminatoria.verificaPartidas(Eliminatoria.oitavas))
+            	{
+            		btnEditarPartida.setDisable(true);
+            		btnCancelarPartida.setDisable(true);
+            		btnEditarPartida1.setDisable(true);
+            		btnCancelarPartida1.setDisable(true);
+            	}
+            	break;
+        	case "semi":
+            	if(Eliminatoria.verificaPartidas(Eliminatoria.oitavas))
+            	{
+            		btnEditarPartida.setDisable(true);
+            		btnCancelarPartida.setDisable(true);
+            		btnEditarPartida1.setDisable(true);
+            		btnCancelarPartida1.setDisable(true);
+            	}
+        	case "final":
+            	if(Eliminatoria.Final.isSituacao()==true)
+            	{
+            		btnEditarPartida.setDisable(true);
+            		btnCancelarPartida.setDisable(true);
+            		btnEditarPartida1.setDisable(true);
+            		btnCancelarPartida1.setDisable(true);
+            	}
+            	break;
+        	case "terceiro lugar":
+            	if(Eliminatoria.TerceiroLugar()==true)
+            	{
+            		btnEditarPartida.setDisable(true);
+            		btnCancelarPartida.setDisable(true);
+            		btnEditarPartida1.setDisable(true);
+            		btnCancelarPartida1.setDisable(true);
+            	}
+            	break;
+        }
+    }
         
     }
 

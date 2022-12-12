@@ -236,7 +236,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0), "fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -249,7 +249,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -262,7 +262,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -275,7 +275,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -291,7 +291,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -304,7 +304,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -317,7 +317,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -330,7 +330,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -343,7 +343,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(0),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -363,7 +363,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -376,7 +376,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -389,7 +389,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -402,7 +402,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -418,7 +418,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -431,7 +431,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -444,7 +444,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -457,7 +457,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(1),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -490,7 +490,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -503,7 +503,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -516,7 +516,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -529,7 +529,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -545,7 +545,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -558,7 +558,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -571,7 +571,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -584,7 +584,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -597,7 +597,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(2),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/MostrarPartida.fxml", controller, null);
 				}
 			}
@@ -629,7 +629,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -642,7 +642,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -655,7 +655,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -671,7 +671,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -684,7 +684,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -697,7 +697,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -710,7 +710,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -723,7 +723,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(3),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -744,7 +744,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -758,7 +758,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 				}
 				else {
 					
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -771,7 +771,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -784,7 +784,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -798,7 +798,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -812,7 +812,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -825,7 +825,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -838,7 +838,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -851,7 +851,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(4),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -873,7 +873,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -886,7 +886,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -899,7 +899,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -912,7 +912,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -926,7 +926,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -940,7 +940,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -953,7 +953,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -966,7 +966,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
@@ -979,7 +979,7 @@ public class TelaTabelaDeGrupos implements Initializable{
 					Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
 				}
 				else {
-					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5));
+					TelaMostrarPartida controller = new TelaMostrarPartida(fase, selecaoDao, listaPartida.get(5),"fase de grupos");
 					Main.trocaDeTela("/application/view/Partida/TelaMostrarPartida.fxml", controller, null);
 				}
 			}
