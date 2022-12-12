@@ -36,6 +36,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 		JogadorDaoImpl jogadores = new JogadorDaoImpl(selecao.getListaSelecoes());
 		if(jogadores.verificaExistencia(codigo)) {
 			List<String> gols1 = new ArrayList<String>();
+			
 			gols1.add(codigo);
 			gols1.add(gols);
 			jogadores.atualizarGolsMarcados(codigo, partida.getSelecao1(), gols);
@@ -174,9 +175,8 @@ public class PartidaDaoImpl implements PartidaDAO{
 	}
 
 	
-	@Override
-	public boolean deletar(String codigo) {
-		final Partida partida = findPartida(codigo);
+	public static boolean deletar(Partida partida) {
+		//final Partida partida = findPartida(codigo);
 		if(partida != null) {
 			partida.setData("");
 			partida.setData("");
@@ -189,7 +189,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 			resetaListasPartida(partida.getCartoesVermelhosSelecao2());
 			resetaListasPartida(partida.getGolsSelecao1());
 			resetaListasPartida(partida.getGolsSelecao2());
-			mostrarPartida(codigo);
+			//mostrarPartida(codigo);
 			return true;
 		}
 		return false;
@@ -362,7 +362,7 @@ public class PartidaDaoImpl implements PartidaDAO{
 
 	}
 	
-	private void resetaListasPartida(List<List<String>> lista) {
+	private static void resetaListasPartida(List<List<String>> lista) {
 		for(List<String> jogador: lista) {
 			jogador.set(1, "0");
 		}
@@ -476,6 +476,11 @@ public class PartidaDaoImpl implements PartidaDAO{
 				System.err.println("Nao e possivel retirar gols");
 				return false;
 			}
+	}
+	@Override
+	public boolean deletar(String codigo) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
 

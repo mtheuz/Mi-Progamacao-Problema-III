@@ -121,5 +121,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="515.0" prefHeight="20.0" prefWidth="297.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

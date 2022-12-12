@@ -11,6 +11,7 @@ import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class TelaMenuTecnicos
 {
@@ -36,6 +37,10 @@ public class TelaMenuTecnicos
     @FXML
     private Button btnVoltar;
     
+
+    @FXML
+    private Label label;
+    
     private SelecaoDaoImpl selecaoDao;
     private ArrayList <Selecao> listaSelecoes;
 
@@ -47,29 +52,63 @@ public class TelaMenuTecnicos
 
 	@FXML
     void btnCadastrarTecnicoAction(ActionEvent event) throws IOException {
-		TelaEscolherSelecaoCadastrarTecnico controller = new TelaEscolherSelecaoCadastrarTecnico(selecaoDao);
-		Main.trocaDeTela("/application/view/Tecnico/TelaEscolherSelecaoCadastrarTecnico.fxml", controller, selecaoDao);
+		if(selecaoDao.getListaSelecoes().size()>0)
+		{
+			
+			TelaEscolherSelecaoCadastrarTecnico controller = new TelaEscolherSelecaoCadastrarTecnico(selecaoDao);
+			Main.trocaDeTela("/application/view/Tecnico/TelaEscolherSelecaoCadastrarTecnico.fxml", controller, selecaoDao);
+	
+		}
+		else
+			label.setText("Nenhuma seleção Cadastrada");
 	}
-
     @FXML
     void btnDeletarTecnicoAction(ActionEvent event) throws IOException {
-    	TelaRemoverTecnico controller = new TelaRemoverTecnico(selecaoDao);
-    	Main.trocaDeTela("/application/view/Tecnico/TelaRemoverTecnico.fxml", controller, selecaoDao);
+    	if(selecaoDao.getListaSelecoes().size()>0)
+    	{
+		    if(selecaoDao.getListaSelecoes().get(0).getTecnico()!=null)
+		    {
+		    	TelaRemoverTecnico controller = new TelaRemoverTecnico(selecaoDao);
+		    	Main.trocaDeTela("/application/view/Tecnico/TelaRemoverTecnico.fxml", controller, selecaoDao);
+		    }
+		    else
+				label.setText("Nenhum Técnico Cadastrado");
+    	}
+    	else
+			label.setText("Nenhuma seleção Cadastrada");
+    	
     }
-
     @FXML
     void btnEditarTecnicoACtion(ActionEvent event) throws IOException {
-    	TelaEscolherSelecaoEditarTecnico controller = new TelaEscolherSelecaoEditarTecnico(selecaoDao);
-    	Main.trocaDeTela("/application/view/Tecnico/TelaEscolherSelecaoEditarTecnico.fxml", controller, selecaoDao);
+    	if(selecaoDao.getListaSelecoes().size()>0)
+    	{
+    		if(selecaoDao.getListaSelecoes().get(0).getTecnico()!=null)
+    		{	
+    			TelaEscolherSelecaoEditarTecnico controller = new TelaEscolherSelecaoEditarTecnico(selecaoDao);
+    			Main.trocaDeTela("/application/view/Tecnico/TelaEscolherSelecaoEditarTecnico.fxml", controller, selecaoDao);
+    		}
+    		else
+    			label.setText("Nenhum Técnico Cadastrado");
+    	}
+    	else
+			label.setText("Nenhuma seleção Cadastrada");
     }
-
     @FXML
     void btnListarTecnicoAction(ActionEvent event) throws IOException {
-    	TelaListarTecnicos controller = new TelaListarTecnicos(selecaoDao);
-    	Main.trocaDeTela("/application/view/Tecnico/TelaListarTecnico.fxml", controller, selecaoDao);
-    
+    	if(selecaoDao.getListaSelecoes().size()>0)
+    	{
+    		if(selecaoDao.getListaSelecoes().get(0).getTecnico()!=null)
+    		{
+	    		TelaListarTecnicos controller = new TelaListarTecnicos(selecaoDao);
+	    		Main.trocaDeTela("/application/view/Tecnico/TelaListarTecnico.fxml", controller, selecaoDao);
+    		}
+    		else
+    			label.setText("Nenhum Técnico Cadastrado");
+    	}
+    	else
+			label.setText("Nenhuma seleção Cadastrada");
+    	
     }
-
     @FXML
     void btnVoltarAction(ActionEvent event) throws IOException {
     	TelaMenuCadastros controller = new TelaMenuCadastros(selecaoDao);

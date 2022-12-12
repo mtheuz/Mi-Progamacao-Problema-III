@@ -11,6 +11,7 @@ import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class TelaMenuJogadores {
 	
@@ -24,6 +25,8 @@ public class TelaMenuJogadores {
 	@FXML
 	private Button btnCadastrarJogador;
 	
+	  @FXML
+	    private Label label;
 	@FXML
 	private Button btnDeletarJogador;
 	
@@ -46,28 +49,62 @@ public class TelaMenuJogadores {
 
     @FXML
     void btnCadastrarJogadorAction(ActionEvent event) throws IOException {
-    	TelaEscolherSelecaoCadastrarJogador controller = new TelaEscolherSelecaoCadastrarJogador(this.selecaoDao);
-		Main.trocaDeTela("/application/view/Jogador/TelaEscolherSelecaoCadastrarJogador.fxml",controller, selecaoDao);
-    }
+    	
+    	if(selecaoDao.getListaSelecoes().size()>0)
+    	{
+    			TelaEscolherSelecaoCadastrarJogador controller = new TelaEscolherSelecaoCadastrarJogador(this.selecaoDao);
+    			Main.trocaDeTela("/application/view/Jogador/TelaEscolherSelecaoCadastrarJogador.fxml",controller, selecaoDao);
+    
+    	}
+    	else
+    		label.setText("Nenhuma seleção Cadastrada");
+    }	
 
     @FXML
     void btnDeletarJogadorAction(ActionEvent event) throws IOException {
-
-    	TelaRemoverJogador controller = new TelaRemoverJogador(this.selecaoDao);
-		Main.trocaDeTela("/application/view/Jogador/TelaRemoverrJogador.fxml",controller, selecaoDao);
-    }
-
+    	if(selecaoDao.getListaSelecoes().size()>0)
+    	{
+	    	if(selecaoDao.getListaSelecoes().get(0).getListaJogadores().size()>0)
+	    	{
+	    		TelaRemoverJogador controller = new TelaRemoverJogador(this.selecaoDao);
+				Main.trocaDeTela("/application/view/Jogador/TelaRemoverrJogador.fxml",controller, selecaoDao);
+	    	}
+	    	else
+	    		label.setText("Nenhuma Jogador Cadastrado");
+    	}
+    	else
+    		label.setText("Nenhuma seleção Cadastrada");
+    }	
     @FXML
     void btnEditarJogadorAction(ActionEvent event) throws IOException {
-    	
-    	TelaEscolherEditarJogador controller = new TelaEscolherEditarJogador(this.selecaoDao);
-		Main.trocaDeTela("/application/view/Jogador/TelaEscolherEditarJogador.fxml",controller, selecaoDao);
+    	if(selecaoDao.getListaSelecoes().size()>0)
+    	{
+		    if(selecaoDao.getListaSelecoes().get(0).getListaJogadores().size()>0)
+		    {
+	    		TelaEscolherEditarJogador controller = new TelaEscolherEditarJogador(this.selecaoDao);
+				Main.trocaDeTela("/application/view/Jogador/TelaEscolherEditarJogador.fxml",controller, selecaoDao);
+		    }
+		    else
+		    	label.setText("Nenhuma Jogador Cadastrado");
+    	}
+    	else
+    		label.setText("Nenhuma seleção Cadastrada");
     }
-
+    
     @FXML
     void btnListarJogadoresAction(ActionEvent event) throws IOException {
-    	TelaEscolherSelecaoListarJogador controller = new TelaEscolherSelecaoListarJogador(selecaoDao);
-    	Main.trocaDeTela("/application/view/Jogador/TelaEscolherSelecaoListarJogador.fxml", controller, selecaoDao);
+    	if(selecaoDao.getListaSelecoes().size()>0)
+    	{
+		    if(selecaoDao.getListaSelecoes().get(0).getListaJogadores().size()>0)
+		    {
+		    	TelaEscolherSelecaoListarJogador controller = new TelaEscolherSelecaoListarJogador(selecaoDao);
+		    	Main.trocaDeTela("/application/view/Jogador/TelaEscolherSelecaoListarJogador.fxml", controller, selecaoDao);
+		    }
+		    else
+	    		label.setText("Nenhuma Jogador Cadastrado");
+    	}
+    	else
+    		label.setText("Nenhuma seleção Cadastrada");
     }
 
     @FXML

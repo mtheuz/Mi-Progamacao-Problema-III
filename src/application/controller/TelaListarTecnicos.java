@@ -217,6 +217,8 @@ public class TelaListarTecnicos {
 
     @FXML
     private Label labelTecnico9;
+    
+    
 
     private SelecaoDaoImpl selecaoDao;
     

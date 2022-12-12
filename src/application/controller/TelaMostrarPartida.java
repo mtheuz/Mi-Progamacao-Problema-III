@@ -1,10 +1,15 @@
 package application.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import application.Main;
+import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.PartidaPackage.Partida;
+import application.model.PartidaPackage.PartidaDaoImpl;
+import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,10 +18,13 @@ import javafx.scene.control.Label;
 public class TelaMostrarPartida {
 
 	private Partida partida;
-
-    public TelaMostrarPartida(Partida partida) {
-		this.partida = partida;
+	private SelecaoDaoImpl selecaoDao;
+	
+    public TelaMostrarPartida(SelecaoDaoImpl selecaoDao, Partida partida) {
+		this.selecaoDao = selecaoDao;
+    	this.partida = partida;
     }
+   
     @FXML
     private ResourceBundle resources;
 
@@ -229,88 +237,28 @@ public class TelaMostrarPartida {
 
     @FXML
     private Label yellowcards2;
-
+    
+   
     @FXML
-    void btnEditarPartidaAction(ActionEvent event) {
-
+    void btnCancelarPartidaAction(ActionEvent event) {
+    	PartidaDaoImpl.deletar(partida);
     }
 
     @FXML
-    void btnVoltarAction(ActionEvent event) {
+    void btnEditarPartidaAction(ActionEvent event) throws IOException {
+    	ControllerCadastroPartida cadastroPartida = new ControllerCadastroPartida(this.partida);
+		Main.trocaDeTela("/application/view/Partida/CadastroDePartida.fxml", cadastroPartida, null);
+    }
 
+    @FXML
+    void btnVoltarAction(ActionEvent event) throws IOException {
+    	TelaPartida controller = new TelaPartida();
+    	Main.trocaDeTela("/application/view/Partida/TelaPartidas.fxml", controller, selecaoDao);
     }
 
     @FXML
     void initialize() {
-        assert AmareloJogador10Time1 != null : "fx:id=\"AmareloJogador10Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador10Time2 != null : "fx:id=\"AmareloJogador10Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador11Time1 != null : "fx:id=\"AmareloJogador11Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador11Time2 != null : "fx:id=\"AmareloJogador11Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador1Time1 != null : "fx:id=\"AmareloJogador1Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador1Time2 != null : "fx:id=\"AmareloJogador1Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador2Time1 != null : "fx:id=\"AmareloJogador2Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador2Time2 != null : "fx:id=\"AmareloJogador2Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador3Time1 != null : "fx:id=\"AmareloJogador3Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador3Time2 != null : "fx:id=\"AmareloJogador3Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador4Time1 != null : "fx:id=\"AmareloJogador4Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador4Time2 != null : "fx:id=\"AmareloJogador4Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador5Time1 != null : "fx:id=\"AmareloJogador5Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador5Time2 != null : "fx:id=\"AmareloJogador5Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador6Time1 != null : "fx:id=\"AmareloJogador6Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador6Time2 != null : "fx:id=\"AmareloJogador6Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador7Time1 != null : "fx:id=\"AmareloJogador7Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador7Time2 != null : "fx:id=\"AmareloJogador7Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador8Time1 != null : "fx:id=\"AmareloJogador8Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador8Time2 != null : "fx:id=\"AmareloJogador8Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador9Time1 != null : "fx:id=\"AmareloJogador9Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert AmareloJogador9Time2 != null : "fx:id=\"AmareloJogador9Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador1Time1 != null : "fx:id=\"VermelhoJogador1Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador1Time2 != null : "fx:id=\"VermelhoJogador1Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador2Time1 != null : "fx:id=\"VermelhoJogador2Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador2Time2 != null : "fx:id=\"VermelhoJogador2Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador3Time1 != null : "fx:id=\"VermelhoJogador3Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador3Time2 != null : "fx:id=\"VermelhoJogador3Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador4Time1 != null : "fx:id=\"VermelhoJogador4Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert VermelhoJogador4Time2 != null : "fx:id=\"VermelhoJogador4Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert btnCancelarPartida != null : "fx:id=\"btnCancelarPartida\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert btnEditarPartida != null : "fx:id=\"btnEditarPartida\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert btnVoltar != null : "fx:id=\"btnVoltar\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert data != null : "fx:id=\"data\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert estadio != null : "fx:id=\"estadio\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog10Time1 != null : "fx:id=\"golJog10Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog10Time2 != null : "fx:id=\"golJog10Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog11Time1 != null : "fx:id=\"golJog11Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog11Time2 != null : "fx:id=\"golJog11Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog1Time1 != null : "fx:id=\"golJog1Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog1Time2 != null : "fx:id=\"golJog1Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog2Time1 != null : "fx:id=\"golJog2Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog2Time2 != null : "fx:id=\"golJog2Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog3Time1 != null : "fx:id=\"golJog3Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog3Time2 != null : "fx:id=\"golJog3Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog4Time1 != null : "fx:id=\"golJog4Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog4Time2 != null : "fx:id=\"golJog4Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog5Time1 != null : "fx:id=\"golJog5Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog5Time2 != null : "fx:id=\"golJog5Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog6Time1 != null : "fx:id=\"golJog6Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog6Time2 != null : "fx:id=\"golJog6Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog7Time1 != null : "fx:id=\"golJog7Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog7Time2 != null : "fx:id=\"golJog7Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog8Time1 != null : "fx:id=\"golJog8Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog8Time2 != null : "fx:id=\"golJog8Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog9Time1 != null : "fx:id=\"golJog9Time1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert golJog9Time2 != null : "fx:id=\"golJog9Time2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert gols1 != null : "fx:id=\"gols1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert gols2 != null : "fx:id=\"gols2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert horario != null : "fx:id=\"horario\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert nomeSelecao1 != null : "fx:id=\"nomeSelecao1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert nomeSelecao114111 != null : "fx:id=\"nomeSelecao114111\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert nomeSelecao2 != null : "fx:id=\"nomeSelecao2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert nomeSelecao3 != null : "fx:id=\"nomeSelecao3\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert nomeSelecao4 != null : "fx:id=\"nomeSelecao4\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert redCards1 != null : "fx:id=\"redCards1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert redCards2 != null : "fx:id=\"redCards2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert yellowcards1 != null : "fx:id=\"yellowcards1\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
-        assert yellowcards2 != null : "fx:id=\"yellowcards2\" was not injected: check your FXML file 'TelaMostrarPartida.fxml'.";
+        
         
         
         data.setText(partida.getData());
@@ -393,35 +341,46 @@ public class TelaMostrarPartida {
         labelsRedCardstime2.add(VermelhoJogador3Time2);
         labelsRedCardstime2.add(VermelhoJogador4Time2);
         
+        int selecao1 = selecaoDao.buscaSelecao(this.partida.getSelecao1());
+        int selecao2 = selecaoDao.buscaSelecao(this.partida.getSelecao2());
+       
+        
         for(int i =0;i <partida.getGolsSelecao1().size();i++)
         {
-        	labelsJogadoresGolstime1.get(i).setText(partida.getGolsSelecao1().get(i).get(i));
+             int jogador = JogadorDaoImpl.buscarJogador(partida.getGolsSelecao1().get(0).get(1));
+             labelsJogadoresGolstime1.get(i).setText(selecaoDao.getListaSelecoes().get(selecao1).getListaJogadores().get(jogador).getNome());
         }
         
         for(int i =0;i <partida.getGolsSelecao2().size();i++)
         {
-        	labelsJogadoresGolstime2.get(i).setText(partida.getGolsSelecao2().get(i).get(i));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getGolsSelecao2().get(0).get(1));
+        	labelsJogadoresGolstime2.get(i).setText(selecaoDao.getListaSelecoes().get(selecao2).getListaJogadores().get(jogador).getNome());
         }
         
         for(int i =0;i <partida.getCartoesAmarelosSelecao1().size();i++)
         {
-        	 labelsYellowCardstime2.get(i).setText(partida.getCartoesAmarelosSelecao1().get(i).get(i));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesAmarelosSelecao1().get(0).get(1));
+        	labelsYellowCardstime1.get(i).setText(selecaoDao.getListaSelecoes().get(selecao1).getListaJogadores().get(jogador).getNome());
+        	 
         }
         
         for(int i =0;i <partida.getCartoesAmarelosSelecao2().size();i++)
         {
-        	 labelsYellowCardstime2.get(i).setText(partida.getCartoesAmarelosSelecao2().get(i).get(i));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesAmarelosSelecao2().get(0).get(1)); 
+        	labelsYellowCardstime2.get(i).setText(selecaoDao.getListaSelecoes().get(selecao2).getListaJogadores().get(jogador).getNome());
         }
 
 
         for(int i =0;i <partida.getCartoesVermelhosSelecao1().size();i++)
         {
-        	labelsRedCardstime1.get(i).setText(partida.getCartoesVermelhosSelecao1().get(i).get(i));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesVermelhosSelecao1().get(0).get(1));
+        	labelsRedCardstime1.get(i).setText(selecaoDao.getListaSelecoes().get(selecao1).getListaJogadores().get(jogador).getNome());
         }
         
         for(int i =0;i <partida.getCartoesVermelhosSelecao2().size();i++)
         {
-        	labelsRedCardstime2.get(i).setText(partida.getCartoesVermelhosSelecao2().get(i).get(i));
+        	int jogador = JogadorDaoImpl.buscarJogador(partida.getCartoesVermelhosSelecao2().get(0).get(1));
+        	labelsRedCardstime2.get(i).setText(selecaoDao.getListaSelecoes().get(selecao2).getListaJogadores().get(jogador).getNome());
         }
     }
 

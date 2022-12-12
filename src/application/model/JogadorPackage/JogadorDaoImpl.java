@@ -20,7 +20,7 @@ import application.model.TratamentoDeExcecoesPackage.TratamentosExcecoes;
  *	@since 2022
  */
 public class JogadorDaoImpl implements JogadorDAO{
-	SelecaoDaoImpl selecao = new SelecaoDaoImpl();
+	static SelecaoDaoImpl selecao = new SelecaoDaoImpl();
 	private String[] posicoes = {"Goleiro", "Zagueiro","Lateral", "Volante", "Meio-Campo", "Atacante"};
 	/**
 	 * Construtor padrão da classe <b> JogadorDaoImpl </b>
@@ -264,7 +264,7 @@ public void cadastrarUmJogador()
 
 	//Gera o id do jogador com base na data
 
-	private String geraid(Jogador jogador) throws InterruptedException {
+	public static String geraid(Jogador jogador) throws InterruptedException {
 		LocalDateTime dataagr = LocalDateTime.now();
 		Thread.sleep(10);
 	    DateTimeFormatter formato = DateTimeFormatter.ofPattern("ddMMyyHHmmnn");
@@ -281,7 +281,7 @@ public void cadastrarUmJogador()
 	 */
 
 
-	public int buscarJogador(String codigo) {
+	public static int buscarJogador(String codigo) {
 		final List<Selecao> listaSelecao = selecao.getListaSelecoes();
 		for(int index = 0; index < listaSelecao.size();index++) {
 			var listaJogador = listaSelecao.get(index).getListaJogadores();

@@ -11,6 +11,7 @@ import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class TelaMenuArbitro
 {
@@ -29,7 +30,10 @@ public class TelaMenuArbitro
 
     @FXML
     private Button btnEditarTecnico;
-
+    
+    @FXML
+    private Label label;
+    
     @FXML
     private Button btnListarTecnico;
 
@@ -47,27 +51,46 @@ public class TelaMenuArbitro
 
 	@FXML
     void btnCadastrarArbitroAction(ActionEvent event) throws IOException {
-		TelaCadastrarArbitro controller = new TelaCadastrarArbitro(selecaoDao);
-		Main.trocaDeTela("/application/view/Arbitro/TelaCadastrarArbitro.fxml", controller, selecaoDao);
+		if(TelaInicio.listaArbitros.size()<9)
+		{
+			TelaCadastrarArbitro controller = new TelaCadastrarArbitro(selecaoDao);
+			Main.trocaDeTela("/application/view/Arbitro/TelaCadastrarArbitro.fxml", controller, selecaoDao);
+		}
+		else
+			label.setText("Lista Completa!");
 	}
 
     @FXML
     void btnDeletarArbitroAction(ActionEvent event) throws IOException {
-    	TelaDeletarArbitro controller = new TelaDeletarArbitro(selecaoDao);
-		Main.trocaDeTela("/application/view/Arbitro/TelaDeletarArbitro.fxml", controller, selecaoDao);
+    	if(TelaInicio.listaArbitros.size()>0)
+    	{
+	    	TelaDeletarArbitro controller = new TelaDeletarArbitro(selecaoDao);
+			Main.trocaDeTela("/application/view/Arbitro/TelaDeletarArbitro.fxml", controller, selecaoDao);
+    	}
+    	else
+			label.setText("Nemhum Árbitro Cadastrado!");
+    	
     }
-
     @FXML
     void btnEditarArbitroAction(ActionEvent event) throws IOException {
-    	TelaEditarArbitro controller = new TelaEditarArbitro(selecaoDao);
-		Main.trocaDeTela("/application/view/Arbitro/TelaEditarArbitro.fxml", controller, selecaoDao);
+    	if(TelaInicio.listaArbitros.size()>0)
+		{
+    		TelaEditarArbitro controller = new TelaEditarArbitro(selecaoDao);
+    		Main.trocaDeTela("/application/view/Arbitro/TelaEditarArbitro.fxml", controller, selecaoDao);
+		}
+    	else
+			label.setText("Nemhum Árbitro Cadastrado!");
+    	
     }
-
     @FXML
     void btnListarArbitroAction(ActionEvent event) throws IOException {
-    	TelaListarArbitro controller = new TelaListarArbitro(selecaoDao);
-    	Main.trocaDeTela("/application/view/Arbitro/TelaListarArbitro.fxml", controller, selecaoDao);
-    
+    	if(TelaInicio.listaArbitros.size()>0)
+    	{
+    		TelaListarArbitro controller = new TelaListarArbitro(selecaoDao);
+    		Main.trocaDeTela("/application/view/Arbitro/TelaListarArbitro.fxml", controller, selecaoDao);
+    	}
+    	else
+			label.setText("Nemhum Árbitro Cadastrado!");
     }
 
     @FXML

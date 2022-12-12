@@ -46,7 +46,7 @@ public class TelaCadastrarArbitro {
     @FXML
     void btnCadastrarAction(ActionEvent event) throws IOException {
     	String nome = nomeArbitro.getText();
-    	if(TelaInicio.listaArbitros.size() <= 10)
+    	if(TelaInicio.listaArbitros.size() < 10)
     	{
 	    	if(nome != null && nome != "")
 	    	{

@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import application.model.JogadorPackage.Jogador;
+import application.model.JogadorPackage.JogadorDaoImpl;
 import application.model.SelecaoPackage.Selecao;
 import application.model.SelecaoPackage.SelecaoDaoImpl;
 import javafx.event.ActionEvent;
@@ -65,7 +66,7 @@ public class TelaCadastrarJogador {
    }
     
     @FXML
-    void btnCadastrarJogadoresAction(ActionEvent event) throws IOException {
+    void btnCadastrarJogadoresAction(ActionEvent event) throws IOException, InterruptedException {
     	String nomeJogador = this.nomeJogador.getText();
 		String posicao = this.choiceBoxSelecoes.getValue();
 		
@@ -75,6 +76,7 @@ public class TelaCadastrarJogador {
 			{
 				Jogador jogador = new Jogador(nomeJogador);
 				jogador.setPosicao(posicao);
+				jogador.setCode(JogadorDaoImpl.geraid(jogador));
 				int indice = selecaoDao.buscaSelecao(nomeDaSelecao);
 				listaSelecoes.get(indice).getListaJogadores().add(jogador);
 				TelaCadastrarJogador controller = new TelaCadastrarJogador(this.selecaoDao, TelaCadastrarJogador.nomeDaSelecao);
